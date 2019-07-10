@@ -32,7 +32,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Helmet>
-      <link rel="stylesheet" href="http://d17s4kc6349e5h.cloudfront.net/holidayextras/stylesheets/6.3.17/theme.min.css" />
+      <link rel="stylesheet" href="https://d17s4kc6349e5h.cloudfront.net/holidayextras/stylesheets/6.3.17/theme.min.css" />
 
       <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous" />
       <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en,Promise" />
