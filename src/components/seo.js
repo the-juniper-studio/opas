@@ -25,10 +25,42 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
+
   const metaDescription = description || site.siteMetadata.description
 
   return (
     <Helmet
+      script={
+        `https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en,Promise`,
+        `https://maps.googleapis.com/maps/api/js?key=MY_GOOGLE_MAPS_API" type="text/javascript`,
+        `https://hove.eu-west-2.bidjs.com/static/2.0/js/bid-dependencies.min.js`,
+        `https://hove.eu-west-2.bidjs.com/static/2.0/prettyphoto/jquery.prettyPhoto.min.js`,
+        `https://hove.eu-west-2.bidjs.com/static/2.0/js/hbs-bid.min.js`,
+        `https://hove.eu-west-2.bidjs.com/static/2.0/js/bid.min.js`,
+        window.bidjs = {  
+          config: {    
+            apiBase: "https://hove.eu-west-2.bidjs.com/auction-007/api",
+            clientId: "/demonstration",
+            staticBase: "https://hove.eu-west-2.bidjs.com/static/2.0",
+            staticCDN: 'https://static.bidjs.com', // Do not change    
+            staticVersion: '1.5', // e.g. 1.3  
+            templateVariant: 'bootstrap3' // either 'bootstrap3' or 'bootstrap4'  
+           },  
+          modules: {    
+            auctionDetails: '#!/auctionDetails/%AUCTION_ID%',
+            auctionsArchived: true,
+            invoices: true,
+            lotDetails: '#!/itemDetails/%ITEM_ID%',
+            mySales: true
+            },  
+          options: {
+            allowTitleChange: true,
+            allowMetaDescriptionChange: true,
+            standalone: false,
+            unsupportedBrowserMessage: 'Your browser is not supported. Please use a browser such as Google Chrome or Microsoft Edge to ensure full functionality'
+          }
+        }
+      }
       htmlAttributes={{
         lang,
       }}
