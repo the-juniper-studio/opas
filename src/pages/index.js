@@ -32,7 +32,10 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <h1>TEST BEDSzzzzz</h1>
-    <div dangerouslySetInnerHTML={scripting()} />
+    <noscript id="deferred-styles">
+      <link href="https://hove.eu-west-2.bidjs.com/static/2.0/prettyphoto/jquery.prettyPhoto.min.css" rel="stylesheet" type="text/css" />
+      <link href="https://hove.eu-west-2.bidjs.com/static/2.0/css/bid--no-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    </noscript>
     <div className='container'>
       <div id='bidlogix-app' className='row bidlogix-app'>
         <div className='col-xs-12 text-center'>
@@ -53,6 +56,7 @@ const IndexPage = () => (
     <div className='container bidlogix-app'>
       <div id='bidjs'></div>
     </div>
+    <div dangerouslySetInnerHTML={scripting()} />
   </Layout>
 )
 
