@@ -2,12 +2,10 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>TEST BED</h1>
+
+function scripting() {
+  return {__html: `
     <script>
-      {`
         window.addEventListener('DOMContentLoaded', function() {
           (function($) {
             $(document).ready(function() {
@@ -26,8 +24,15 @@ const IndexPage = () => (
           webkitRequestAnimationFrame || msRequestAnimationFrame;
         if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
         else window.addEventListener('load', loadDeferredStyles);
-      `}
     </script>
+  `};
+}
+
+const IndexPage = () => (
+  <Layout>
+    <SEO title="Home" />
+    <h1>TEST BEDSzzzzz</h1>
+    <div dangerouslySetInnerHTML={scripting()} />
     <div className='container'>
       <div id='bidlogix-app' className='row bidlogix-app'>
         <div className='col-xs-12 text-center'>
