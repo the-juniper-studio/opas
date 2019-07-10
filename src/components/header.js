@@ -3,31 +3,30 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+
+  <header role="banner">
+    <nav className="navbar navbar-default">
+      <div className="container">
+        <div className="navbar-header">
+          <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+          </button>
+          <Link className="navbar-brand" to="/">{ siteTitle }</Link>
+        </div>
+
+        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul className="nav navbar-nav navbar-right">
+            <li><Link className="navbar-brand" to="/">Link</Link></li>
+            <li><Link className="navbar-brand" to="/">Link</Link></li>
+            <li><Link className="navbar-brand" to="/">Link</Link></li>
+            <li><Link className="navbar-brand" to="/">Link</Link></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 )
 
