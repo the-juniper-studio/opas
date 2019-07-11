@@ -50,3 +50,11 @@
 // Utility classes
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/utilities";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
+
+.panel, .thumbnail {
+  box-shadow:0 2px 3px 0 rgba(0,0,0,.075);
+}
+.bidlogix-app > .container {
+  @extend .row;
+  padding:0;
+}
