@@ -1,0 +1,17 @@
+// Layout
+
+.bidlogix-app > .container {
+  @extend .row;
+  padding:0;
+}
+.bidlogix-app > div > .container {
+  padding:0;
+  width:auto;
+}
+
+// Filters
+
+.filter-list {
+  @extend .list-unstyled;
+  margin-left:$padding-small-horizontal;
+}
