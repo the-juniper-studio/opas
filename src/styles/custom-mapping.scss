@@ -12,6 +12,11 @@
   @extend .navbar;
   @extend .navbar-inverse;
   color: $text-color-inverse;
+  margin-bottom: 0 !important;
+
+  li {
+    @extend .mb-1;
+  }
 }
 
 .panel, .thumbnail {

@@ -29,5 +29,20 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Open+Sans`, 
+            variants: [`400`, `700`]
+          },
+          {
+            family: `Source+Sans+Pro`, 
+            variants: [`400`, `700`]
+          }
+        ],
+      },
+    }
   ],
 }
