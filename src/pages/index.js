@@ -47,6 +47,7 @@ const IndexPage = () => {
         <script src="https://hove.eu-west-2.bidjs.com/static/2.0/prettyphoto/jquery.prettyPhoto.min.js" />
         <script src="https://hove.eu-west-2.bidjs.com/static/2.0/js/hbs-bid.min.js" />
         <script src="https://hove.eu-west-2.bidjs.com/static/2.0/js/bid.min.js" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
         <script>{`
           window.bidjs = {  
