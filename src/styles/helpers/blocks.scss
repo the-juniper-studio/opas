@@ -1,0 +1,24 @@
+//
+// Blocks
+// --------------------------------------------------
+
+
+// Base classes
+// --------------------------------------------------
+// Sizing
+.block-xs {
+  padding-top: $block-padding-xs;
+  padding-bottom: $block-padding-xs;
+}
+.block-sm {
+  padding-top: $block-padding-small;
+  padding-bottom: $block-padding-small;
+}
+.block-md {
+  padding-top: $block-padding-medium;
+  padding-bottom: $block-padding-medium;
+}
+.block-lg {
+  padding-top: $block-padding-large;
+  padding-bottom: $block-padding-large;
+}

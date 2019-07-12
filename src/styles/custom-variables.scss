@@ -31,6 +31,8 @@ $body-bg:               #edf2f7;
 //** Global text color on `<body>`.
 $text-color:            $gray-dark;
 
+$text-color-inverse:    $gray-lighter;
+
 //** Global textual link color.
 $link-color:            $brand-primary;
 //** Link hover color set via `darken()` function.
@@ -872,3 +874,13 @@ $dl-horizontal-offset:        $component-offset-horizontal;
 $dl-horizontal-breakpoint:    $grid-float-breakpoint;
 //** Horizontal line color.
 $hr-border:                   $gray-lighter;
+
+
+//== Blocks
+//
+//##
+
+$block-padding-xs:         $padding-base-vertical;
+$block-padding-small:      $padding-large-vertical;
+$block-padding-medium:     $padding-large-vertical * 2;
+$block-padding-large:      $padding-large-vertical * 3;
