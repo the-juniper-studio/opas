@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const ContactPage = props => (
-  <Layout color="charcoal">
+  <Layout>
     <SEO title="Home" />
     <div className="row">
       <div className="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
