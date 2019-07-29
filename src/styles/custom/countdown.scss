@@ -1,3 +1,16 @@
 .countdown {
-  border: solid red 1px;
+  display: inline-block;
+
+  > div {
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: $font-size-h1;
+    padding: 0 $padding-base-vertical;
+    line-height: 1;
+    > span {
+      display: block;
+      font-size: 12px;
+    }
+  }
 }
