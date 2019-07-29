@@ -1,8 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Countdown from "../components/countdown"
 import Helmet from "react-helmet"
-import Countdown from 'react-countdown-now';
 
 function scripting() {
   return {__html: `
@@ -99,7 +99,7 @@ const IndexPage = () => {
       <div className='bidlogix-app'>
         <div id='bidjs'></div>
       </div>
-      <Countdown date={Date.now() + 500000000} zeroPadTime='2' zeroPadDays='2' />
+      <Countdown date={Date.now() + 500000000} zeroPadTime='2' zeroPadDays='2' renderer={renderer} />
       <div dangerouslySetInnerHTML={scripting()} />
     </Layout>
   )
