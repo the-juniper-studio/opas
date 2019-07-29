@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Countdown from "../components/countdown"
+import Countdown from 'react-countdown-now';
 import Helmet from "react-helmet"
 
 function scripting() {
@@ -35,6 +35,17 @@ function scripting() {
     </script>
   `};
 }
+
+const renderer = ({ days, hours, minutes, seconds }) => {
+  return (
+    <div className='countdown'>
+      <div className='days'><span>Days</span> {hours}</div>
+      <div className='hours'><span>Hours</span> {hours}</div>
+      <div className='minutes'><span>Minutes</span> {minutes}</div>
+      <div className='seconds'><span>Seconds</span> {seconds}</div>
+    </div>
+  )
+};
 
 const IndexPage = () => {
   return (
