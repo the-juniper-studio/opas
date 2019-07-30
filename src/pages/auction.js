@@ -87,31 +87,34 @@ const IndexPage = () => {
           }
         `}</script>
       </Helmet>
-      <h1>Welcome to our world</h1>
-      <noscript id="deferred-styles">
-        <link href="https://hove.eu-west-2.bidjs.com/static/2.0/prettyphoto/jquery.prettyPhoto.min.css" rel="stylesheet" type="text/css" />
-        <link href="https://hove.eu-west-2.bidjs.com/static/2.0/css/bid--no-bootstrap.min.css" rel="stylesheet" type="text/css" />
-      </noscript>
-      <div id='bidlogix-app' className='bidlogix-app'>
-        <div className='text-center'>
-          <svg width='200px' height='200px' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid' className='lds-dual-ring'>
-            <circle cx='50' cy='50' fill='none' strokeLinecap='round' r='20' strokeWidth='2' stroke='#337ab7' strokeDasharray='31.41592653589793 31.41592653589793' transform='rotate(150 50 50)'>
-              <animateTransform attributeName='transform' type='rotate' calcMode='linear' values='0 50 50;360 50 50' keyTimes='0;1' dur='3s' begin='0s' repeatCount='indefinite'></animateTransform>
-            </circle>
-            <circle cx='50' cy='50' fill='none' strokeLinecap='round' r='15' strokeWidth='2' stroke='#333' strokeDasharray='23.561944901923447 23.561944901923447' strokeDashoffset='23.561944901923447' transform='rotate(-150 50 50)'>
-              <animateTransform attributeName='transform' type='rotate' calcMode='linear' values='0 50 50;-360 50 50' keyTimes='0;1' dur='3s' begin='0s' repeatCount='indefinite'></animateTransform>
-            </circle>
-          </svg>
+      
+      <div className="container-fluid">
+        <h1>Welcome to our world</h1>
+        <noscript id="deferred-styles">
+          <link href="https://hove.eu-west-2.bidjs.com/static/2.0/prettyphoto/jquery.prettyPhoto.min.css" rel="stylesheet" type="text/css" />
+          <link href="https://hove.eu-west-2.bidjs.com/static/2.0/css/bid--no-bootstrap.min.css" rel="stylesheet" type="text/css" />
+        </noscript>
+        <div id='bidlogix-app' className='bidlogix-app'>
+          <div className='text-center'>
+            <svg width='200px' height='200px' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid' className='lds-dual-ring'>
+              <circle cx='50' cy='50' fill='none' strokeLinecap='round' r='20' strokeWidth='2' stroke='#337ab7' strokeDasharray='31.41592653589793 31.41592653589793' transform='rotate(150 50 50)'>
+                <animateTransform attributeName='transform' type='rotate' calcMode='linear' values='0 50 50;360 50 50' keyTimes='0;1' dur='3s' begin='0s' repeatCount='indefinite'></animateTransform>
+              </circle>
+              <circle cx='50' cy='50' fill='none' strokeLinecap='round' r='15' strokeWidth='2' stroke='#333' strokeDasharray='23.561944901923447 23.561944901923447' strokeDashoffset='23.561944901923447' transform='rotate(-150 50 50)'>
+                <animateTransform attributeName='transform' type='rotate' calcMode='linear' values='0 50 50;-360 50 50' keyTimes='0;1' dur='3s' begin='0s' repeatCount='indefinite'></animateTransform>
+              </circle>
+            </svg>
+          </div>
         </div>
+        <div className='bidlogix-app'>
+          <div id='bidlogix-modal'></div>
+        </div>
+        <div className='bidlogix-app'>
+          <div id='bidjs'></div>
+        </div>
+        <Countdown date={Date.now() + 500000000} zeroPadTime='2' zeroPadDays='2' renderer={renderer} />
+        <div dangerouslySetInnerHTML={scripting()} />
       </div>
-      <div className='bidlogix-app'>
-        <div id='bidlogix-modal'></div>
-      </div>
-      <div className='bidlogix-app'>
-        <div id='bidjs'></div>
-      </div>
-      <Countdown date={Date.now() + 500000000} zeroPadTime='2' zeroPadDays='2' renderer={renderer} />
-      <div dangerouslySetInnerHTML={scripting()} />
     </Layout>
   )
 }

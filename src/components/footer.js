@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const Footer = () => (
   <footer className="footer mt-3" role="contentinfo">
-    <div className="container block-lg">
+    <div className="container-fluid block-lg">
       <div className="row">
         <div className="col-xs-12 col-sm-4">
           <h4>Bidlogix Test &copy; {new Date().getFullYear()}</h4>
