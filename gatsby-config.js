@@ -28,7 +28,21 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`, 
+    {
+      resolve: 'gatsby-source-prismic-graphql',
+      options: {
+        repositoryName: 'testeeee',
+        path: '/preview', // optional, default: /preview
+        previews: true, // optional, default: false
+        pages: [{               // (optional)
+          type: 'Landing_page', // TypeName from prismic
+          match: '/:uid',       // Pages will be generated under this pattern
+          path: '/',            // Placeholder page for unpublished documents
+          component: require.resolve('./src/templates/Landing.jsx'),
+        }],
+      }
+    },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
