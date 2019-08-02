@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
+import { RichText } from 'prismic-reactjs';
+import { linkResolver } from '../utils/linkResolver';
 import SEO from "../components/seo"
 
 
@@ -33,6 +35,7 @@ const RenderBody = ({ landingPage }) => {
   return (
     <div className="container-fluid">
       <h1>{landingPage.title}</h1>
+      <div>{RichText.render(landingPage.content, linkResolver)}</div>
     </div>
   )
 }
