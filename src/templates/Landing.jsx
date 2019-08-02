@@ -43,7 +43,7 @@ const LandingPage = props => {
 
   return(
     <Layout>
-      <SEO title={doc.node.meta_title} keywords={doc.node.meta_keywords} description={doc.node.meta_description} lang='en-gb' />
+      <SEO title="Contact" />
       <RenderBody landingPage={doc.node} />
     </Layout>
   )
