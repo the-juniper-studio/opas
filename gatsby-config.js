@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Bidlogix Test`,
-    description: `A Bootstrap and Gatsby test site for Bidlogix made by the team at Juniper Studios `,
+    title: `Scottish Property Auctions`,
+    description: `Scottish Property Auctions – Buy and Sell you property with us. Free property valuations.`,
     author: `@studiojuniper`,
   },
   plugins: [
@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Bidlogix by Juniper`,
-        short_name: `Bidlogix`,
+        name: `Scottish Property Auctions`,
+        short_name: `SPA`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -32,13 +32,13 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic-graphql',
       options: {
-        repositoryName: 'testeeee',
+        repositoryName: 'juniper-test',
         path: '/preview', // optional, default: /preview
         previews: true, // optional, default: false
         pages: [{               // (optional)
-          type: 'Landing_page', // TypeName from prismic
-          match: '/article/:uid',       // Pages will be generated under this pattern
-          path: '/article',            // Placeholder page for unpublished documents
+          type: 'Legal_page', // TypeName from prismic
+          match: '/:uid',       // Pages will be generated under this pattern
+          path: '/',            // Placeholder page for unpublished documents
           component: require.resolve('./src/templates/Landing.jsx'),
         }],
       }

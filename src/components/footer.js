@@ -6,13 +6,13 @@ const Footer = () => (
     <div className="container-fluid block-lg">
       <div className="row">
         <div className="col-xs-12 col-sm-4">
-          <h4>Bidlogix Test &copy; {new Date().getFullYear()}</h4>
-          69 Middle Street<br/>
-          Brighton<br/>
-          East Sussex<br/>
-          BN1 1AD<br/>
-          Tel: +44 (0)845 056 1277<br/>
-          Email: hello@bidlogix.net
+          <h4>Scottish Property Auctions &copy; {new Date().getFullYear()}</h4>
+          272 Bath Street<br/>
+          Glasgow<br/>
+          Scotland<br/>
+          G2 4JR<br />
+          Tel: +44 (0)123 456 7890<br/>
+          Email: contact@scottishpropertyauctions.com
         </div>
         <div className="col-xs-12 col-sm-4">
           <h4>Links</h4>
