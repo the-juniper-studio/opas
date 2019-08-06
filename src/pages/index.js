@@ -46,7 +46,7 @@ const IndexPage = props => (
             <h3 className="h6 mb-0 text-muted">4 Bed Detatched House</h3>
             <div className="h2 mt-0">£800,000</div>
             <p className="text-muted">The Dalby, The Observatory, Canterbury</p>  
-            <a href="#" className="btn btn-default btn-sm btn-block" role="button">View</a>
+            <a href="#test" className="btn btn-default btn-sm btn-block" role="button">View</a>
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@ const IndexPage = props => (
             <h3 className="h6 mb-0 text-muted">4 Bed Detatched House</h3>
             <div className="h2 mt-0">£800,000</div>
             <p className="text-muted">The Dalby, The Observatory, Canterbury</p>               
-            <a href="#" className="btn btn-default btn-sm btn-block" role="button">View</a>
+            <a href="#test" className="btn btn-default btn-sm btn-block" role="button">View</a>
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@ const IndexPage = props => (
             <h3 className="h6 mb-0 text-muted">4 Bed Detatched House</h3>
             <div className="h2 mt-0">£800,000</div>
             <p className="text-muted">The Dalby, The Observatory, Canterbury</p>  
-            <a href="#" className="btn btn-default btn-sm btn-block" role="button">View</a>
+            <a href="#test" className="btn btn-default btn-sm btn-block" role="button">View</a>
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@ const IndexPage = props => (
             <h3 className="h6 mb-0 text-muted">4 Bed Detatched House</h3>
             <div className="h2 mt-0">£800,000</div>
             <p className="text-muted">The Dalby, The Observatory, Canterbury</p>  
-            <a href="#" className="btn btn-default btn-sm btn-block" role="button">View</a>
+            <a href="#test" className="btn btn-default btn-sm btn-block" role="button">View</a>
           </div>
         </div>
       </div>
@@ -93,7 +93,7 @@ const IndexPage = props => (
             <h3 className="h6 mb-0 text-muted">4 Bed Detatched House</h3>
             <div className="h2 mt-0">£800,000</div>
             <p className="text-muted">The Dalby, The Observatory, Canterbury</p>  
-            <a href="#" className="btn btn-default btn-sm btn-block" role="button">View</a>
+            <a href="#test" className="btn btn-default btn-sm btn-block" role="button">View</a>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@ const IndexPage = props => (
             <h3 className="h6 mb-0 text-muted">4 Bed Detatched House</h3>
             <div className="h2 mt-0">£800,000</div>
             <p className="text-muted">The Dalby, The Observatory, Canterbury</p>               
-            <a href="#" className="btn btn-default btn-sm btn-block" role="button">View</a>
+            <a href="#test" className="btn btn-default btn-sm btn-block" role="button">View</a>
           </div>
         </div>
       </div>
@@ -115,7 +115,7 @@ const IndexPage = props => (
             <h3 className="h6 mb-0 text-muted">4 Bed Detatched House</h3>
             <div className="h2 mt-0">£800,000</div>
             <p className="text-muted">The Dalby, The Observatory, Canterbury</p>  
-            <a href="#" className="btn btn-default btn-sm btn-block" role="button">View</a>
+            <a href="#test" className="btn btn-default btn-sm btn-block" role="button">View</a>
           </div>
         </div>
       </div>
@@ -126,7 +126,7 @@ const IndexPage = props => (
             <h3 className="h6 mb-0 text-muted">4 Bed Detatched House</h3>
             <div className="h2 mt-0">£800,000</div>
             <p className="text-muted">The Dalby, The Observatory, Canterbury</p>  
-            <a href="#" className="btn btn-default btn-sm btn-block" role="button">View</a>
+            <a href="#test" className="btn btn-default btn-sm btn-block" role="button">View</a>
           </div>
         </div>
       </div>
