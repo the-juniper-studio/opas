@@ -18,13 +18,13 @@ const Header = ({ siteTitle }) => (
         </div>
 
         <div className="collapse navbar-collapse" id="main-nav">
-          <Link className="btn btn-primary navbar-btn navbar-right mr-1 x-bidlogix--trigger-login" to="/">Sign Up/Log in</Link>
-          <ul className="nav navbar-nav navbar-right">
+          <ul className="nav navbar-nav">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/auction">Auction</Link></li>
             <li><Link to="/sell">Sell</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
           </ul>
+          <button className="btn btn-primary navbar-btn navbar-right mr-1 x-bidlogix--trigger-login">Sign Up/Log in</button>
         </div>
       </div>
     </nav>
