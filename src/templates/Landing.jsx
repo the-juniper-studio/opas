@@ -47,7 +47,7 @@ const LandingPage = props => {
 
   return(
     <Layout>
-      <SEO title="banana" />
+      <SEO title='contact' />
       <RenderBody landingPage={doc.node} />
     </Layout>
   )

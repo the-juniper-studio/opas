@@ -46,7 +46,7 @@ const renderer = ({ days, hours, minutes, seconds }) => {
 
 const RenderBody = ({ indexPage }) => {
   return (
-    <>
+    <div>
       <div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
         <ol className="carousel-indicators">
           <li data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
@@ -157,7 +157,7 @@ const RenderBody = ({ indexPage }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
@@ -167,7 +167,7 @@ const IndexPage = props => {
 
   return(
     <Layout>
-      <SEO title="banana" lang='en-gb' />
+      <SEO title='contact' />
       <RenderBody indexPage={doc.node} />
     </Layout>
   )
