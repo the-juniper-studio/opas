@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const ContactPage = props => (
+const Sell = props => (
   <Layout>
     <SEO title="Sell" />
     <div className="container-fluid">
@@ -75,4 +75,4 @@ const ContactPage = props => (
   </Layout>
 )
 
-export default ContactPage
+export default Sell
