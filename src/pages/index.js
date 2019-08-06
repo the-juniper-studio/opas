@@ -43,7 +43,7 @@ const IndexPage = props => (
     </div>
     <div className="container-fluid mt-2">
       <div className="row">
-        <div className="col-xs-12 col-md-8">
+        <div className="col-xs-12 col-md-9">
           <main className="main" id="main" role="main">
             <h1>Buy or sell with Scottish Property Auctions</h1>
             <p>Welcome to BIDLOGIX Auctions, Scotland's largest auction house network, offering the biggest volume and widest variety of stock and asset offerings to the secondary market.</p>
@@ -121,7 +121,7 @@ const IndexPage = props => (
             </div>
           </main>
         </div>
-        <div className="col-xs-12 col-md-4">
+        <div className="col-xs-12 col-md-3">
           <aside role="complementary">
             <div className="well text-center">
               <h2 className="mt-0">Next Auction</h2>
