@@ -71,7 +71,7 @@ const RenderBody = ({ indexPage }) => {
           <div className="col-xs-12 col-md-8">
             <main className="main" id="main" role="main">
               <h1>{indexPage.title}</h1>
-              <p>{RichText.render(indexPage.content, linkResolver)}</p>
+              <div>{RichText.render(indexPage.content, linkResolver)}</div>
               <h2 className="text-center">Latest Properties</h2>
               <div className='row'>
                 <div className='col-xs-6 col-md-4'>
@@ -147,10 +147,10 @@ const RenderBody = ({ indexPage }) => {
             </main>
           </div>
           <div className="col-xs-12 col-md-4">
-            <aside role="complementary">
+            <aside>
               <div className="well text-center">
                 <div>{RichText.render(indexPage.countdown_title, linkResolver)}</div>
-                <Countdown date={indexPage.countdown_deadline} zeroPadTime='2' zeroPadDays='2' renderer={renderer} />
+                <Countdown date={indexPage.countdown_deadline} zeroPadTime={2} zeroPadDays={2} renderer={renderer} />
                 <div>{RichText.render(indexPage.countdown_text, linkResolver)}</div>
               </div>
             </aside>
@@ -165,9 +165,9 @@ const IndexPage = props => {
   const doc = props.data.prismic.allIndex_pages.edges.slice(0,1).pop();
   if(!doc) return null;
 
-  return(
+  return (
     <Layout>
-      <SEO title='contact' />
+      <SEO title={doc.node.meta_title} keywords={doc.node.meta_keywords} description={doc.node.meta_description} lang='en-gb' />
       <RenderBody indexPage={doc.node} />
     </Layout>
   )
