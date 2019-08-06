@@ -18,8 +18,8 @@ const Footer = () => (
           <h4>Links</h4>
           <ul className="list-unstyled">
             <li><Link to="/privacy">Privacy Policy</Link></li>
-            <li><Link to="/cookie">Cookie Policy</Link></li>
-            <li><Link to="/legal">Legal</Link></li>
+            <li><Link to="/">Cookie Policy</Link></li>
+            <li><Link to="/">Legal</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>

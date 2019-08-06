@@ -2,40 +2,28 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 
-function SEO({ description, lang, meta, title, keywords }) {
+function SEO({ description, keywords, lang, title }) {
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      meta={[
-        {
-          name: `description`,
-          content: description,
-        },
-        {
-          name: `keywords`,
-          content: keywords,
-        }
-      ].concat(meta)}
-    />
+    <Helmet>
+      <html lang={lang} />
+      <title itemProp="name" lang={lang}>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+    </Helmet>
   )
 }
 
 SEO.defaultProps = {
   lang: `en-gb`,
-  meta: [],
-  description: ``,
 }
 
 SEO.propTypes = {
   description: PropTypes.string,
+  keywords: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-  keywords: PropTypes.string
 }
 
 export default SEO
