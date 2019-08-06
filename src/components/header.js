@@ -18,7 +18,7 @@ const Header = ({ siteTitle }) => (
         </div>
 
         <div className="collapse navbar-collapse" id="main-nav">
-          <Link className="btn btn-primary navbar-btn navbar-right mr-1" to="/">Sign Up/Log in</Link>
+          <Link className="btn btn-primary navbar-btn navbar-right mr-1 x-bidlogix--trigger-login" to="/">Sign Up/Log in</Link>
           <ul className="nav navbar-nav navbar-right">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/auction">Auction</Link></li>
