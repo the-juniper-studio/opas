@@ -43,8 +43,8 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Open+Sans`, 
-            variants: [`400`, `700`]
+            family: `Roboto`, 
+            variants: [`700`, `900`]
           },
           {
             family: `Source+Sans+Pro`, 
