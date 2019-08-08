@@ -14,7 +14,7 @@ const Header = ({ siteTitle }) => (
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <Link className="navbar-brand" to="/">{ siteTitle }</Link>
+          <Link className="navbar-brand" to="/"><img alt="this" src="../images/Online-Property-Logo.png" /></Link>
         </div>
 
         <div className="collapse navbar-collapse" id="main-nav">

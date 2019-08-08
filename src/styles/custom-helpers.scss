@@ -3,3 +3,10 @@
 .mr-0 {margin-right:0 !important}
 .mt-0 {margin-top:0 !important}
 .mb-0 {margin-bottom:0 !important}
+
+a {
+  transition: color .3s;
+}
+.btn {
+  transition: background-color .3s; 
+}
