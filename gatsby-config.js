@@ -1,9 +1,4 @@
 module.exports = {
-  siteMetadata: {
-    title: `Scottish Property Auctions`,
-    description: `Scottish Property Auctions – Buy and Sell you property with us. Free property valuations.`,
-    author: `@studiojuniper`,
-  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {

@@ -1,13 +1,13 @@
 // Layout
 
-.bidlogix-app > .container {
-  @extend .row;
-  padding:0;
-}
-.bidlogix-app > div > .container {
-  padding:0;
-  width:auto;
-}
+// .bidlogix-app > .container {
+//   @extend .row;
+//   padding:0;
+// }
+// .bidlogix-app > div > .container {
+//   padding:0;
+//   width:auto;
+// }
 .footer {
   @extend .navbar;
   @extend .navbar-inverse;
