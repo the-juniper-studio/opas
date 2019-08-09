@@ -119,8 +119,8 @@ $line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
 $line-height-small:         1.5;
 
 $border-radius-base:        0px;
-$border-radius-large:       6px;
-$border-radius-small:       3px;
+$border-radius-large:       0px;
+$border-radius-small:       0px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 $component-active-color:    #fff;
@@ -158,7 +158,7 @@ $table-border-color:            $gray-lighter;
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-$btn-font-weight:                normal;
+$btn-font-weight:                bold;
 
 $btn-default-color:              #333;
 $btn-default-bg:                 #fff;
