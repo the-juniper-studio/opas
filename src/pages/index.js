@@ -74,7 +74,7 @@ const RenderBody = ({ indexPage }) => {
       </div>
       <div className='container-fluid mt-2'>
         <div className='row'>
-          <div className='col-xs-12 col-md-9'>
+          <div className='col-xs-12 col-md-8 col-lg-9'>
             <main className='main' id='main' role='main'>
               <h1>{indexPage.title}</h1>
               <div>{RichText.render(indexPage.content, linkResolver)}</div>
@@ -152,12 +152,14 @@ const RenderBody = ({ indexPage }) => {
               </div>
             </main>
           </div>
-          <div className='col-xs-12 col-md-3'>
+          <div className='col-xs-12 col-md-4 col-lg-3'>
             <aside>
-              <div className='well text-center'>
-                <div>{RichText.render(indexPage.countdown_title, linkResolver)}</div>
-                <Countdown date={indexPage.countdown_deadline} zeroPadTime={2} zeroPadDays={2} renderer={renderer} />
-                <div>{RichText.render(indexPage.countdown_text, linkResolver)}</div>
+              <div className='panel panel-default'>
+                <div className='panel-body text-center'>
+                  <div>{RichText.render(indexPage.countdown_title, linkResolver)}</div>
+                  <Countdown date={indexPage.countdown_deadline} zeroPadTime={2} zeroPadDays={2} renderer={renderer} />
+                  <div>{RichText.render(indexPage.countdown_text, linkResolver)}</div>
+                </div>
               </div>
             </aside>
           </div>
