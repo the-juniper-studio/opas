@@ -48,8 +48,8 @@ const Sell = props => (
                 <input className="form-control" type="text" name="city" id="city" ></input>
               </div>  
               <div className="form-group">
-                <label htmlFor="city">Postcode</label>
-                <input className="form-control" type="text" name="city" id="city" ></input>
+                <label htmlFor="postcode">Postcode</label>
+                <input className="form-control" type="text" name="postcode" id="postcode" ></input>
               </div>  
               <div className="form-group">
                 <label htmlFor="propertytype">Property type</label>
