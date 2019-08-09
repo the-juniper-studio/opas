@@ -17,7 +17,7 @@ const Footer = () => (
         <div className="col-xs-12 col-sm-4">
           <h4>Links</h4>
           <ul className="list-unstyled">
-            <li><Link to="/privacy">Privacy Policy</Link></li>
+            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
