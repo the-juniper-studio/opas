@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { Link } from "gatsby"
+import Logo from "../images/Online-Property-Logo.png"
 
 const Header = ({ siteTitle }) => (
 
@@ -14,7 +15,7 @@ const Header = ({ siteTitle }) => (
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <Link className="navbar-brand" to="/"><img alt="this" src="../images/Online-Property-Logo.png" /></Link>
+          <Link className="navbar-brand" to="/"><img alt="{ siteTitle }" src={Logo} /></Link>
         </div>
 
         <div className="collapse navbar-collapse" id="main-nav">

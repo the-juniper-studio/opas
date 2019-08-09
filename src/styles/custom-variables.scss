@@ -377,7 +377,7 @@ $navbar-height:                    70px;
 $navbar-margin-bottom:             $line-height-computed;
 $navbar-border-radius:             $border-radius-base;
 $navbar-padding-horizontal:        floor(($grid-gutter-width / 2));
-$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2);
+$navbar-padding-vertical:          $navbar-padding-horizontal;
 $navbar-collapse-max-height:       340px;
 
 $navbar-default-color:             $gray;
@@ -505,7 +505,7 @@ $jumbotron-color:                inherit;
 $jumbotron-bg:                   $gray-lighter;
 $jumbotron-heading-color:        inherit;
 $jumbotron-font-size:            ceil(($font-size-base * 1.5));
-$jumbotron-heading-font-size:    ceil(($font-size-base * 4.5));
+$jumbotron-heading-font-size:    calc(#{$font-size-base} + 8vw);
 
 
 //== Form states and alerts
