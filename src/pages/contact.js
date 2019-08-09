@@ -29,45 +29,43 @@ export const contactQuery = graphql`
 
 const RenderBody = ({ contactPage }) => {
   return (
-    <Layout>
-      <SEO title="Contact" />
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-            <h1>{contactPage.title}</h1>
-            {RichText.render(contactPage.content, linkResolver)}
-            <form
-              name="Contact"
-              method="POST"
-              action="/success"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-            >
-              <input type="hidden" name="bot-field" />
-              <div className="form-group">
-                <label htmlFor="name">Name<sup>*</sup></label>
-                <input className="form-control" type="text" name="name" id="name" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">Email<sup>*</sup></label>
-                <input className="form-control" type="email" name="email" id="email" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="phone">Phone</label>
-                <input className="form-control" type="tel" name="phone" id="phone" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="message">How can we help?<sup>*</sup></label>
-                <textarea className="form-control" name="message" id="message" required></textarea>
-              </div>
-              <div className="form-group">
-                <button className="btn btn-primary" type="submit">Send</button>
-              </div>
-            </form>
-          </div>
+    <SEO title="Contact" />
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+          <h1>{contactPage.title}</h1>
+          {RichText.render(contactPage.content, linkResolver)}
+          <form
+            name="Contact"
+            method="POST"
+            action="/success"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="bot-field" />
+            <div className="form-group">
+              <label htmlFor="name">Name<sup>*</sup></label>
+              <input className="form-control" type="text" name="name" id="name" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email<sup>*</sup></label>
+              <input className="form-control" type="email" name="email" id="email" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="phone">Phone</label>
+              <input className="form-control" type="tel" name="phone" id="phone" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message">How can we help?<sup>*</sup></label>
+              <textarea className="form-control" name="message" id="message" required></textarea>
+            </div>
+            <div className="form-group">
+              <button className="btn btn-primary" type="submit">Send</button>
+            </div>
+          </form>
         </div>
       </div>
-    </Layout>
+    </div>
   )
 }
 
