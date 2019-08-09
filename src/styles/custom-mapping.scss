@@ -65,8 +65,15 @@ body {
   height: 100%;
 }
 
-.btn-secondary {
+.btn.btn-secondary {
   background: $color-red;
   color: $color-off-white;
-  font-weight: bold;
+  transition: all .3s;
+  &:hover,
+  &:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+    filter: brightness(110%);
+    color: $color-off-white;
+  }
 }
