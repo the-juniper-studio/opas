@@ -7,6 +7,9 @@
 a {
   transition: color .3s;
 }
-.btn {
-  transition: background-color .3s; 
-}
+.shadow-xs { box-shadow: $box-shadow-xs !important; }
+.shadow-sm { box-shadow: $box-shadow-sm !important; }
+.shadow { box-shadow: $box-shadow !important; }
+.shadow-lg { box-shadow: $box-shadow-lg !important; }
+.shadow-xl { box-shadow: $box-shadow-xl !important; }
+.shadow-none { box-shadow: none !important; }

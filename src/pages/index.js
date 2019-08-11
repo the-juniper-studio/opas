@@ -86,7 +86,7 @@ const RenderBody = ({ homePage }) => {
                       <h3 className='h6 mb-0 text-muted'>4 Bed Detatched House</h3>
                       <div className='h2 mt-0'>£800,000</div>
                       <p className='text-muted'>The Dalby, The Observatory, Canterbury</p>  
-                      <a href='#test' className='btn btn-secondary btn-block' role='button'>View</a>
+                      <a href='#test' className='btn btn-primary btn-block' role='button'>View</a>
                     </div>
                   </div>
                 </div>
@@ -97,7 +97,7 @@ const RenderBody = ({ homePage }) => {
                       <h3 className='h6 mb-0 text-muted'>4 Bed Detatched House</h3>
                       <div className='h2 mt-0'>£800,000</div>
                       <p className='text-muted'>The Dalby, The Observatory, Canterbury</p>               
-                      <a href='#test' className='btn btn-secondary btn-block' role='button'>View</a>
+                      <a href='#test' className='btn btn-primary btn-block' role='button'>View</a>
                     </div>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ const RenderBody = ({ homePage }) => {
                       <h3 className='h6 mb-0 text-muted'>4 Bed Detatched House</h3>
                       <div className='h2 mt-0'>£800,000</div>
                       <p className='text-muted'>The Dalby, The Observatory, Canterbury</p>  
-                      <a href='#test' className='btn btn-secondary btn-block' role='button'>View</a>
+                      <a href='#test' className='btn btn-primary btn-block' role='button'>View</a>
                     </div>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ const RenderBody = ({ homePage }) => {
                       <h3 className='h6 mb-0 text-muted'>4 Bed Detatched House</h3>
                       <div className='h2 mt-0'>£800,000</div>
                       <p className='text-muted'>The Dalby, The Observatory, Canterbury</p>  
-                      <a href='#test' className='btn btn-secondary btn-block' role='button'>View</a>
+                      <a href='#test' className='btn btn-primary btn-block' role='button'>View</a>
                     </div>
                   </div>
                 </div>
@@ -133,7 +133,7 @@ const RenderBody = ({ homePage }) => {
                       <h3 className='h6 mb-0 text-muted'>4 Bed Detatched House</h3>
                       <div className='h2 mt-0'>£800,000</div>
                       <p className='text-muted'>The Dalby, The Observatory, Canterbury</p>               
-                      <a href='#test' className='btn btn-secondary btn-block' role='button'>View</a>
+                      <a href='#test' className='btn btn-primary btn-block' role='button'>View</a>
                     </div>
                   </div>
                 </div>
@@ -144,7 +144,7 @@ const RenderBody = ({ homePage }) => {
                       <h3 className='h6 mb-0 text-muted'>4 Bed Detatched House</h3>
                       <div className='h2 mt-0'>£800,000</div>
                       <p className='text-muted'>The Dalby, The Observatory, Canterbury</p>  
-                      <a href='#test' className='btn btn-secondary btn-block' role='button'>View</a>
+                      <a href='#test' className='btn btn-primary btn-block' role='button'>View</a>
                     </div>
                   </div>
                 </div>
@@ -153,7 +153,7 @@ const RenderBody = ({ homePage }) => {
           </div>
           <div className='col-xs-12 col-md-4 col-lg-3'>
             <aside>
-              <div className='panel panel-default'>
+              <div className='panel panel-primary'>
                 <div className='panel-body text-center'>
                   <div>{RichText.render(homePage.countdown_title, linkResolver)}</div>
                   <Countdown date={homePage.countdown_deadline} zeroPadTime={2} zeroPadDays={2} renderer={renderer} />
