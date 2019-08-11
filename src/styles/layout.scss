@@ -1,5 +1,6 @@
 @import "custom-variables";
 @import "custom-mapping";
+@import "custom-helpers";
 
 // Core variables and mixins
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
@@ -58,3 +59,4 @@
 
 // Custom components 
 @import "custom/countdown";
+@import "custom/hero";

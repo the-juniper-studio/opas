@@ -31,7 +31,7 @@ module.exports = {
         path: '/preview', // optional, default: /preview
         previews: true, // optional, default: false
         pages: [{               // (optional)
-          type: 'Legal_page', // TypeName from prismic
+          type: 'Content_page', // TypeName from prismic
           match: '/:uid',       // Pages will be generated under this pattern
           path: '/',            // Placeholder page for unpublished documents
           component: require.resolve('./src/templates/Landing.jsx'),
@@ -43,8 +43,8 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Open+Sans`, 
-            variants: [`400`, `700`]
+            family: `Roboto`, 
+            variants: [`700`, `900`]
           },
           {
             family: `Source+Sans+Pro`, 

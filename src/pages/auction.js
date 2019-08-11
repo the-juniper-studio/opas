@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Countdown from 'react-countdown-now';
 import Helmet from "react-helmet"
 
 function scripting() {
@@ -35,17 +34,6 @@ function scripting() {
     </script>
   `};
 }
-
-const renderer = ({ days, hours, minutes, seconds }) => {
-  return (
-    <div className='countdown'>
-      <div className='days'><span>Days</span> {hours}</div>
-      <div className='hours'><span>Hours</span> {hours}</div>
-      <div className='minutes'><span>Minutes</span> {minutes}</div>
-      <div className='seconds'><span>Seconds</span> {seconds}</div>
-    </div>
-  )
-};
 
 const IndexPage = () => {
   return (
@@ -89,7 +77,6 @@ const IndexPage = () => {
       </Helmet>
       
       <div className="container-fluid">
-        <h1>Welcome to our world</h1>
         <noscript id="deferred-styles">
           <link href="https://hove.eu-west-2.bidjs.com/static/2.0/prettyphoto/jquery.prettyPhoto.min.css" rel="stylesheet" type="text/css" />
           <link href="https://hove.eu-west-2.bidjs.com/static/2.0/css/bid--no-bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -112,7 +99,6 @@ const IndexPage = () => {
         <div className='bidlogix-app'>
           <div id='bidjs'></div>
         </div>
-        <Countdown date={Date.now() + 500000000} zeroPadTime='2' zeroPadDays='2' renderer={renderer} />
         <div dangerouslySetInnerHTML={scripting()} />
       </div>
     </Layout>
