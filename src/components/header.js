@@ -6,7 +6,7 @@ import Logo from "../images/Online-Property-Logo.png"
 const Header = ({ siteTitle }) => (
 
   <header role="banner">
-    <nav className="navbar navbar-default navbar-fixed-top">
+    <nav className="navbar navbar-default navbar-fixed-top shadow-sm">
       <div className="container-fluid">
         <div className="navbar-header">
           <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
