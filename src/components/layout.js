@@ -11,8 +11,8 @@ const Layout = ({ children }) => {
       <Header siteTitle="Scotish Property Auctions" />
       <main role="main">{children}</main>
       <Footer />
-      <div className='bidlogix-app'>
-        <div id='bidlogix-modal'></div>
+      <div className="bidlogix-app">
+        <div id="bidlogix-modal"></div>
       </div>
     </React.Fragment>
   )
