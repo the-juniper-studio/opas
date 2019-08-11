@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import Helmet from "react-helmet"
 
 function scripting() {
@@ -38,12 +37,10 @@ function scripting() {
 const IndexPage = () => {
   return (
     <Layout>
-      <SEO title="Home" />
       <Helmet>
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous" />
         <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en,Promise" />
         <script src="https://maps.googleapis.com/maps/api/js?key=MY_GOOGLE_MAPS_API" type="text/javascript" />
-        <script src="https://hove.eu-west-2.bidjs.com/static/2.0/js/bid-dependencies.min.js" />
+        <script src="https://hove.eu-west-2.bidjs.com/static/2.0/js/bid-dependencies--no-bootstrap.min.js" />
         <script src="https://hove.eu-west-2.bidjs.com/static/2.0/prettyphoto/jquery.prettyPhoto.min.js" />
         <script src="https://hove.eu-west-2.bidjs.com/static/2.0/js/hbs-bid.min.js" />
         <script src="https://hove.eu-west-2.bidjs.com/static/2.0/js/bid.min.js" />
