@@ -55,9 +55,6 @@ const IndexPage = () => {
           </div>
         </div>
         <div className='bidlogix-app'>
-          <div id='bidlogix-modal'></div>
-        </div>
-        <div className='bidlogix-app'>
           <div id='bidjs'></div>
         </div>
         <div dangerouslySetInnerHTML={scripting()} />

@@ -7,11 +7,14 @@ import "../styles/layout.scss"
 const Layout = ({ children }) => {
 
   return (
-    <>
+    <React.Fragment>
       <Header siteTitle="Scotish Property Auctions" />
       <main role="main">{children}</main>
       <Footer />
-    </>
+      <div className='bidlogix-app'>
+        <div id='bidlogix-modal'></div>
+      </div>
+    </React.Fragment>
   )
 }
 
