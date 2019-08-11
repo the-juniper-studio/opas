@@ -90,7 +90,7 @@ const IndexPage = () => {
             </svg>
           </div>
         </div>
-        <div className='bidlogix-app'>
+        <div className='bidlogix-app mt-3'>
           <div id='bidjs'></div>
         </div>
         <div dangerouslySetInnerHTML={scripting()} />
