@@ -1,13 +1,5 @@
 // Layout
 
-// .bidlogix-app > .container {
-//   @extend .row;
-//   padding:0;
-// }
-// .bidlogix-app > div > .container {
-//   padding:0;
-//   width:auto;
-// }
 .footer {
   @extend .navbar;
   @extend .navbar-inverse;
@@ -24,14 +16,14 @@
   box-shadow:0 2px 3px 0 rgba(0,0,0,.075);
 }
 
-// Filters
+/* Filters */
 
 .filter-list {
   @extend .list-unstyled;
   margin-left:$padding-small-horizontal;
 }
 
-// List-Items & States
+/* List-Items & States */
 
 .list-group-item.active {
   transform: scale(1.02);
@@ -76,4 +68,10 @@ body {
     filter: brightness(110%);
     color: $color-off-white;
   }
+}
+
+/* BidLogix Specific */
+.bidlogix-app .grid-item {
+  display:flex;
+  flex-basis: auto;
 }
