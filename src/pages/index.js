@@ -113,7 +113,7 @@ const RenderBody = ({ homePage }) => {
                   </div>
                 </div>
               </div>
-              <h2 className='text-center'>Recently Sold</h2>
+{/*              <h2 className='text-center'>Recently Sold</h2>
               <div className='row'>
                 <div className='col-xs-6 col-md-4'>
                   <div className='thumbnail'>
@@ -148,7 +148,7 @@ const RenderBody = ({ homePage }) => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div>*/}
             </main>
           </div>
           <div className='col-xs-12 col-md-4 col-lg-3'>
