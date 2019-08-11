@@ -12,21 +12,6 @@
   }
 }
 
-.panel, .thumbnail {
-  @extend .shadow-xs;
-  border:solid red 1px;
-}
-
-/* Filters */
-
-.filter-bar {
- @extend .mt-1;
-}
-.filter-list {
-  @extend .list-unstyled;
-  margin-left:$padding-small-horizontal;
-}
-
 /* List-Items & States */
 
 .list-group-item.active {
@@ -83,12 +68,6 @@ body {
   }
 }
 
-/* BidLogix Specific */
-.bidlogix-app .grid-item {
-  display:flex;
-  flex-basis: auto;
-}
-
 .panel.panel-primary {
   background-color: $panel-primary-border; 
   color: $color-off-white;
@@ -107,3 +86,21 @@ body {
     }
   }
 }
+
+/* BidLogix Specific */
+.bidlogix-app .grid-item {
+  display:flex;
+  flex-basis: auto;
+}
+.filter-bar {
+ @extend .mt-1;
+}
+.filter-list {
+  @extend .list-unstyled;
+  margin-left:$padding-small-horizontal;
+}
+.panel, .thumbnail {
+  @extend .shadow-xs;
+  border:solid red 1px;
+}
+
