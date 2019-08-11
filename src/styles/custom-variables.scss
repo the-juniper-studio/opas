@@ -18,6 +18,7 @@ $gray-lighter:           lighten($gray-base, 93.5%);
 $color-red:              #ec2028;
 $color-blue:             #3f4ea1;
 $color-turquoise:        #26a7df;
+$color-turquoise-light:  #abddf2;
 $color-off-white:        #fbfcfd;
 
 
@@ -732,9 +733,9 @@ $panel-default-text:          $gray-dark;
 $panel-default-border:        transparent;
 $panel-default-heading-bg:    #f5f5f5;
 
-$panel-primary-text:          #fff;
-$panel-primary-border:        $brand-primary;
-$panel-primary-heading-bg:    $brand-primary;
+$panel-primary-text:          $color-off-white;
+$panel-primary-border:        $color-blue;
+$panel-primary-heading-bg:    $panel-primary-border;
 
 $panel-success-text:          $state-success-text;
 $panel-success-border:        $state-success-border;
@@ -893,3 +894,18 @@ $block-padding-xs:         $padding-base-vertical;
 $block-padding-small:      $padding-large-vertical;
 $block-padding-medium:     $padding-large-vertical * 2;
 $block-padding-large:      $padding-large-vertical * 3;
+
+//== Shadows
+//
+//##
+//== Shadow scale (elevation)
+//
+//##
+
+$shadow-color: #000;
+
+$box-shadow-xs: 0 1px 3px fade($shadow-color, 10%), 0 0 1px fade($shadow-color, 5%);
+$box-shadow-sm: 0 5px 10px fade($shadow-color, 15%), 0 0 5px fade($shadow-color, 10%);
+$box-shadow:    0 10px 20px fade($shadow-color, 20%), 0 0 10px fade($shadow-color, 15%);
+$box-shadow-lg: 0 15px 30px fade($shadow-color, 25%), 0 0 15px fade($shadow-color, 20%);
+$box-shadow-xl: 0 20px 40px fade($shadow-color, 30%), 0 0 20px fade($shadow-color, 25%);

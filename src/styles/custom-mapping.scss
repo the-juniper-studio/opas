@@ -1,13 +1,5 @@
 // Layout
 
-// .bidlogix-app > .container {
-//   @extend .row;
-//   padding:0;
-// }
-// .bidlogix-app > div > .container {
-//   padding:0;
-//   width:auto;
-// }
 .footer {
   @extend .navbar;
   @extend .navbar-inverse;
@@ -19,13 +11,18 @@
     @extend .mb-1;
   }
 }
+.navbar-default {
+  box-shadow:0 2px 3px 0 rgba(0,0,0,.075);
+}
 
 .panel, .thumbnail {
   box-shadow:0 2px 3px 0 rgba(0,0,0,.075);
 }
 
 // Filters
-
+.filter-bar {
+ @extend .mt-1;
+}
 .filter-list {
   @extend .list-unstyled;
   margin-left:$padding-small-horizontal;
@@ -65,15 +62,42 @@ body {
   height: 100%;
 }
 
-.btn.btn-secondary {
-  background: $color-red;
-  color: $color-off-white;
+// buttons
+
+.btn:not(.navbar-btn) {
   transition: all .3s;
   &:hover,
   &:focus {
     transform: translateY(-2px);
     box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
     filter: brightness(110%);
+  }
+}
+
+.btn.btn-secondary {
+  background: $color-red;
+  color: $color-off-white;
+  &:hover,
+  &:focus {
+    filter: brightness(110%);
     color: $color-off-white;
+  }
+}
+.panel.panel-primary {
+  background-color: $panel-primary-border; 
+  color: $color-off-white;
+  a {
+    color: $color-turquoise-light;
+  }
+}
+
+@media (min-width: $grid-float-breakpoint) {
+  .navbar-default .navbar-nav {
+    > li {
+      > a {
+        padding-top: calc(#{$navbar-padding-vertical} + 10px);
+        padding-bottom: calc(#{$navbar-padding-vertical} + 10px);
+      }
+    }
   }
 }

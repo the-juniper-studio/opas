@@ -25,7 +25,7 @@ const Header = ({ siteTitle }) => (
             <li><Link to="/sell">Sell</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
           </ul>
-          <button className="btn btn-primary navbar-btn navbar-right mr-1 x-bidlogix--trigger-login">Sign Up/Log in</button>
+          <button className="btn btn-secondary navbar-btn navbar-right mr-1 x-bidlogix--trigger-login">Sign Up/Log in</button>
         </div>
       </div>
     </nav>
