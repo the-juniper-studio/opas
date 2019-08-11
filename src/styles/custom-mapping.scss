@@ -11,12 +11,10 @@
     @extend .mb-1;
   }
 }
-.navbar-default {
-  box-shadow:0 2px 3px 0 rgba(0,0,0,.075);
-}
 
 .panel, .thumbnail {
-  box-shadow:0 2px 3px 0 rgba(0,0,0,.075);
+  @extend .shadow-xs;
+  border:solid red 1px;
 }
 
 // Filters

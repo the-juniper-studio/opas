@@ -902,10 +902,10 @@ $block-padding-large:      $padding-large-vertical * 3;
 //
 //##
 
-$shadow-color: #000;
+$shadow-color: rgba(0,0,0,1) !default;
 
-$box-shadow-xs: 0 1px 3px fade($shadow-color, 10%), 0 0 1px fade($shadow-color, 5%);
-$box-shadow-sm: 0 5px 10px fade($shadow-color, 15%), 0 0 5px fade($shadow-color, 10%);
-$box-shadow:    0 10px 20px fade($shadow-color, 20%), 0 0 10px fade($shadow-color, 15%);
-$box-shadow-lg: 0 15px 30px fade($shadow-color, 25%), 0 0 15px fade($shadow-color, 20%);
-$box-shadow-xl: 0 20px 40px fade($shadow-color, 30%), 0 0 20px fade($shadow-color, 25%);
+$box-shadow-xs: 0 1px 3px rgba($shadow-color, .075), 0 0 1px rgba($shadow-color, .025);
+$box-shadow-sm: 0 3px 6px rgba($shadow-color, .1), 0 0 3px rgba($shadow-color, .05);
+$box-shadow:    0 6px 12px rgba($shadow-color, .15), 0 0 6px rgba($shadow-color, .1);
+$box-shadow-lg: 0 12px 24px rgba($shadow-color, .2), 0 0 12px rgba($shadow-color, .15);
+$box-shadow-xl: 0 20px 40px rgba($shadow-color, .15), 0 0 20px rgba($shadow-color, .1);
