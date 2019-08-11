@@ -23,7 +23,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
-    `gatsby-plugin-offline`, 
     {
       resolve: 'gatsby-source-prismic-graphql',
       options: {

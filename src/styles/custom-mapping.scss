@@ -89,8 +89,8 @@ body {
 
 /* BidLogix Specific */
 .bidlogix-app .grid-item {
-  display:flex;
-  flex-basis: auto;
+  display:flex !important;
+  flex-basis: auto !important;
 }
 .filter-bar {
  @extend .mt-1;
