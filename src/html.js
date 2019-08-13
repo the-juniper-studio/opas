@@ -1,6 +1,36 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+function scripting() {
+  return {__html: `
+    <script>
+      window.bidjs = {  
+        config: {    
+          apiBase: "https://hove.eu-west-2.bidjs.com/auction-007/api",
+          clientId: "/demonstration",
+          staticBase: "https://hove.eu-west-2.bidjs.com/static/2.0",
+          staticCDN: 'https://static.bidjs.com', // Do not change    
+          staticVersion: '1.5', // e.g. 1.3  
+          templateVariant: 'bootstrap3' // either 'bootstrap3' or 'bootstrap4'  
+          },  
+        modules: {    
+          auctionDetails: '#!/auctionDetails/%AUCTION_ID%',
+          auctionsArchived: true,
+          invoices: true,
+          lotDetails: '#!/itemDetails/%ITEM_ID%',
+          mySales: true
+          },  
+        options: {
+          allowTitleChange: true,
+          allowMetaDescriptionChange: true,
+          standalone: false,
+          unsupportedBrowserMessage: 'Your browser is not supported. Please use a browser such as Google Chrome or Microsoft Edge to ensure full functionality'
+        }
+      }
+    </script>
+  `};
+}
+
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
@@ -24,6 +54,7 @@ export default function HTML(props) {
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
+        <div dangerouslySetInnerHTML={scripting()} />
         {props.preBodyComponents}
         <noscript key="noscript" id="gatsby-noscript">
           This app works best with JavaScript enabled.
