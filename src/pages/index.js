@@ -9,7 +9,7 @@ import { linkResolver } from '../utils/linkResolver';
 export const homeQuery = graphql`
   query {
     prismic {
-      allHome_pages(uid:null) {
+      allHome_pages(uid: null) {
         edges {
           node {
             _meta {
@@ -19,14 +19,20 @@ export const homeQuery = graphql`
             meta_title
             meta_keywords
             meta_description
-            title
             content
             countdown_deadline
             countdown_title
             countdown_text
-            hero
-            hero_title
-            hero_text
+            body {
+              ...on PRISMIC_Home_pageBodyImage_gallery {
+                type
+                fields {
+                  hero_title
+                  hero_image
+                  hero_content
+                }
+              }
+            }
           }
         }
       }
@@ -48,29 +54,43 @@ const renderer = ({ days, hours, minutes, seconds }) => {
 const RenderBody = ({ homePage }) => {
   return (
     <React.Fragment>
-      <div id='carousel-example-generic' className='carousel slide' data-ride='carousel'>
-        <ol className='carousel-indicators'>
-          <li data-target='#carousel-example-generic' data-slide-to='0' className='active'></li>
-        </ol>
-        <div className='carousel-inner' role='listbox'>
-          <div className='item active'>
-            <div className='hero-text'>
-              {RichText.render(homePage.hero_title, linkResolver)}
-              {RichText.render(homePage.hero_text, linkResolver)}
-            </div>
-            <img src={homePage.hero.url} alt={homePage.hero.alt} />
-          </div>
-        </div>
-
-        <a className='left carousel-control' href='#carousel-example-generic' role='button' data-slide='prev'>
-          <span className='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>
-          <span className='sr-only'>Previous</span>
-        </a>
-        <a className='right carousel-control' href='#carousel-example-generic' role='button' data-slide='next'>
-          <span className='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>
-          <span className='sr-only'>Next</span>
-        </a>
-      </div>
+      {homePage.body &&
+        <React.Fragment>
+          {homePage.body.map((slice, index) => {
+            return (
+              <div key={`slice-${index}`}>
+                {slice.type ==='image_gallery' &&
+                  <React.Fragment>
+                    <div id='carousel-example-generic' className='carousel slide' data-ride='carousel'>
+                      <div className='carousel-inner' role='listbox'>
+                        {slice.fields.map((item, index) => {
+                          return (
+                            <div className={'item' + (index === 0 ? ' active' : '')} key={`item-${index}`}>
+                              <img src={item.hero_image.url} alt={item.hero_image.alt} />
+                              <div className='carousel-caption'>
+                                {RichText.render(item.hero_title, linkResolver)}
+                                {RichText.render(item.hero_content, linkResolver)}
+                              </div>
+                            </div>
+                          )
+                        })}
+                        <a className='left carousel-control' href='#carousel-example-generic' role='button' data-slide='prev'>
+                          <span className='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>
+                          <span className='sr-only'>Previous</span>
+                        </a>
+                        <a className='right carousel-control' href='#carousel-example-generic' role='button' data-slide='next'>
+                          <span className='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>
+                          <span className='sr-only'>Next</span>
+                        </a>
+                      </div>
+                    </div>
+                  </React.Fragment>
+                }
+              </div>
+            )
+          })}
+        </React.Fragment>
+      }
       <div className='container-fluid mt-2'>
         <div className='row'>
           <div className='col-xs-12 col-md-8 col-lg-9'>
