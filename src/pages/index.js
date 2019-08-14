@@ -19,6 +19,7 @@ export const homeQuery = graphql`
             meta_title
             meta_keywords
             meta_description
+            title
             content
             countdown_deadline
             countdown_title
@@ -95,7 +96,7 @@ const RenderBody = ({ homePage }) => {
         <div className='row'>
           <div className='col-xs-12 col-md-8 col-lg-9'>
             <main className='main' id='main' role='main'>
-              <h1>{homePage.title}</h1>
+              <h1>{RichText.render(homePage.title, linkResolver)}</h1>
               {RichText.render(homePage.content, linkResolver)}
               <h2 className='text-center'>Latest Properties</h2>
               <div className='row'>
