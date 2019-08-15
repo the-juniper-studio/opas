@@ -124,7 +124,7 @@ const RenderBody = ({ homePage, bidJs }) => {
                 {bidJs.edges.map((item, index) => {
                   const endDate = format(item.node.endTime, 'ha on Mo MMMM YYYY');
                   return (
-                    <div className='col-xs-6 col-md-4'  key={`item-${index}`}>
+                    <div className='col-xs-6 col-md-3'  key={`item-${index}`}>
                       <div className='thumbnail pos-rel'>
                         <span className='label label-info pos-abs'>Lot {item.node.lotNumber}</span>
                         <img className='img-responsive' src={item.node.imageUrls[0]} alt='' />
