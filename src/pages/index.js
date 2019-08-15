@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import Countdown from 'react-countdown-now';
 import { RichText } from 'prismic-reactjs';
 import { linkResolver } from '../utils/linkResolver';
+import { format } from 'date-fns'
 
 export const homeQuery = graphql`
   query {
@@ -38,6 +39,22 @@ export const homeQuery = graphql`
         }
       }
     }
+    allBidJs {
+      edges {
+        node {
+          id
+          lotNumber
+          imageUrls
+          status
+          title
+          endTime
+          currencyId
+          winner {
+            amount
+          }
+        }
+      }
+    }
   }
 `
 
@@ -52,7 +69,8 @@ const renderer = ({ days, hours, minutes, seconds }) => {
   )
 };
 
-const RenderBody = ({ homePage }) => {
+const RenderBody = ({ homePage, bidJs }) => {
+  console.log(bidJs)
   return (
     <React.Fragment>
       {homePage.body &&
@@ -96,80 +114,26 @@ const RenderBody = ({ homePage }) => {
         <div className='row'>
           <div className='col-xs-12 col-md-8 col-lg-9'>
             <main className='main' id='main' role='main'>
-              <h1>{RichText.render(homePage.title, linkResolver)}</h1>
+              {RichText.render(homePage.title, linkResolver)}
               {RichText.render(homePage.content, linkResolver)}
-              <h2 className='text-center'>Latest Properties</h2>
-              <div className='row'>
-                <div className='col-xs-6 col-md-4'>
-                  <div className='thumbnail'>
-                    <img src='https://media.rightmove.co.uk/dir/crop/10:9-16:9/88k/87209/68312137/87209_FPS1001256_IMG_01_0004_max_656x437.jpg' alt='...' />
-                    <div className='caption'>
-                      <h3 className='h6 mb-0 text-muted'>4 Bed Detatched House</h3>
-                      <div className='h2 mt-0'>£800,000</div>
-                      <p className='text-muted'>The Dalby, The Observatory, Canterbury</p>  
-                      <a href='#test' className='btn btn-primary btn-block' role='button'>View</a>
+              <h2>Latest Properties</h2>
+              <div className='row auction'>
+                {bidJs.edges.map((item, index) => {
+                  const endDate = format(item.node.endTime, 'ha on Mo MMMM YYYY');
+                  return (
+                    <div className='col-xs-6 col-md-4'  key={`item-${index}`}>
+                      <div className='thumbnail pos-rel'>
+                        <span className='label label-info pos-abs'>Lot {item.node.lotNumber}</span>
+                        <img className='img-responsive' src={item.node.imageUrls[0]} alt='' />
+                        <div className='caption'>
+                          <span className='label label-default'>Ends: <strong>{endDate}</strong></span>
+                          <h3 className='h4 mb-0 text-muted' dangerouslySetInnerHTML={{__html: item.node.title}} />  
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div className='col-xs-6 col-md-4'>
-                  <div className='thumbnail'>
-                    <img src='https://media.rightmove.co.uk/dir/crop/10:9-16:9/88k/87209/68312137/87209_FPS1001256_IMG_01_0004_max_656x437.jpg' alt='...' />
-                    <div className='caption'>
-                      <h3 className='h6 mb-0 text-muted'>4 Bed Detatched House</h3>
-                      <div className='h2 mt-0'>£800,000</div>
-                      <p className='text-muted'>The Dalby, The Observatory, Canterbury</p>               
-                      <a href='#test' className='btn btn-primary btn-block' role='button'>View</a>
-                    </div>
-                  </div>
-                </div>
-                <div className='col-xs-6 col-md-4'>
-                  <div className='thumbnail'>
-                    <img src='https://media.rightmove.co.uk/dir/crop/10:9-16:9/88k/87209/68312137/87209_FPS1001256_IMG_01_0004_max_656x437.jpg' alt='...' />
-                    <div className='caption'>
-                      <h3 className='h6 mb-0 text-muted'>4 Bed Detatched House</h3>
-                      <div className='h2 mt-0'>£800,000</div>
-                      <p className='text-muted'>The Dalby, The Observatory, Canterbury</p>  
-                      <a href='#test' className='btn btn-primary btn-block' role='button'>View</a>
-                    </div>
-                  </div>
-                </div>
+                  )
+                })}
               </div>
-{/*              <h2 className='text-center'>Recently Sold</h2>
-              <div className='row'>
-                <div className='col-xs-6 col-md-4'>
-                  <div className='thumbnail'>
-                    <img src='https://media.rightmove.co.uk/dir/crop/10:9-16:9/88k/87209/68312137/87209_FPS1001256_IMG_01_0004_max_656x437.jpg' alt='...' />
-                    <div className='caption'>
-                      <h3 className='h6 mb-0 text-muted'>4 Bed Detatched House</h3>
-                      <div className='h2 mt-0'>£800,000</div>
-                      <p className='text-muted'>The Dalby, The Observatory, Canterbury</p>  
-                      <a href='#test' className='btn btn-primary btn-block' role='button'>View</a>
-                    </div>
-                  </div>
-                </div>
-                <div className='col-xs-6 col-md-4'>
-                  <div className='thumbnail'>
-                    <img src='https://media.rightmove.co.uk/dir/crop/10:9-16:9/88k/87209/68312137/87209_FPS1001256_IMG_01_0004_max_656x437.jpg' alt='...' />
-                    <div className='caption'>
-                      <h3 className='h6 mb-0 text-muted'>4 Bed Detatched House</h3>
-                      <div className='h2 mt-0'>£800,000</div>
-                      <p className='text-muted'>The Dalby, The Observatory, Canterbury</p>               
-                      <a href='#test' className='btn btn-primary btn-block' role='button'>View</a>
-                    </div>
-                  </div>
-                </div>
-                <div className='col-xs-6 col-md-4'>
-                  <div className='thumbnail'>
-                    <img src='https://media.rightmove.co.uk/dir/crop/10:9-16:9/88k/87209/68312137/87209_FPS1001256_IMG_01_0004_max_656x437.jpg' alt='...' />
-                    <div className='caption'>
-                      <h3 className='h6 mb-0 text-muted'>4 Bed Detatched House</h3>
-                      <div className='h2 mt-0'>£800,000</div>
-                      <p className='text-muted'>The Dalby, The Observatory, Canterbury</p>  
-                      <a href='#test' className='btn btn-primary btn-block' role='button'>View</a>
-                    </div>
-                  </div>
-                </div>
-              </div>*/}
             </main>
           </div>
           <div className='col-xs-12 col-md-4 col-lg-3'>
@@ -191,12 +155,13 @@ const RenderBody = ({ homePage }) => {
 
 const HomePage = props => {
   const doc = props.data.prismic.allHome_pages.edges.slice(0,1).pop();
+  const bidJs = props.data.allBidJs;
   if(!doc) return null;
 
   return (
     <Layout>
       <SEO title={doc.node.meta_title} keywords={doc.node.meta_keywords} description={doc.node.meta_description} lang='en-gb' />
-      <RenderBody homePage={doc.node} />
+      <RenderBody homePage={doc.node} bidJs={bidJs}/>
     </Layout>
   )
 }
