@@ -44,6 +44,7 @@ const RenderBody = ({ contactPage }) => {
               data-netlify-honeypot="bot-field"
             >
               <input type="hidden" name="bot-field" />
+              <input type="hidden" name="form-name" value="Contact" />
               <div className="form-group">
                 <label htmlFor="name">Name<sup>*</sup></label>
                 <input className="form-control" type="text" name="name" id="name" required />

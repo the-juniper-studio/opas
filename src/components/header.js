@@ -18,7 +18,7 @@ const Header = ({ siteTitle }) => (
           <Link className="navbar-brand" to="/"><img alt="{ siteTitle }" src={Logo} /></Link>
         </div>
 
-        <div className="collapse navbar-collapse shadow-sm" id="main-nav">
+        <div className="collapse navbar-collapse" id="main-nav">
           <ul className="nav navbar-nav">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/auction/">Auction</Link></li>
