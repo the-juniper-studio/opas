@@ -85,7 +85,7 @@ const RenderBody = ({ homePage, bidJs }) => {
                           return (
                             <div className={'item' + (index === 0 ? ' active' : '')} key={`item-${index}`}>
                               <img src={item.hero_image.url} alt={item.hero_image.alt} />
-                              <div className='carousel-caption'>
+                              <div className='carousel-caption hero-text'>
                                 {RichText.render(item.hero_title, linkResolver)}
                                 {RichText.render(item.hero_content, linkResolver)}
                               </div>
@@ -115,12 +115,15 @@ const RenderBody = ({ homePage, bidJs }) => {
             <main className='main' id='main' role='main'>
               {RichText.render(homePage.title, linkResolver)}
               {RichText.render(homePage.content, linkResolver)}
-              <h2>Latest Properties</h2>
+              <div className='row'>
+                <h2 className='text-center'>Latest Properties</h2>
+                <a href='#test' className='btn btn-link pull-right' role='button'>View All</a>
+              </div>
               <div className='row auction'>
                 {bidJs.edges.map((item, index) => {
                   const endDate = format(item.node.endTime, 'ha on Mo MMMM YYYY');
                   return (
-                    <div className='col-xs-6 col-md-4'  key={`item-${index}`}>
+                    <div className='col-xs-6 col-md-3'  key={`item-${index}`}>
                       <div className='thumbnail pos-rel'>
                         <span className='label label-info pos-abs'>Lot {item.node.lotNumber}</span>
                         <img className='img-responsive' src={item.node.imageUrls[0]} alt='' />

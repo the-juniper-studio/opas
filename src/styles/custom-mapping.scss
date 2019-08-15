@@ -47,14 +47,16 @@ body {
 }
 
 /* buttons */
-
-.btn:not(.navbar-btn) {
-  transition: all .3s;
-  &:hover,
-  &:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
-    filter: brightness(110%);
+.btn { 
+  &:not(.navbar-btn),
+  &:not(.btn-link) {
+    transition: all .3s;
+    &:hover,
+    &:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+      filter: brightness(110%);
+    }
   }
 }
 
@@ -96,6 +98,14 @@ body {
     }
   }
 }
+
+a {
+  &:hover,
+  &:focus {
+    text-underline-position: under;
+  }
+}
+
 
 /* BidLogix Specific */
 .bidlogix-app .grid-item {

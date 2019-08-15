@@ -1,13 +1,9 @@
 .hero-text {
-  position: absolute;
-  left: 0;
-  right: 0;
   top: 0;
-  text-align: center;
   text-shadow: 0px 0px 5px #808080e3;
   color: white;
   h1 {
-    font-size: $jumbotron-heading-font-size;
+    font-size: 10vw;
   }
   p {
     font-size: $jumbotron-font-size;
