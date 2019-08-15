@@ -24,6 +24,13 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     {
+      resolve: `gatsby-source-bidjs`,
+      options: {
+        clientId: '302',
+        includeImages: true,
+      },
+    },
+    {
       resolve: 'gatsby-source-prismic-graphql',
       options: {
         repositoryName: 'juniper-test',

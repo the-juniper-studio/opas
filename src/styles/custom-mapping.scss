@@ -77,6 +77,16 @@ body {
     color: $color-turquoise-light;
   }
 }
+.pos-rel {
+  position:relative;
+}
+.pos-abs {
+  position:absolute;
+}
+.label.pos-abs {
+  top:0;
+  right:0
+}
 
 @media (min-width: $grid-float-breakpoint) {
   .navbar-default .navbar-nav {
@@ -112,5 +122,8 @@ a {
 .panel, .thumbnail {
   @extend .shadow-xs;
   border:solid red 1px;
+}
+.auction .thumbnail img {
+  max-height:200px;
 }
 
