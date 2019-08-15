@@ -98,7 +98,10 @@ const RenderBody = ({ homePage }) => {
             <main className='main' id='main' role='main'>
               <h1>{RichText.render(homePage.title, linkResolver)}</h1>
               {RichText.render(homePage.content, linkResolver)}
-              <h2 className='text-center'>Latest Properties</h2>
+              <div className='row'>
+                <h2 className='text-center'>Latest Properties</h2>
+                <a href='#test' className='btn btn-link pull-right' role='button'>View All</a>
+              </div>
               <div className='row'>
                 <div className='col-xs-6 col-md-4'>
                   <div className='thumbnail'>
@@ -134,42 +137,6 @@ const RenderBody = ({ homePage }) => {
                   </div>
                 </div>
               </div>
-{/*              <h2 className='text-center'>Recently Sold</h2>
-              <div className='row'>
-                <div className='col-xs-6 col-md-4'>
-                  <div className='thumbnail'>
-                    <img src='https://media.rightmove.co.uk/dir/crop/10:9-16:9/88k/87209/68312137/87209_FPS1001256_IMG_01_0004_max_656x437.jpg' alt='...' />
-                    <div className='caption'>
-                      <h3 className='h6 mb-0 text-muted'>4 Bed Detatched House</h3>
-                      <div className='h2 mt-0'>£800,000</div>
-                      <p className='text-muted'>The Dalby, The Observatory, Canterbury</p>  
-                      <a href='#test' className='btn btn-primary btn-block' role='button'>View</a>
-                    </div>
-                  </div>
-                </div>
-                <div className='col-xs-6 col-md-4'>
-                  <div className='thumbnail'>
-                    <img src='https://media.rightmove.co.uk/dir/crop/10:9-16:9/88k/87209/68312137/87209_FPS1001256_IMG_01_0004_max_656x437.jpg' alt='...' />
-                    <div className='caption'>
-                      <h3 className='h6 mb-0 text-muted'>4 Bed Detatched House</h3>
-                      <div className='h2 mt-0'>£800,000</div>
-                      <p className='text-muted'>The Dalby, The Observatory, Canterbury</p>               
-                      <a href='#test' className='btn btn-primary btn-block' role='button'>View</a>
-                    </div>
-                  </div>
-                </div>
-                <div className='col-xs-6 col-md-4'>
-                  <div className='thumbnail'>
-                    <img src='https://media.rightmove.co.uk/dir/crop/10:9-16:9/88k/87209/68312137/87209_FPS1001256_IMG_01_0004_max_656x437.jpg' alt='...' />
-                    <div className='caption'>
-                      <h3 className='h6 mb-0 text-muted'>4 Bed Detatched House</h3>
-                      <div className='h2 mt-0'>£800,000</div>
-                      <p className='text-muted'>The Dalby, The Observatory, Canterbury</p>  
-                      <a href='#test' className='btn btn-primary btn-block' role='button'>View</a>
-                    </div>
-                  </div>
-                </div>
-              </div>*/}
             </main>
           </div>
           <div className='col-xs-12 col-md-4 col-lg-3'>
