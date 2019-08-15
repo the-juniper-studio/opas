@@ -70,7 +70,6 @@ const renderer = ({ days, hours, minutes, seconds }) => {
 };
 
 const RenderBody = ({ homePage, bidJs }) => {
-  console.log(bidJs)
   return (
     <React.Fragment>
       {homePage.body &&
