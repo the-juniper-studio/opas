@@ -115,21 +115,21 @@ const RenderBody = ({ homePage, bidJs }) => {
             <main className='main' id='main' role='main'>
               {RichText.render(homePage.title, linkResolver)}
               {RichText.render(homePage.content, linkResolver)}
-              <div className='row'>
-                <h2 className='text-center'>Latest Properties</h2>
+              <div className='clearfix mt-4'>
+                <h2 class="pull-left mt-0">Latest Properties</h2>
                 <a href='#test' className='btn btn-link pull-right' role='button'>View All</a>
               </div>
-              <div className='row auction'>
+              <div className='row auction d-block flex-wrap'>
                 {bidJs.edges.map((item, index) => {
                   const endDate = format(item.node.endTime, 'ha on Mo MMMM YYYY');
                   return (
-                    <div className='col-xs-6 col-md-3'  key={`item-${index}`}>
-                      <div className='thumbnail pos-rel'>
+                    <div className='col-xs-6 col-md-4 col-lg-3 d-block flex-column'  key={`item-${index}`}>
+                      <div className='thumbnail pos-rel flex-grow'>
                         <span className='label label-info pos-abs'>Lot {item.node.lotNumber}</span>
                         <img className='img-responsive' src={item.node.imageUrls[0]} alt='' />
                         <div className='caption'>
                           <span className='label label-default'>Ends: <strong>{endDate}</strong></span>
-                          <h3 className='h4 mb-0 text-muted' dangerouslySetInnerHTML={{__html: item.node.title}} />  
+                          <h3 className='h5 mb-0 text-muted' dangerouslySetInnerHTML={{__html: item.node.title}} />  
                         </div>
                       </div>
                     </div>

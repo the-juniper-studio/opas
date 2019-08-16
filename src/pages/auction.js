@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 
 function scripting() {
   return {__html: `
-    <script>
+    <script defer>
         window.addEventListener('DOMContentLoaded', function() {
           (function($) {
             $(document).ready(function() {

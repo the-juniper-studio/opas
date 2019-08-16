@@ -13,13 +13,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Scottish Property Auctions`,
-        short_name: `SPA`,
+        name: `Online Property Auctions Scotland`,
+        short_name: `OPAS`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#3f4ea1`,
+        theme_color: `#3f4ea1`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/opas-icon.png`,
       },
     },
     `gatsby-plugin-sass`,

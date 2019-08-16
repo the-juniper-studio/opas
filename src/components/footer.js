@@ -18,7 +18,7 @@ const Footer = () => (
           <h4>Links</h4>
           <ul className="list-unstyled">
             <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-            <li><Link to="/about">About</Link></li>
+            <li><Link to="/about-us">About us</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
