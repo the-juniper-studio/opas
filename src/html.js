@@ -1,13 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-function scripting() {
+function topScript() {
   return {__html: `
     <script defer>
       window.bidjs = {  
         config: {    
           apiBase: "https://hove.eu-west-2.bidjs.com/auction-007/api",
           clientId: "/demonstration",
+          googleMapsApiKey: "AIzaSyBjtP1Mp87k9FzmlJi7cmcTDQPkugfHEIc",
           staticBase: "https://hove.eu-west-2.bidjs.com/static/2.0",
           staticCDN: 'https://static.bidjs.com', // Do not change    
           staticVersion: '1.5', // e.g. 1.3  
@@ -27,6 +28,38 @@ function scripting() {
           unsupportedBrowserMessage: 'Your browser is not supported. Please use a browser such as Google Chrome or Microsoft Edge to ensure full functionality'
         }
       }
+    </script>
+  `};
+}
+
+function bottomScript() {
+  return {__html: `
+    <script defer>
+        window.addEventListener('DOMContentLoaded', function() {
+          (function($) {
+            $(document).ready(function() {
+              PageApp.start();
+            });
+          })(jQuery);
+        });
+        function startApplication () {
+          (function($) {
+            $(document).ready(function() {
+              PageApp.start();
+            });
+          })(jQuery);
+        };
+        var loadDeferredStyles = function() {
+          var addStylesNode = document.getElementById("deferred-styles");
+          var replacement = document.createElement("div");
+          replacement.innerHTML = addStylesNode.textContent;
+          document.body.appendChild(replacement)
+          addStylesNode.parentElement.removeChild(addStylesNode);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+        else window.addEventListener('load', loadDeferredStyles);
     </script>
   `};
 }
@@ -54,7 +87,7 @@ export default function HTML(props) {
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
-        <div dangerouslySetInnerHTML={scripting()} />
+        <div dangerouslySetInnerHTML={topScript()} />
         {props.preBodyComponents}
         <noscript key="noscript" id="gatsby-noscript">
           This app works best with JavaScript enabled.
@@ -65,6 +98,10 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+        <div className='bidlogix-app'>
+          <div id='bidlogix-modal'></div>
+        </div>
+        <div dangerouslySetInnerHTML={bottomScript()} />
       </body>
     </html>
   )
