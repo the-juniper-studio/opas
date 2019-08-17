@@ -26,7 +26,7 @@ const Header = ({ siteTitle }) => (
             <li><Link to="/about-us/">About us</Link></li>
             <li><Link to="/contact/">Contact</Link></li>
           </ul>
-          <a href="https://juniper-spa.netlify.com/auction/#!/login" className="btn btn-secondary navbar-btn navbar-right mr-1 x-bidlogix--trigger-login">Sign Up/Log in</a>
+          <a href="/auction/#!/login" className="btn btn-secondary navbar-btn navbar-right mr-1 x-bidlogix--trigger-login">Sign Up/Log in</a>
         </div>
       </div>
     </nav>
