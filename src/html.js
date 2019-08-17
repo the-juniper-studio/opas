@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-function topScript() {
+function scripting() {
   return {__html: `
     <script defer>
       window.bidjs = {  
@@ -32,38 +32,6 @@ function topScript() {
   `};
 }
 
-function bottomScript() {
-  return {__html: `
-    <script defer>
-        window.addEventListener('DOMContentLoaded', function() {
-          (function($) {
-            $(document).ready(function() {
-              PageApp.start();
-            });
-          })(jQuery);
-        });
-        function startApplication () {
-          (function($) {
-            $(document).ready(function() {
-              PageApp.start();
-            });
-          })(jQuery);
-        };
-        var loadDeferredStyles = function() {
-          var addStylesNode = document.getElementById("deferred-styles");
-          var replacement = document.createElement("div");
-          replacement.innerHTML = addStylesNode.textContent;
-          document.body.appendChild(replacement)
-          addStylesNode.parentElement.removeChild(addStylesNode);
-        };
-        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-          webkitRequestAnimationFrame || msRequestAnimationFrame;
-        if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-        else window.addEventListener('load', loadDeferredStyles);
-    </script>
-  `};
-}
-
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
@@ -87,7 +55,7 @@ export default function HTML(props) {
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
-        <div dangerouslySetInnerHTML={topScript()} />
+        <div dangerouslySetInnerHTML={scripting()} />
         {props.preBodyComponents}
         <noscript key="noscript" id="gatsby-noscript">
           This app works best with JavaScript enabled.
@@ -98,10 +66,6 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
-        <div className='bidlogix-app'>
-          <div id='bidlogix-modal'></div>
-        </div>
-        <div dangerouslySetInnerHTML={bottomScript()} />
       </body>
     </html>
   )
