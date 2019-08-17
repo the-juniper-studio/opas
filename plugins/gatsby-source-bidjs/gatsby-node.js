@@ -29,16 +29,16 @@ exports.sourceNodes = (
 
 
   // Convert the options object into a query string
-  const apiOptions = queryString.stringify(configOptions)
-  // Join apiOptions with the Pixabay API URL
-  const apiUrl = `https://hove.eu-west-2.bidjs.com/auction-mgt/bdxapi/reporting/auction/277/category?${apiOptions}`
+  // const apiOptions = queryString.stringify(configOptions)
+  // Join apiOptions with the BidJs API URL
+  const apiUrl = `https://hove.eu-west-2.bidjs.com/auction-mgt/bdxapi/reporting/auction/${configOptions.auctionId}/${configOptions.sorting}?clientId=${configOptions.clientId}&includeImages=${configOptions.includeImages}`
   // Gatsby expects sourceNodes to return a promise
   return (
     // Fetch a response from the apiUrl
     fetch(apiUrl, { 
       method: 'get', 
       headers: new Headers({
-        'bdxapi_name': 'c4ecbd19b228bf924a31ddb178d4180381536bef',
+        'bdxapi_name': configOptions.bdxapi_name,
       })
     })
     // Parse the response as JSON

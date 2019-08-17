@@ -77,12 +77,7 @@ body {
     color: $color-turquoise-light;
   }
 }
-.pos-rel {
-  position:relative;
-}
-.pos-abs {
-  position:absolute;
-}
+
 .label.pos-abs {
   top:0;
   right:0
@@ -123,7 +118,17 @@ a {
   @extend .shadow-xs;
   border:solid red 1px;
 }
-.auction .thumbnail img {
-  max-height:200px;
-}
 
+/* Flexbox */
+.d-block {
+  display:flex
+}
+.flex-column {
+  flex-direction:column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-grow {
+  flex-grow:1;
+}
