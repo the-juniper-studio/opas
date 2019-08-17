@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 
 function scripting() {
   return {__html: `
-    <script defer>
+    <script>
         window.addEventListener('DOMContentLoaded', function() {
           (function($) {
             $(document).ready(function() {
@@ -53,7 +53,10 @@ const IndexPage = () => {
             </svg>
           </div>
         </div>
-        <div className='bidlogix-app mt-3'>
+        <div className='bidlogix-app'>
+          <div id='bidlogix-modal'></div>
+        </div>
+        <div className='container bidlogix-app'>
           <div id='bidjs'></div>
         </div>
         <div dangerouslySetInnerHTML={scripting()} />
