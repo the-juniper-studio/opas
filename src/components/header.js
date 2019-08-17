@@ -21,7 +21,7 @@ const Header = ({ siteTitle }) => (
         <div className="collapse navbar-collapse" id="main-nav">
           <ul className="nav navbar-nav">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/auction/">Auction</Link></li>
+            <li><a href="/auction/">Auction</a></li>
             <li><Link to="/sell/">Sell</Link></li>
             <li><Link to="/about-us/">About us</Link></li>
             <li><Link to="/contact/">Contact</Link></li>
