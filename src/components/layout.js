@@ -8,6 +8,7 @@ const Layout = ({ children }) => {
 
   return (
     <React.Fragment>
+      <a class="sr-only sr-only-focusable" href="#main">Skip to main content</a>
       <Header siteTitle="Scotish Property Auctions" />
       <main role="main">{children}</main>
       <Footer />

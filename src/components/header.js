@@ -15,7 +15,7 @@ const Header = ({ siteTitle }) => (
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <Link className="navbar-brand" to="/"><img alt="{ siteTitle }" src={Logo} /></Link>
+          <Link className="navbar-brand" to="/"><img alt="Online Property Auctions Scotland Ltd" src={Logo} /></Link>
         </div>
 
         <div className="collapse navbar-collapse" id="main-nav">
