@@ -11,8 +11,6 @@ const Footer = () => (
           Glasgow<br/>
           Scotland<br/>
           G2 4JR<br />
-          Tel: +44 (0)123 456 7890<br/>
-          Email: contact@scottishpropertyauctions.com
         </div>
         <div className="col-xs-12 col-sm-4">
           <h4>Links</h4>
