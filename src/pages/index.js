@@ -125,10 +125,10 @@ const RenderBody = ({ homePage, bidJs }) => {
                   return (
                     <div className='col-xs-6 col-md-4 col-lg-3 d-block flex-column'  key={`item-${index}`}>
                       <div className='thumbnail pos-rel flex-grow'>
-                        <span className='label label-info pos-abs'>Lot {item.node.lotNumber}</span>
+                        <span className='label label-primary pos-abs'>Lot {item.node.lotNumber}</span>
                         <img className='img-responsive' src={item.node.imageUrls[0]} alt='' />
                         <div className='caption'>
-                          <span className='label label-primary'>Ends: <strong>{endDate}</strong></span>
+                          <span className='text-muted'>Ends: <strong>{endDate}</strong></span>
                           <h3 className='h5 mb-0 text-muted' dangerouslySetInnerHTML={{__html: item.node.title}} />  
                         </div>
                       </div>
