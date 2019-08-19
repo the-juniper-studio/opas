@@ -56,7 +56,7 @@ const IndexPage = () => {
         <div className='bidlogix-app'>
           <div id='bidlogix-modal'></div>
         </div>
-        <div className='container bidlogix-app'>
+        <div className='bidlogix-app'>
           <div id='bidjs'></div>
         </div>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />

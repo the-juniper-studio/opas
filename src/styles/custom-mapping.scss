@@ -95,6 +95,7 @@ body {
 }
 
 a {
+  display:inline-block;
   &:hover,
   &:focus {
     text-underline-position: under;
