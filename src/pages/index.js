@@ -128,7 +128,7 @@ const RenderBody = ({ homePage, bidJs }) => {
                         <span className='label label-primary pos-abs'>Lot {item.node.lotNumber}</span>
                         <img className='img-responsive' src={item.node.imageUrls[0]} alt='' />
                         <div className='caption'>
-                          <span className='text-muted'>Ends: <strong>{endDate}</strong></span>
+                          <small className='text-muted'>Ends: {endDate}</small>
                           <h3 className='h5 mb-0 text-muted' dangerouslySetInnerHTML={{__html: item.node.title}} />  
                         </div>
                       </div>
