@@ -59,6 +59,7 @@ const IndexPage = () => {
         <div className='container bidlogix-app'>
           <div id='bidjs'></div>
         </div>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
         <div dangerouslySetInnerHTML={scripting()} />
       </div>
     </Layout>

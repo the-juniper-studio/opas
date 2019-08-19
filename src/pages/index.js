@@ -84,7 +84,7 @@ const RenderBody = ({ homePage, bidJs }) => {
                         {slice.fields.map((item, index) => {
                           return (
                             <div className={'item' + (index === 0 ? ' active' : '')} key={`item-${index}`}>
-                              <img src={item.hero_image.url} alt={item.hero_image.alt} />
+                              <img src={item.hero_image.url} alt={item.hero_image.alt} loading='lazy' />
                               <div className='carousel-caption hero-text'>
                                 {RichText.render(item.hero_title, linkResolver)}
                                 {RichText.render(item.hero_content, linkResolver)}
@@ -126,7 +126,7 @@ const RenderBody = ({ homePage, bidJs }) => {
                     <div className='col-xs-6 col-md-4 col-lg-3 d-block flex-column'  key={`item-${index}`}>
                       <div className='thumbnail pos-rel flex-grow'>
                         <span className='label label-primary pos-abs'>Lot {item.node.lotNumber}</span>
-                        <img className='img-responsive' src={item.node.imageUrls[0]} alt='' />
+                        <img className='img-responsive' src={item.node.imageUrls[0]} alt='' loading='lazy' />
                         <div className='caption'>
                           <small className='text-muted'>Ends: {endDate}</small>
                           <h3 className='h5 mb-0 text-muted' dangerouslySetInnerHTML={{__html: item.node.title}} />  
