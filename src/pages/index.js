@@ -79,7 +79,7 @@ const RenderBody = ({ homePage, bidJs }) => {
               <div key={`slice-${index}`}>
                 {slice.type ==='image_gallery' &&
                   <React.Fragment>
-                    <div id='carousel-example-generic' className='carousel slide' data-ride='carousel'>
+                    <div id='opas-carousel' className='carousel slide' data-ride='carousel'>
                       <div className='carousel-inner' role='listbox'>
                         {slice.fields.map((item, index) => {
                           return (
@@ -92,12 +92,12 @@ const RenderBody = ({ homePage, bidJs }) => {
                             </div>
                           )
                         })}
-                        <a className='left carousel-control' href='#carousel-example-generic' role='button' data-slide='prev'>
-                          <span className='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>
+                        <a className='left carousel-control' href='#opas-carousel' role='button' data-slide='prev'>
+                          <span className='icon-prev' aria-hidden='true'></span>
                           <span className='sr-only'>Previous</span>
                         </a>
-                        <a className='right carousel-control' href='#carousel-example-generic' role='button' data-slide='next'>
-                          <span className='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>
+                        <a className='right carousel-control' href='#opas-carousel' role='button' data-slide='next'>
+                          <span className='icon-next' aria-hidden='true'></span>
                           <span className='sr-only'>Next</span>
                         </a>
                       </div>

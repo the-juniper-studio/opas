@@ -36,7 +36,7 @@ function scripting() {
 const IndexPage = () => {
   return (
     <Layout>
-      <div className="container-fluid">
+      <div className="container-fluid mt-2">
         <noscript id="deferred-styles">
           <link href="https://hove.eu-west-2.bidjs.com/static/2.0/prettyphoto/jquery.prettyPhoto.min.css" rel="stylesheet" type="text/css" />
           <link href="https://hove.eu-west-2.bidjs.com/static/2.0/css/bid--no-bootstrap.min.css" rel="stylesheet" type="text/css" />

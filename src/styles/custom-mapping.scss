@@ -1,5 +1,9 @@
 // Layout
 
+.bidlogix-app > .container {
+  @extend .row;
+}
+
 .footer {
   @extend .navbar;
   @extend .navbar-inverse;
@@ -117,7 +121,6 @@ a {
 }
 .panel, .thumbnail {
   @extend .shadow-xs;
-  border:solid red 1px;
 }
 
 /* Flexbox */
