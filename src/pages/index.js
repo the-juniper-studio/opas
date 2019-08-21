@@ -122,11 +122,45 @@ const RenderBody = ({ homePage, bidJs }) => {
               <div className='row auction d-block flex-wrap'>
                 {bidJs.edges.map((item, index) => {
                   const endDate = format(item.node.endTime, 'ha on Mo MMMM YYYY');
+                  const splitString = item.node.imageUrls[0].split("upload");
+                  console.log(splitString)
                   return (
                     <div className='col-xs-6 col-md-4 col-lg-3 d-block flex-column'  key={`item-${index}`}>
                       <div className='thumbnail pos-rel flex-grow'>
                         <span className='label label-primary pos-abs'>Lot {item.node.lotNumber}</span>
-                        <img className='img-responsive' src={item.node.imageUrls[0]} alt='' loading='lazy' />
+                          <picture>
+                            <source
+                              srcSet={`
+                                ${splitString[0]}upload/q_100,w_150${splitString[1].replace("jpg", "webp")} 150w,
+                                ${splitString[0]}upload/q_100,w_200${splitString[1].replace("jpg", "webp")} 200w,
+                                ${splitString[0]}upload/q_100,w_400${splitString[1].replace("jpg", "webp")} 400w,
+                                ${splitString[0]}upload/q_100,w_800${splitString[1].replace("jpg", "webp")} 800w `}
+                              sizes="(min-width: 1200px) calc(18vw - 30px), (min-width: 992px) calc(25vw - 30px), calc(50vw - 30px)"
+                              type="image/webp"
+                            />
+                            <source
+                              srcSet={`
+                                ${splitString[0]}upload/q_100,w_150${splitString[1]} 150w,
+                                ${splitString[0]}upload/q_100,w_200${splitString[1]} 200w,
+                                ${splitString[0]}upload/q_100,w_400${splitString[1]} 400w,
+                                ${splitString[0]}upload/q_100,w_800${splitString[1]} 800w `}
+                              sizes="(min-width: 1200px) calc(18vw - 30px), (min-width: 992px) calc(25vw - 30px), calc(50vw - 30px)"
+                              type="image/jpeg"
+                            />
+                            <img
+                              srcSet={`
+                                ${splitString[0]}upload/q_100,w_150${splitString[1]} 150w,
+                                ${splitString[0]}upload/q_100,w_200${splitString[1]} 200w,
+                                ${splitString[0]}upload/q_100,w_400${splitString[1]} 400w,
+                                ${splitString[0]}upload/q_100,w_800${splitString[1]} 800w `}
+                              src={`${splitString[0]}upload/q_100,w_400${splitString[1]}`}
+                              sizes="(min-width: 1200px) calc(18vw - 30px), (min-width: 992px) calc(25vw - 30px), calc(50vw - 30px)"
+                              alt=""
+                              loading="lazy"
+                              className='img-responsive'
+                            />
+                          </picture>
+
                         <div className='caption'>
                           <small className='text-muted'>Ends: {endDate}</small>
                           <h3 className='h5 mb-0 text-muted' dangerouslySetInnerHTML={{__html: item.node.title}} />  

@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -28,7 +32,7 @@ module.exports = {
       resolve: `gatsby-source-bidjs`,
       options: {
         auctionId: '277',  // Required
-        bdxapi_name: `c4ecbd19b228bf924a31ddb178d4180381536bef`, // Required
+        bdxapi_name: `${process.env.BIDJS_KEY}`, // Required
         clientId: '302', // Required
         sorting: 'category', // Only value currently supported is 'category'
         includeImages: true, // Optional
