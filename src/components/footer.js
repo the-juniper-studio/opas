@@ -23,7 +23,7 @@ const Footer = () => (
           </ul>
         </div>
         <div className="col-xs-12 col-sm-4">
-          <div className="row">
+          <div className="row d-flex">
             <div className="col-xs-6">
               <img alt="The Property Ombudsman" src={Ombudsman} loading="lazy" className="img-responsive" />
             </div>
