@@ -31,9 +31,9 @@ module.exports = {
     {
       resolve: `gatsby-source-bidjs`,
       options: {
-        auctionId: '277',  // Required
-        bdxapi_name: `${process.env.BIDJS_KEY}`, // Required
-        clientId: '302', // Required
+        auctionId: `${process.env.BIDJS_AUCTION_ID}`,  // Required ${process.env.AUCTION_ID}
+        bdxapi_name: `${process.env.BIDJS_KEY}`, // Required ${process.env.BIDJS_KEY}
+        clientId: `${process.env.BIDJS_CLIENT_ID}`, // Required ${process.env.BIDJS_CLIENT_ID}
         sorting: 'category', // Only value currently supported is 'category'
         includeImages: true, // Optional
       },

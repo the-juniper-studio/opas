@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
+import Ombudsman from "../images/the-property-ombudsman.png"
+import TSI from "../images/TSI.png"
 
 const Footer = () => (
   <footer className="footer mt-3" role="contentinfo">
@@ -21,7 +23,14 @@ const Footer = () => (
           </ul>
         </div>
         <div className="col-xs-12 col-sm-4">
-
+          <div className="row">
+            <div className="col-xs-6">
+              <img alt="The Property Ombudsman" src={Ombudsman} loading="lazy" className="img-responsive" />
+            </div>
+            <div className="col-xs-6">
+              <img alt="TSI" src={TSI} loading="lazy" className="img-responsive" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -84,7 +84,7 @@ const RenderBody = ({ homePage, bidJs }) => {
                         {slice.fields.map((item, index) => {
                           return (
                             <div className={'item' + (index === 0 ? ' active' : '')} key={`item-${index}`}>
-                              <img src={item.hero_image.url} alt={item.hero_image.alt} loading='lazy' />
+                              <img src={item.hero_image.url} alt={item.hero_image.alt} loading={index === 0 ? 'eager' : 'lazy'} />
                               <div className='carousel-caption hero-text'>
                                 {RichText.render(item.hero_title, linkResolver)}
                                 {RichText.render(item.hero_content, linkResolver)}
@@ -116,14 +116,13 @@ const RenderBody = ({ homePage, bidJs }) => {
               {RichText.render(homePage.title, linkResolver)}
               {RichText.render(homePage.content, linkResolver)}
               <div className='clearfix mt-4'>
-                <h2 class="pull-left mt-0">Latest Properties</h2>
+                <h2 className="pull-left mt-0">Latest Properties</h2>
                 <a href='#test' className='btn btn-link pull-right' role='button'>View All</a>
               </div>
               <div className='row auction d-block flex-wrap'>
                 {bidJs.edges.map((item, index) => {
                   const endDate = format(item.node.endTime, 'ha on Mo MMMM YYYY');
                   const splitString = item.node.imageUrls[0].split("upload");
-                  console.log(splitString)
                   return (
                     <div className='col-xs-6 col-md-4 col-lg-3 d-block flex-column'  key={`item-${index}`}>
                       <div className='thumbnail pos-rel flex-grow'>
