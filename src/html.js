@@ -7,8 +7,7 @@ function scripting() {
       window.bidjs = {  
         config: {    
           apiBase: "https://hove.eu-west-2.bidjs.com/auction-007/api",
-          clientId: "/demonstration",
-          googleMapsApiKey: "AIzaSyBjtP1Mp87k9FzmlJi7cmcTDQPkugfHEIc",
+          clientId: "/onlinepropertyauctions",
           staticBase: "https://hove.eu-west-2.bidjs.com/static/2.0",
           staticCDN: 'https://static.bidjs.com', // Do not change    
           staticVersion: '1.5', // e.g. 1.3  
@@ -48,7 +47,7 @@ export default function HTML(props) {
         <script defer src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossOrigin="anonymous"></script>
         <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossOrigin="anonymous" />
         <script defer src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en,Promise" />
-        <script defer src="https://maps.googleapis.com/maps/api/js?key=MY_GOOGLE_MAPS_API" type="text/javascript" />
+        <script defer src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GOOGLE_API_KEY}`} type="text/javascript" />
         <script defer src="https://hove.eu-west-2.bidjs.com/static/2.0/js/bid-dependencies.min.js" />
         <script defer src="https://hove.eu-west-2.bidjs.com/static/2.0/prettyphoto/jquery.prettyPhoto.min.js" />
         <script defer src="https://hove.eu-west-2.bidjs.com/static/2.0/js/hbs-bid.min.js" />
