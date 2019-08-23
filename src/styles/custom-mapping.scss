@@ -14,8 +14,11 @@
   li {
     @extend .mb-1;
   }
-  .row img {
-    height:auto;
+  .d-flex {
+    align-items: center;
+    img {
+      height:auto;
+    }
   }
 }
 
@@ -128,7 +131,10 @@ a {
 
 /* Flexbox */
 .d-block {
-  display:flex
+  display:block;
+}
+.d-flex {
+  display:flex;
 }
 .flex-column {
   flex-direction:column;
