@@ -1,0 +1,197 @@
+{
+  "URL" : {
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "URL",
+        "placeholder" : "e.g about-us"
+      }
+    }
+  },
+  "Meta" : {
+    "meta_title" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Meta Title"
+      }
+    },
+    "meta_description" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Meta Description"
+      }
+    },
+    "meta_keywords" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Meta Keywords"
+      }
+    }
+  },
+  "Hero" : {
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "choices" : {
+          "image_gallery" : {
+            "type" : "Slice",
+            "fieldset" : "Hero Gallery",
+            "description" : "Gallery with heading and supporting text",
+            "icon" : "photo_library",
+            "repeat" : {
+              "hero_title" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1",
+                  "label" : "Hero Title"
+                }
+              },
+              "hero_image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : null,
+                    "height" : null
+                  },
+                  "thumbnails" : [ ],
+                  "label" : "Hero Image Name"
+                }
+              },
+              "hero_content" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph, strong, em, hyperlink",
+                  "allowTargetBlank" : true,
+                  "label" : "Hero Content",
+                  "placeholder" : "Additional content to show on Hero"
+                }
+              }
+            },
+            "display" : "list"
+          }
+        }
+      }
+    }
+  },
+  "Content" : {
+    "title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "useAsTitle" : true,
+        "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label" : "Title",
+        "placeholder" : "Main page title"
+      }
+    },
+    "content" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, list-item, o-list-item",
+        "allowTargetBlank" : true,
+        "label" : "content",
+        "placeholder" : "Main Content"
+      }
+    }
+  },
+  "Countdown" : {
+    "countdown_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading2",
+        "label" : "Countdown Title",
+        "placeholder" : "Countdown Title Text"
+      }
+    },
+    "countdown_deadline" : {
+      "type" : "Date",
+      "config" : {
+        "label" : "Countdown Deadline",
+        "placeholder" : "Select the countdown deadline"
+      }
+    },
+    "countdown_text" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph, strong, em, hyperlink",
+        "allowTargetBlank" : true,
+        "label" : "Countdown Text",
+        "placeholder" : "Add any additional Countdown Supporting Text"
+      }
+    },
+    "countdown_timeout" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph, heading2, strong, em, hyperlink, image, list-item, o-list-item, o-list-item",
+        "label" : "Countdown Deadline Message",
+        "placeholder" : "The message to display after Countdown deadline has passed"
+      }
+    }
+  },
+  "Social Media" : {
+    "twitter" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "twitter_title" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "Title",
+              "placeholder" : "max 70 characters"
+            }
+          },
+          "twitter_description" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "Description",
+              "placeholder" : "max 200 characters"
+            }
+          },
+          "twitter_image" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : {
+                "width" : 1200,
+                "height" : 600
+              },
+              "thumbnails" : [ ],
+              "label" : "Image"
+            }
+          }
+        },
+        "label" : "Twitter"
+      }
+    },
+    "facebook" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "og_title" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "Title"
+            }
+          },
+          "og_description" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "Description"
+            }
+          },
+          "og_image" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : {
+                "width" : 1200,
+                "height" : 630
+              },
+              "thumbnails" : [ ],
+              "label" : "Image"
+            }
+          }
+        },
+        "label" : "Facebook Open Graph"
+      }
+    }
+  }
+}
