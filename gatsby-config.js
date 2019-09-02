@@ -41,7 +41,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic-graphql',
       options: {
-        repositoryName: 'juniper-test',
+        repositoryName: 'opas',
         path: '/preview', // optional, default: /preview
         previews: true, // optional, default: false
         pages: [{               // (optional)
