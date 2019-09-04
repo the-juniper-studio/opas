@@ -26,7 +26,8 @@ const Header = ({ siteTitle }) => (
             <li><Link to="/about-us/">About us</Link></li>
             <li><Link to="/contact/">Contact</Link></li>
           </ul>
-          <a href="/auction/#!/login" className="btn btn-secondary navbar-btn navbar-right mr-1 x-bidlogix--trigger-login">Sign Up/Log in</a>
+          <a href="/auction/#!/login" className="btn btn-secondary navbar-btn ml-1 x-bidlogix--trigger-login">Sign Up/Log in</a>
+          <p className='hidden-sm navbar-text pull-right'>Glasgow: 0141 266 0125</p>
         </div>
       </div>
     </nav>
