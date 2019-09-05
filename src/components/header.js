@@ -1,45 +1,61 @@
-import PropTypes from "prop-types"
-import React from "react"
-import { Link } from "gatsby"
+import React, { Component } from 'react'
+import { Link } from 'gatsby';
 import Logo from "../images/Online-Property-Logo.png"
 
-const Header = ({ siteTitle }) => (
-
-  <header role="banner">
-    <nav className="navbar navbar-default navbar-fixed-top shadow-sm">
-      <div className="container-fluid">
-        <div className="navbar-header">
-          <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
-            <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-          </button>
-          <Link className="navbar-brand" to="/"><img alt="Online Property Auctions Scotland Ltd" src={Logo} /></Link>
-        </div>
-
-        <div className="collapse navbar-collapse" id="main-nav">
-          <ul className="nav navbar-nav">
-            <li><Link to="/">Home</Link></li>
-            <li><a href="/auction/">Auction</a></li>
-            <li><Link to="/sell/">Sell</Link></li>
-            <li><Link to="/about-us/">About us</Link></li>
-            <li><Link to="/contact/">Contact</Link></li>
-          </ul>
-          <a href="/auction/#!/login" className="btn btn-secondary navbar-btn ml-1 x-bidlogix--trigger-login">Sign Up/Log in</a>
-          <p className='hidden-sm navbar-text pull-right'>Phone: <a href="tel:+441412660125">0141 266 0125</a></p>
-        </div>
-      </div>
-    </nav>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+const Header = () => {
+  return (
+    <React.Fragment>
+      <RenderBody />
+    </React.Fragment>
+  )
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
+class RenderBody extends Component {
+  constructor() {
+    super()
+    this.state = {
+      expanded: false
+    }
+    this.toggleNav = this.toggleNav.bind(this);
+  }
+  toggleNav() {
+    this.setState({
+      expanded:!this.state.expanded
+    })
+  }
+  render() {
+    return (
+      <React.Fragment>
+        <header role="banner">
+          <nav className="navbar navbar-default navbar-fixed-top shadow-sm">
+            <div className="container-fluid">
+              <div className="navbar-header">
+                <button className="navbar-toggle" aria-expanded={this.state.expanded} type='button' onClick={ this.toggleNav } onKeyDown={ this.toggleNav }>
+                  <span className="sr-only">Toggle navigation</span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                </button>
+                <Link className="navbar-brand" to="/"><img alt="Online Property Auctions Scotland Ltd" src={Logo} /></Link>
+              </div>
+
+              <div hidden={!this.state.expanded} id="main-nav">
+                <ul className="nav navbar-nav">
+                  <li><Link to="/" activeClassName="active" >Home</Link></li>
+                  <li><a href="/auction/">Auction</a></li>
+                  <li><Link to="/sell/" activeClassName="active">Sell</Link></li>
+                  <li><Link to="/about-us/" activeClassName="active">About us</Link></li>
+                  <li><Link to="/contact/" activeClassName="active">Contact</Link></li>
+                </ul>
+                <a href="/auction/#!/login" className="btn btn-secondary navbar-btn x-bidlogix--trigger-login">Sign Up/Log in</a>
+                <p className='hidden-sm navbar-text navbar-right'>Phone: <a href="tel:+441412660125">0141 266 0125</a></p>
+              </div>
+            </div>
+          </nav>
+        </header>
+      </React.Fragment>
+    )
+  }
 }
 
 export default Header
