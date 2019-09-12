@@ -46,13 +46,8 @@ export const homeQuery = graphql`
           id
           lotNumber
           imageUrls
-          status
           title
           endTime
-          currencyId
-          winner {
-            amount
-          }
         }
       }
     }
