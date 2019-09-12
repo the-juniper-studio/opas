@@ -4,7 +4,7 @@ import Ombudsman from "../images/the-property-ombudsman.png"
 import TSI from "../images/TSI.png"
 
 const Footer = () => (
-  <footer className="footer" role="contentinfo">
+  <footer className="footer mt-2" role="contentinfo">
     <div className="container-fluid block-lg">
       <div className="row">
         <div className="col-xs-12 col-sm-4">
