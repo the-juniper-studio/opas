@@ -16,6 +16,7 @@ export const sellQuery = graphql`
             meta_description
             title
             content
+            hero
           }
         }
       }
@@ -94,6 +95,7 @@ const RenderBody = ({ sellPage }) => {
           </div>
         </div>
       </div>
+      <img className="img-responsive" src={sellPage.hero.url} alt={sellPage.hero.alt} />
     </React.Fragment>
   )
 }
