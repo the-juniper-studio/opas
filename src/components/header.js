@@ -26,8 +26,8 @@ const Header = ({ siteTitle }) => (
             <li><Link to="/about-us/">About us</Link></li>
             <li><Link to="/contact/">Contact</Link></li>
           </ul>
-          <a href="/auction/#!/login" className="btn btn-secondary navbar-btn ml-1 x-bidlogix--trigger-login">Sign Up/Log in</a>
           <p className='hidden-sm navbar-text pull-right'>Phone: <a href="tel:+441412660125">0141 266 0125</a></p>
+          <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right x-bidlogix--trigger-login">Sign Up/Log in</a>
         </div>
       </div>
     </nav>

@@ -104,15 +104,6 @@ body {
   }
 }
 
-a {
-  display:inline-block;
-  &:hover,
-  &:focus {
-    text-underline-position: under;
-  }
-}
-
-
 /* BidLogix Specific */
 .bidlogix-app .grid-item {
   display:flex !important;

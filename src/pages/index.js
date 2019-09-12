@@ -118,7 +118,7 @@ const RenderBody = ({ homePage, bidJs }) => {
               {RichText.render(homePage.content, linkResolver)}
               <div className='clearfix mt-4'>
                 <h2 className="pull-left mt-0">Latest Properties</h2>
-                <a href='#test' className='btn btn-link pull-right' role='button'>View All</a>
+                <a href='#test' className='btn btn-default pull-right' role='button'>View All</a>
               </div>
               <div className='row auction d-flex flex-wrap'>
                 {bidJs.edges.map((item, index) => {
