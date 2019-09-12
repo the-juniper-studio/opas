@@ -80,6 +80,25 @@ body {
   }
 }
 
+.navbar-btn {
+  @extend .ml-1;
+}
+@media (max-width: $grid-float-breakpoint) {
+  .navbar .pull-right {
+    float:none !important;
+  }
+  .navbar ul {
+  margin-bottom:0;
+  }
+  .navbar .navbar-text {
+    padding:10px 0;
+    margin:0;
+  }
+  a.navbar-btn {
+    margin-left:0 !important;
+  }
+}
+
 .panel.panel-primary {
   background-color: $panel-primary-border; 
   color: $color-off-white;
@@ -94,6 +113,12 @@ body {
 }
 
 @media (min-width: $grid-float-breakpoint) {
+  .navbar div[hidden] {
+    display:block !important;
+  }
+  p.navbar-right {
+    margin-right: 0;
+  }
   .navbar-default .navbar-nav {
     > li {
       > a {
