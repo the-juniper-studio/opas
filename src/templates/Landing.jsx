@@ -21,6 +21,7 @@ export const query = graphql`
             meta_description
             title
             content
+            hero
           }
         }
       }
@@ -36,6 +37,13 @@ const RenderBody = ({ contentPage }) => {
           <h1>{contentPage.title}</h1>
           <div>{RichText.render(contentPage.content, linkResolver)}</div>
         </div>
+        {contentPage.hero && (
+          <picture>
+            <source media="(max-width: 800px)" srcset={contentPage.hero.url} />
+            <source media="(min-width: 801px)" srcset={contentPage.hero.Mobile.url} />
+            <img className="img-responsive" src={contentPage.hero.url} alt={contentPage.hero.alt} />
+          </picture>
+        )}
       </div>
     </div>
   )

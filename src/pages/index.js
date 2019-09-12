@@ -85,7 +85,8 @@ const RenderBody = ({ homePage, bidJs }) => {
                         {slice.fields.map((item, index) => {
                           return (
                             <div className={'item' + (index === 0 ? ' active' : '')} key={`item-${index}`}>
-                              <img src={item.hero_image.url} alt={item.hero_image.alt} loading={index === 0 ? 'eager' : 'auto'} />
+                            
+                              <img className="img-responsive" src={item.hero_image.url} alt={item.hero_image.alt} />
                               <div className='carousel-caption hero-text'>
                                 {RichText.render(item.hero_title, linkResolver)}
                                 {RichText.render(item.hero_content, linkResolver)}
