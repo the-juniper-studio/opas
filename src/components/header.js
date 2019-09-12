@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'gatsby';
 import Logo from "../images/Online-Property-Logo.png"
 
+<<<<<<< HEAD
 const Header = () => {
   return (
     <React.Fragment>
@@ -47,7 +48,7 @@ class RenderBody extends Component {
                   <li><Link to="/about-us/" activeClassName="active">About us</Link></li>
                   <li><Link to="/contact/" activeClassName="active">Contact</Link></li>
                 </ul>
-                <a href="/auction/#!/login" className="btn btn-secondary navbar-btn x-bidlogix--trigger-login">Sign Up/Log in</a>
+                <p className='hidden-sm navbar-text pull-right'>Phone: <a href="tel:+441412660125">0141 266 0125</a></p>
                 <p className='hidden-sm navbar-text navbar-right'>Phone: <a href="tel:+441412660125">0141 266 0125</a></p>
               </div>
             </div>
