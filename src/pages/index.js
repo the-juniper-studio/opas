@@ -46,13 +46,8 @@ export const homeQuery = graphql`
           id
           lotNumber
           imageUrls
-          status
           title
           endTime
-          currencyId
-          winner {
-            amount
-          }
         }
       }
     }
@@ -85,8 +80,7 @@ const RenderBody = ({ homePage, bidJs }) => {
                         {slice.fields.map((item, index) => {
                           return (
                             <div className={'item' + (index === 0 ? ' active' : '')} key={`item-${index}`}>
-                            
-                              <img className="img-responsive" src={item.hero_image.url} alt={item.hero_image.alt} />
+                              <img src={item.hero_image.url} alt={item.hero_image.alt} loading={index === 0 ? 'eager' : 'auto'} />
                               <div className='carousel-caption hero-text'>
                                 {RichText.render(item.hero_title, linkResolver)}
                                 {RichText.render(item.hero_content, linkResolver)}
