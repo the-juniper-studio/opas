@@ -31,21 +31,22 @@ export const query = graphql`
 
 const RenderBody = ({ contentPage }) => {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-          <h1>{contentPage.title}</h1>
-          <div>{RichText.render(contentPage.content, linkResolver)}</div>
+    <>
+      {contentPage.hero && (
+        <picture>
+          <source srcset={contentPage.hero.Mobile.url} loading="lazy" media="(max-width: 768px)" class="img-responsive" />
+          <img src={contentPage.hero.url} loading="lazy" alt={contentPage.hero.alt} class="img-responsive" />
+        </picture>
+      )}
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+            <h1>{contentPage.title}</h1>
+            <div>{RichText.render(contentPage.content, linkResolver)}</div>
+          </div>
         </div>
-        {contentPage.hero && (
-          <picture>
-            <source media="(max-width: 800px)" srcset={contentPage.hero.url} />
-            <source media="(min-width: 801px)" srcset={contentPage.hero.Mobile.url} />
-            <img className="img-responsive" src={contentPage.hero.url} alt={contentPage.hero.alt} />
-          </picture>
-        )}
       </div>
-    </div>
+    </>
   )
 }
 
