@@ -28,6 +28,12 @@ const RenderBody = ({ sellPage }) => {
   return (
     <React.Fragment>
       <SEO title="Sell" />
+      {sellPage.hero && (
+        <picture>
+          <source srcset={sellPage.hero.Mobile.url} loading="lazy" media="(max-width: 768px)" class="img-responsive" />
+          <img src={sellPage.hero.url} loading="lazy" alt={sellPage.hero.alt} class="img-responsive" />
+        </picture>
+      )}
       <div className="container-fluid">
         <div className="row">
           <div className="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
@@ -95,7 +101,6 @@ const RenderBody = ({ sellPage }) => {
           </div>
         </div>
       </div>
-      <img className="img-responsive" src={sellPage.hero.url} alt={sellPage.hero.alt} />
     </React.Fragment>
   )
 }
