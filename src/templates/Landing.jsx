@@ -21,6 +21,7 @@ export const query = graphql`
             meta_description
             title
             content
+            hero
           }
         }
       }
@@ -30,14 +31,22 @@ export const query = graphql`
 
 const RenderBody = ({ contentPage }) => {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-          <h1>{contentPage.title}</h1>
-          <div>{RichText.render(contentPage.content, linkResolver)}</div>
+    <>
+      {contentPage.hero && (
+        <picture>
+          <source srcset={contentPage.hero.Mobile.url} loading="lazy" media="(max-width: 768px)" class="img-responsive" />
+          <img src={contentPage.hero.url} loading="lazy" alt={contentPage.hero.alt} class="img-responsive" />
+        </picture>
+      )}
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+            <h1>{contentPage.title}</h1>
+            <div>{RichText.render(contentPage.content, linkResolver)}</div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
