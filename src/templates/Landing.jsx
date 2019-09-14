@@ -33,15 +33,16 @@ const RenderBody = ({ contentPage }) => {
   return (
     <>
       {contentPage.hero && (
-        <picture>
+        <picture className="hero">
           <source srcset={contentPage.hero.Mobile.url} loading="lazy" media="(max-width: 768px)" class="img-responsive" />
           <img src={contentPage.hero.url} loading="lazy" alt={contentPage.hero.alt} class="img-responsive" />
+          <div className='hero-text'><h1>{contentPage.title}</h1></div>
         </picture>
       )}
       <div className="container">
         <div className="row">
-          <div className="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-            <h1>{contentPage.title}</h1>
+          <div className="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 mt-2">
+            {contentPage.hero ? ('') : (<h1>{contentPage.title}</h1>) }
             <div>{RichText.render(contentPage.content, linkResolver)}</div>
           </div>
         </div>
