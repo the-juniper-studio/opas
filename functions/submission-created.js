@@ -3,11 +3,8 @@ const fetch = require('node-fetch')
 const { CREDAS_TOKEN } = process.env
 
 exports.handler = async event => {
-  const body = JSON.parse(event.body)
-  console.log(`Body: ${body}`)
-  console.log(`event payload: ${event.payload}`)
-  console.log(`event body: ${event.body}`)
-  console.log(`credas: ${CREDAS_TOKEN}`)
+  console.log(`2 ${event.payload}`)
+  console.log(`3 ${event.body}`)
 
   return fetch('https://pi-api.credas.co.uk/api/registrations', {
     method: 'POST',
@@ -18,7 +15,7 @@ exports.handler = async event => {
   })
     .then(response => response.json())
     .then(data => {
-      console.log(`Submitted to CREDAS:\n ${data}`)
+      console.log(`END`)
     })
     .catch(error => ({ statusCode: 422, body: String(error) }))
 }
