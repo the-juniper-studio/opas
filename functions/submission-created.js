@@ -6,8 +6,8 @@ exports.handler = async event => {
   const body = JSON.parse(event.body)
   console.log(`Body: ${body}`)
   console.log(`event payload: ${event.payload}`)
-  console.log(event.body)
-  console.log(CREDAS_TOKEN)
+  console.log(`event body: ${event.body}`)
+  console.log(`credas: ${CREDAS_TOKEN}`)
 
   return fetch('https://pi-api.credas.co.uk/api/registrations', {
     method: 'POST',
