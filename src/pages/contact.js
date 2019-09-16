@@ -62,7 +62,7 @@ const RenderBody = ({ contactPage }) => {
                 <textarea className="form-control" name="message" id="message" required></textarea>
               </div>
               <div className="form-group">
-                <button className="btn btn-primary" type="submit">Send</button>
+                <button className="btn btn-primary btn-block" type="submit">Send</button>
               </div>
             </form>
           </div>

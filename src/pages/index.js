@@ -76,7 +76,7 @@ const RenderBody = ({ homePage, bidJs }) => {
                 {slice.type ==='image_gallery' &&
                   <React.Fragment>
                     <div id='opas-carousel' className='carousel slide' data-ride='carousel'>
-                      <div className='carousel-inner' role='listbox'>
+                      <div className='carousel-inner hero' role='listbox'>
                         {slice.fields.map((item, index) => {
                           return (
                             <div className={'item' + (index === 0 ? ' active' : '')} key={`item-${index}`}>
