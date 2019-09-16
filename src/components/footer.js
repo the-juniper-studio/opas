@@ -13,7 +13,7 @@ const Footer = () => (
           Glasgow<br/>
           Scotland<br/>
           G2 4JR<br />
-          <p className=''>T: 0141 266 0125</p>
+          <p className=''>T: <a href="tel:+441412660125">0141 266 0125</a></p>
         </div>
         <div className="col-xs-12 col-sm-4">
           <h4>Links</h4>

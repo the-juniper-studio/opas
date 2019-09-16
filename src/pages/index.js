@@ -76,11 +76,14 @@ const RenderBody = ({ homePage, bidJs }) => {
                 {slice.type ==='image_gallery' &&
                   <React.Fragment>
                     <div id='opas-carousel' className='carousel slide' data-ride='carousel'>
-                      <div className='carousel-inner' role='listbox'>
+                      <div className='carousel-inner hero' role='listbox'>
                         {slice.fields.map((item, index) => {
                           return (
                             <div className={'item' + (index === 0 ? ' active' : '')} key={`item-${index}`}>
-                              <img src={item.hero_image.url} alt={item.hero_image.alt} loading={index === 0 ? 'eager' : 'auto'} />
+                              <picture>
+                                <source srcset={item.hero_image.Mobile.url} loading={index === 0 ? 'eager' : 'auto'} media="(max-width: 768px)" class="img-responsive" />
+                                <img src={item.hero_image.url} alt={item.hero_image.alt} loading={index === 0 ? 'eager' : 'auto'} class="img-responsive" />
+                              </picture>
                               <div className='carousel-caption hero-text'>
                                 {RichText.render(item.hero_title, linkResolver)}
                                 {RichText.render(item.hero_content, linkResolver)}
@@ -113,7 +116,7 @@ const RenderBody = ({ homePage, bidJs }) => {
               {RichText.render(homePage.content, linkResolver)}
               <div className='clearfix mt-4'>
                 <h2 className="pull-left mt-0">Latest Properties</h2>
-                <a href='#test' className='btn btn-default pull-right' role='button'>View All</a>
+                <a href='/auction' className='btn btn-default pull-right' role='button'>View All</a>
               </div>
               <div className='row auction d-flex flex-wrap'>
                 {bidJs.edges.map((item, index) => {

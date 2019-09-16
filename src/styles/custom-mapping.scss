@@ -1,7 +1,7 @@
 // Layout
 
 .bidlogix-app > .container {
-  @extend .row;
+  width:auto;
 }
 
 .footer {
@@ -83,6 +83,7 @@ body {
 .navbar-btn {
   @extend .ml-1;
 }
+
 @media (max-width: $grid-float-breakpoint) {
   .navbar .pull-right {
     float:none !important;
