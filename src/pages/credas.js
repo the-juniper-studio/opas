@@ -1,9 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { graphql } from 'gatsby'
-import { RichText } from 'prismic-reactjs';
-import { linkResolver } from '../utils/linkResolver';
 
 const RenderBody = () => {
   return (
@@ -16,7 +13,6 @@ const RenderBody = () => {
             <form
               name="Credas"
               method="POST"
-              action="https://pi-api.credas.co.uk/api/registrations"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
             >
@@ -25,10 +21,10 @@ const RenderBody = () => {
 
               <input type="hidden" name="regTypeId" value="Cc466776a-9663-4812-8312-c5f00aa90796" />
               <input type="hidden" name="referenceId" value="HID/12345/336/10" />
-              <input type="hidden" name="sendEmail" value=true />
+              <input type="hidden" name="sendEmail" value="true" />
               <input type="hidden" name="diallingCode" value="+44" />
-              <input type="hidden" name="duplicateAcknowledgement" value=false />
-              <input type="hidden" name="provideWebJourneyLink" value=true />
+              <input type="hidden" name="duplicateAcknowledgement" value="false" />
+              <input type="hidden" name="provideWebJourneyLink" value="true" />
 
               <div className="form-group">
                 <label htmlFor="forename">First Name<sup>*</sup></label>
