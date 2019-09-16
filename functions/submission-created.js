@@ -5,16 +5,16 @@ const { CREDAS_TOKEN } = process.env
 exports.handler = async event => {
   const body = JSON.parse(event.body)
   console.log(`Body: ${body}`)
-  const payload = JSON.parse(event.body).payload
   console.log(`Payload: ${payload}`)
-  console.log(`event: ${event}`)
+  console.log(`event payload: ${event.payload}`)
+  console.log(event.body)
 
   return fetch('https://pi-api.credas.co.uk/api/registrations', {
     method: 'POST',
     headers: {
       apikey: `${CREDAS_TOKEN}`,
     },
-    body: ({ body }),
+    body: event.body
   })
     .then(response => response.json())
     .then(data => {
