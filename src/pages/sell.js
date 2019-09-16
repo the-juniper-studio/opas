@@ -38,7 +38,7 @@ const RenderBody = ({ sellPage }) => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 mt-2">
-            {sellPage.hero ? ('') : (<h1>{sellPage.title}</h1>) }
+            {sellPage.hero ? null : <h1>{sellPage.title}</h1>}
             {RichText.render(sellPage.content, linkResolver)}
             <form
               name="Sell"
