@@ -4,7 +4,7 @@ const { CREDAS_TOKEN } = process.env
 
 exports.handler = async (event, context, callback) => {
   let payload = JSON.parse(event.body).payload;
-  return fetch('https://pi-api.credas.co.uk/api/registrations', {
+  return fetch('https://postb.in/b/1568728701007-9881959655322', {
     method: 'POST',
     headers: {
       apikey: CREDAS_TOKEN,
