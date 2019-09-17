@@ -7,7 +7,7 @@ exports.handler = async (event, context, callback) => {
 
   try {
     console.log("START SENDING")
-    return fetch('https://pi-api.credas.co.uk/api/registrations', {
+    return fetch('https://postb.in/1568742220725-7964856103062', {
       method: 'POST',
       headers: {
         apikey: CREDAS_TOKEN,
