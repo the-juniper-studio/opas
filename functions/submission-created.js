@@ -7,7 +7,7 @@ exports.handler = async (event, context, callback) => {
 
   try {
     console.log("START SENDING")
-    return fetch('https://postb.in/1568742220725-7964856103062', {
+    return fetch('https://postb.in/1568748329837-6677212512586', {
       method: 'POST',
       headers: {
         apikey: CREDAS_TOKEN,
@@ -26,7 +26,7 @@ exports.handler = async (event, context, callback) => {
         "provideWebJourneyLink": true,
         "returnUrls": {
           "returnUrl": "https://www.opascotland.com/success"
-        },
+        }
       })
     })
   .then(response => response.json())
