@@ -26,6 +26,11 @@ exports.handler = async (event, context, callback) => {
         provideWebJourneyLink: true
     })
   })
+  .then(response => response.json())
+  .catch(error => (
+      console.log(data, "DATA")
+    )
+  )
   } catch( err ) {
     console.log('ERRORED')
     console.log(err)
