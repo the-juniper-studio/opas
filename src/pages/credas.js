@@ -38,6 +38,7 @@ const RenderBody = ({ IdCheckPage }) => {
             <form
               name="Credas"
               method="POST"
+              action="/success"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
             >
