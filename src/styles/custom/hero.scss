@@ -7,6 +7,9 @@
 }
 .hero-text {
   @extend .carousel-caption;
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: auto;
   h1 {
     line-height: 1;
     font-size: 6vw;
