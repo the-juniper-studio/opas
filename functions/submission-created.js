@@ -23,9 +23,9 @@ exports.handler = async (event, context, callback) => {
         sendEmail: true,
         diallingCode: "+44",
         duplicateAcknowledgement: false,
-        provideWebJourneyLink: true,
+        provideWebJourneyLink: true
     })
-    })
+  })
   } catch( err ) {
     console.log('ERRORED')
     console.log(err)
