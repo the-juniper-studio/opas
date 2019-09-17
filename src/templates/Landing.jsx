@@ -42,7 +42,7 @@ const RenderBody = ({ contentPage }) => {
       <div className="container">
         <div className="row">
           <div className="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 mt-2">
-            {contentPage.hero ? null : <h1>{contentPage.title}</h1>}here 
+            {contentPage.hero ? null : <h1>{contentPage.title}</h1>}
             <div>{RichText.render(contentPage.content, linkResolver)}</div>
           </div>
         </div>
