@@ -9,6 +9,10 @@ exports.handler = async (event, context, callback) => {
     console.log("START SENDING")
     return fetch('https://postb.in/1568734216551-1112770559266', {
       method: 'POST',
+      headers: {
+        apikey: CREDAS_TOKEN,
+        'Content-Type': 'application/json'
+      },
       body: 'HELLO'
     })
   } catch( err ) {
