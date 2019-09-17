@@ -4,13 +4,14 @@ const { CREDAS_TOKEN } = process.env
 
 exports.handler = async (event, context, callback) => {
   let payload = JSON.parse(event.body).payload;
+  console.log("START SENDING")
   return fetch('https://postb.in/b/1568728701007-9881959655322', {
     method: 'POST',
     headers: {
       apikey: CREDAS_TOKEN,
       'Content-Type': 'application/json'
     },
-    body: {
+    body: JSON.stringify({
       forename: payload.data.forename,
       surname: payload.data.surname,
       phoneNumber: payload.data.phoneNumber,
@@ -21,7 +22,7 @@ exports.handler = async (event, context, callback) => {
       diallingCode: "+44",
       duplicateAcknowledgement: false,
       provideWebJourneyLink: true,
-    }
+    })
   })
     .then(response => response.json())
     .then(data => {
