@@ -76,8 +76,7 @@ module.exports = {
       options: {
         id: "GTM-N7QPPV3",
         includeInDevelopment: true, // Defaults to false meaning GTM will only be loaded in production.
-        defaultDataLayer: { platform: "gatsby" },
-        dataLayerName: "YOUR_DATA_LAYER_NAME",
+        defaultDataLayer: { platform: "gatsby" }
       },
     }
   ],
