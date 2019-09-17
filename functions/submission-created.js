@@ -13,7 +13,18 @@ exports.handler = async (event, context, callback) => {
         apikey: CREDAS_TOKEN,
         'Content-Type': 'application/json'
       },
-      body: 'HELLO'
+      body: JSON.stringify({
+        forename: payload.data.forename,
+        surname: payload.data.surname,
+        phoneNumber: payload.data.phoneNumber,
+        emailAddress: payload.data.emailAddress,
+        regTypeId: "Cc466776a-9663-4812-8312-c5f00aa90796",
+        referenceId: "HID/12345/336/10",
+        sendEmail: true,
+        diallingCode: "+44",
+        duplicateAcknowledgement: false,
+        provideWebJourneyLink: true,
+    })
     })
   } catch( err ) {
     console.log('ERRORED')
