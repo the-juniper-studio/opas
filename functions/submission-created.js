@@ -24,9 +24,9 @@ exports.handler = async (event, context, callback) => {
       provideWebJourneyLink: true,
     })
   })
-    .then(response => response.json())
-    .then(data => {
-      console.log("PAYLOAD SEND")
-    })
-    .catch(error => ({ statusCode: 422, body: String(error) }))
+  .then(response => response.json())
+  .then(data => {
+    console.log("PAYLOAD SEND")
+  })
+  .catch(error => ({ statusCode: 422, body: String(error) }))
 }
