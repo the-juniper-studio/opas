@@ -14,18 +14,18 @@ exports.handler = async (event, context, callback) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        forename: payload.data.forename,
-        surname: payload.data.surname,
-        phoneNumber: payload.data.phoneNumber,
-        emailAddress: payload.data.emailAddress,
-        regTypeId: c466776a-9663-4812-8312-c5f00aa90796,
-        referenceId: HID/12345/336/10,
-        sendEmail: true,
-        diallingCode: +44,
-        duplicateAcknowledgement: false,
-        provideWebJourneyLink: true,
-        returnUrls: {
-          returnUrl: https://www.opascotland.com/success
+        "forename": payload.data.forename,
+        "surname": payload.data.surname,
+        "phoneNumber": payload.data.phoneNumber,
+        "emailAddress": payload.data.emailAddress,
+        "regTypeId": "c466776a-9663-4812-8312-c5f00aa90796",
+        "referenceId": "HID/12345/336/10",
+        "sendEmail": true,
+        "diallingCode": "+44",
+        "duplicateAcknowledgement": false,
+        "provideWebJourneyLink": true,
+        "returnUrls": {
+          "returnUrl": "https://www.opascotland.com/success"
         }
       })
     })
