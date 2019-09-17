@@ -5,7 +5,7 @@ const { CREDAS_TOKEN } = process.env
 exports.handler = async (event, context, callback) => {
   let payload = JSON.parse(event.body).payload;
   console.log("START SENDING")
-  return fetch('https://postb.in/b/1568728701007-9881959655322', {
+  return fetch('https://postb.in/b/1568734216551-1112770559266', {
     method: 'POST',
     headers: {
       apikey: CREDAS_TOKEN,
