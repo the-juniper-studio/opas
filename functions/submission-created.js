@@ -26,7 +26,7 @@ exports.handler = async (event, context, callback) => {
   })
   .then(response => response.json())
   .then(data => {
-    console.log("PAYLOAD SEND")
+    console.log(data , "PAYLOAD SENT")
   })
   .catch(error => ({ statusCode: 422, body: String(error) }))
 }
