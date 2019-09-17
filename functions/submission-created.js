@@ -26,7 +26,10 @@ exports.handler = async (event, context, callback) => {
   })
   .then(response => response.json())
   .then(data => {
-    console.log(data , "PAYLOAD SENT")
+    console.log(data, "PAYLOAD SENT")
   })
-  .catch(error => ({ statusCode: 422, body: String(error) }))
+  .catch(error => (
+      console.log(error, "THIS IS CRAP")
+    )
+  )
 }
