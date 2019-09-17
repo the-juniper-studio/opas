@@ -8,6 +8,7 @@ exports.handler = async (event, context, callback) => {
     method: 'POST',
     headers: {
       apikey: CREDAS_TOKEN,
+      'Content-Type': 'application/json'
     },
     body: {
       forename: payload.data.forename,
@@ -24,7 +25,7 @@ exports.handler = async (event, context, callback) => {
   })
     .then(response => response.json())
     .then(data => {
-      console.log(payload.data.regTypeId)
+      console.log("PAYLOAD SEND")
     })
     .catch(error => ({ statusCode: 422, body: String(error) }))
 }
