@@ -76,13 +76,13 @@ const RenderBody = ({ homePage, bidJs }) => {
                 {slice.type ==='image_gallery' &&
                   <React.Fragment>
                     <div id='opas-carousel' className='carousel slide' data-ride='carousel'>
-                      <div className='carousel-inner hero' role='listbox'>
+                      <div className='carousel-inner hero'>
                         {slice.fields.map((item, index) => {
                           return (
                             <div className={'item' + (index === 0 ? ' active' : '')} key={`item-${index}`}>
                               <picture>
-                                <source srcset={item.hero_image.Mobile.url} loading={index === 0 ? 'eager' : 'auto'} media="(max-width: 768px)" class="img-responsive" />
-                                <img src={item.hero_image.url} alt={item.hero_image.alt} loading={index === 0 ? 'eager' : 'auto'} class="img-responsive" />
+                                <source srcSet={item.hero_image.Mobile.url} loading={index === 0 ? 'eager' : 'auto'} media="(max-width: 768px)" className="img-responsive" />
+                                <img src={item.hero_image.url} alt={item.hero_image.alt ? item.hero_image.alt : ""} intrinsicsize="2750 x 860" loading={index === 0 ? 'eager' : 'auto'} className="img-responsive" />
                               </picture>
                               <div className='carousel-caption hero-text'>
                                 {RichText.render(item.hero_title, linkResolver)}

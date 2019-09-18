@@ -27,13 +27,13 @@ const Footer = () => (
         <div className="col-xs-12 col-sm-5">
           <div className="row d-flex">
             <div className="col-xs-4">
-              <img alt="The Property Ombudsman" src={Ombudsman} loading="lazy" className="img-responsive" />
+              <img alt="The Property Ombudsman" src={Ombudsman} loading="lazy" intrinsicsize="1592 x 642" className="img-responsive" />
             </div>
             <div className="col-xs-4">
-              <img alt="TSI" src={TSI} loading="lazy" className="img-responsive" />
+              <img alt="TSI" src={TSI} loading="lazy" intrinsicsize="1222 x 661" className="img-responsive" />
             </div>
             <div className="col-xs-4">
-              <img alt="Right Move" src={RightMove} loading="lazy" className="img-responsive" />
+              <img alt="Right Move" src={RightMove} loading="lazy" intrinsicsize="3108 x 632" className="img-responsive" />
             </div>
           </div>
         </div>

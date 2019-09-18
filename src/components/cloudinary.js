@@ -33,6 +33,7 @@ const cloudinary = ({ url }) => {
         sizes="(min-width: 1200px) calc(18vw - 30px), (min-width: 992px) calc(25vw - 30px), calc(50vw - 30px)"
         alt=""
         loading="lazy"
+        intrinsicsize="800 x 509"
         className='img-responsive'
       />
     </picture>
