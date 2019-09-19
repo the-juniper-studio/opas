@@ -44,6 +44,7 @@ export const homeQuery = graphql`
       edges {
         node {
           id
+          itemid
           lotNumber
           imageUrls
           title
@@ -123,14 +124,14 @@ const RenderBody = ({ homePage, bidJs }) => {
                   const endDate = format(item.node.endTime, 'ha on Mo MMMM YYYY');
                   return (
                     <div className='col-xs-6 col-md-4 col-lg-3 d-flex flex-column'  key={`item-${index}`}>
-                      <div className='thumbnail pos-rel flex-grow'>
+                      <a href={`https://www.opascotland.co.uk/auction/#!/itemDetails/340/${item.node.itemid}`} className='thumbnail pos-rel flex-grow'>
                         <span className='label label-primary pos-abs'>Lot {item.node.lotNumber}</span>
                         <Cloudinary url={item.node.imageUrls[0]} />
                         <div className='caption'>
                           <small className='text-muted'>Ends: {endDate}</small>
                           <h3 className='h5 mb-0 text-muted' dangerouslySetInnerHTML={{__html: item.node.title}} />  
                         </div>
-                      </div>
+                      </a>
                     </div>
                   )
                 })}
