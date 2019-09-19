@@ -13,7 +13,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-remove-serviceworker`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
