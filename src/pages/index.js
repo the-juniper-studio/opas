@@ -123,7 +123,7 @@ const RenderBody = ({ homePage, bidJs }) => {
                 {bidJs.edges.map((item, index) => {
                   const endDate = format(item.node.endTime, 'ha on Mo MMMM YYYY');
                   return (
-                    <div className='col-xs-6 col-md-4 col-lg-3 d-flex flex-column'  key={`item-${index}`}>
+                    <div className='col-xs-6 col-sm-4 col-lg-3 d-flex flex-column'  key={`item-${index}`}>
                       <a className='thumbnail pos-rel flex-grow d-flex flex-column' href={`https://www.opascotland.co.uk/auction/#!/itemDetails/340/${item.node.itemid}`}>
                         <span className='label label-primary pos-abs'>Lot {item.node.lotNumber}</span>
                         <Cloudinary url={item.node.imageUrls[0]} />
