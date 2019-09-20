@@ -151,7 +151,7 @@ body {
   display:block;
 }
 .d-flex {
-  display:flex;
+  display:flex !important;
 }
 .flex-column {
   flex-direction:column;
