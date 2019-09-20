@@ -44,6 +44,7 @@ export const homeQuery = graphql`
       edges {
         node {
           id
+          itemid
           lotNumber
           imageUrls
           title
@@ -129,7 +130,7 @@ const RenderBody = ({ homePage, bidJs }) => {
                         <div className='caption'>
                           <small className='text-muted'>Ends: {endDate}</small>
                           <h3 className='h5 mb-0 text-muted' dangerouslySetInnerHTML={{__html: item.node.title}} />
-                          <a href={`https://www.opascotland.co.uk/auction/#!/itemDetails/340/`} class="btn btn-block btn-secondary">View</a> 
+                          <a href={`https://www.opascotland.co.uk/auction/#!/itemDetails/340/${item.node.itemid}`} class="btn btn-block btn-secondary">View</a> 
                         </div>
                       </div>
                     </div>
