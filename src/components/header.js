@@ -49,7 +49,23 @@ class RenderBody extends Component {
                 </ul>
                 <p className='hidden-sm navbar-text pull-right'>Phone: <a href="tel:+441412660125">0141 266 0125</a></p>
                 <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right x-bidlogix--trigger-login x-bidlogix--authenticated-hide hidden">Sign Up/Log in</a>
-                <div className='x-bidlogix--authenticated-show hidden'>you are logged in</div>
+                <ul className="nav navbar-nav nav-right">
+                  <li className='x-bidlogix--authenticated-hide hidden'><a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right x-bidlogix--trigger-login">Sign Up/Log in</a></li>
+                  <li className="x-bidlogix--authenticated-show dropdown">
+                    <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      Welcome <span className="x-bidlogix--templated-user"></span><span className="caret"></span>
+                    </a>
+                    <ul className="dropdown-menu">
+                      <li className="x-bidlogix--authenticated-show"><a className="clickable x-bidlogix--trigger-my-bids">My bids</a></li>
+                      <li className="x-bidlogix--authenticated-show"><a href="#!/invoices">My invoices</a></li>
+                      <li className="x-bidlogix--vendor-show hidden"><a href="#!/mySales">My sales</a></li>
+                      <li className="x-bidlogix--administrator-show hidden"><a target="_blank" rel="noopener">Admin</a></li>
+                      <li role="separator" className="divider"></li>
+                      <li className="x-bidlogix--authenticated-show"><a className="clickable x-bidlogix--trigger-my-settings">My settings</a></li>
+                      <li className="x-bidlogix--authenticated-show"><a className="clickable x-bidlogix--trigger-logout">Log out</a></li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
             </div>
           </nav>
