@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-function scripting() {
+function scriptbottom() {
   return {__html: `
     <script>
         window.addEventListener('DOMContentLoaded', function() {
@@ -34,10 +34,52 @@ function scripting() {
   `};
 }
 
+function scriptbottom() {
+  return {__html: `
+    <script defer>
+      window.bidjs = {  
+        config: {    
+          apiBase: "https://hove.eu-west-2.bidjs.com/auction-007/api",
+          clientId: "/onlinepropertyauctions",
+          staticBase: "https://hove.eu-west-2.bidjs.com/static/2.0",
+          staticCDN: 'https://static.bidjs.com', // Do not change    
+          staticVersion: '1.5', // e.g. 1.3  
+          templateVariant: 'bootstrap3' // either 'bootstrap3' or 'bootstrap4'  
+          },  
+        modules: {    
+          auctionDetails: '#!/auctionDetails/%AUCTION_ID%',
+          auctionsArchived: true,
+          invoices: true,
+          lotDetails: '#!/itemDetails/%ITEM_ID%',
+          mySales: true
+          },  
+        options: {
+          allowTitleChange: true,
+          allowMetaDescriptionChange: true,
+          standalone: false,
+          unsupportedBrowserMessage: 'Your browser is not supported. Please use a browser such as Google Chrome or Microsoft Edge to ensure full functionality'
+        }
+      }
+    </script>
+  `};
+}
+
 const IndexPage = () => {
   return (
     <Layout pageName='auction'>
       <SEO title="auction" keywords="auction" description="auction" lang='en-gb' />
+
+      <script defer src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossOrigin="anonymous"></script>
+      <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossOrigin="anonymous" />
+      <script defer src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en,Promise" />
+      <script defer src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GOOGLE_API_KEY}`} type="text/javascript" />
+      <script defer src="https://hove.eu-west-2.bidjs.com/static/2.0/js/bid-dependencies.min.js" />
+      <script defer src="https://hove.eu-west-2.bidjs.com/static/2.0/prettyphoto/jquery.prettyPhoto.min.js" />
+      <script defer src="https://hove.eu-west-2.bidjs.com/static/2.0/js/hbs-bid.min.js" />
+      <script defer src="https://hove.eu-west-2.bidjs.com/static/2.0/js/bid.min.js" />
+
+      <div dangerouslySetInnerHTML={scripttop()} />
+
       <div className="container-fluid mt-2">
         <noscript id="deferred-styles">
           <link href="https://hove.eu-west-2.bidjs.com/static/2.0/prettyphoto/jquery.prettyPhoto.min.css" rel="stylesheet" type="text/css" />
@@ -62,7 +104,7 @@ const IndexPage = () => {
           <div id='bidjs'></div>
         </div>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <div dangerouslySetInnerHTML={scripting()} />
+        <div dangerouslySetInnerHTML={scriptbottom()} />
       </div>
     </Layout>
   )
