@@ -48,8 +48,7 @@ class RenderBody extends Component {
                   <li><Link to="/contact/" activeClassName="active">Contact</Link></li>
                 </ul>
                 <p className='hidden-sm navbar-text pull-right'>Phone: <a href="tel:+441412660125">0141 266 0125</a></p>
-                <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right x-bidlogix--trigger-login x-bidlogix--authenticated-hide hidden">Sign Up/Log in</a>
-                <ul className="nav navbar-nav nav-right">
+                <ul className="nav navbar-nav navbar-right">
                   <li className='x-bidlogix--authenticated-hide hide'><a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right">Sign Up/Log in</a></li>
                   <li className="x-bidlogix--authenticated-show hide"><a href="/auction/#!/myBids">My bids</a></li>
                   <li className="x-bidlogix--authenticated-show hide"><a href="/auction/#!/invoices">My invoices</a></li>
