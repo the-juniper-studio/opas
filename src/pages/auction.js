@@ -34,7 +34,7 @@ function scriptbottom() {
   `};
 }
 
-function scriptbottom() {
+function scripttop() {
   return {__html: `
     <script defer>
       window.bidjs = {  
