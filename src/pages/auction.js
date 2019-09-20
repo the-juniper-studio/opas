@@ -36,7 +36,7 @@ function scripting() {
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <Layout pageName='auction'>
       <SEO title="auction" keywords="auction" description="auction" lang='en-gb' />
       <div className="container-fluid mt-2">
         <noscript id="deferred-styles">
