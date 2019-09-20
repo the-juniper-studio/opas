@@ -145,6 +145,7 @@ const RenderBody = ({ homePage, bidJs }) => {
                 <div className='panel-body text-center'>
                   <div>{RichText.render(homePage.countdown_title, linkResolver)}</div>
                   <Countdown date={homePage.countdown_deadline} zeroPadTime={2} zeroPadDays={2} renderer={renderer} />
+                  {homePage.countdown_deadline}
                   <div>{RichText.render(homePage.countdown_text, linkResolver)}</div>
                 </div>
               </div>
