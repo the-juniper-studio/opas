@@ -16,6 +16,7 @@ exports.sourceNodes = (
     const nodeContent = JSON.stringify(auctionItem)
     const nodeData = Object.assign({}, auctionItem, {
       id: nodeId,
+      itemid: auctionItem.id,
       parent: null,
       children: [],
       internal: {
@@ -48,6 +49,7 @@ exports.sourceNodes = (
       // For each query result (or 'hit')
       data.models.auctionReport.items.forEach(auctionItem => {
         // Process the Item data to match the structure of a Gatsby node
+        const biditemid = processAuctionItem(auctionItem.id)
         const nodeData = processAuctionItem(auctionItem)
         // Use Gatsby's createNode helper to create a node from the node data
         createNode(nodeData)

@@ -146,12 +146,18 @@ body {
   @extend .shadow-xs;
 }
 
+a.thumbnail:hover, 
+a.thumbnail:focus, 
+a.thumbnail.active {
+    text-decoration: none;
+}
+
 /* Flexbox */
 .d-block {
   display:block;
 }
 .d-flex {
-  display:flex;
+  display:flex !important;
 }
 .flex-column {
   flex-direction:column;

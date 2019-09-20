@@ -34,7 +34,7 @@ const RenderBody = ({ contentPage }) => {
     <>
       {contentPage.hero && (
         <picture className="hero">
-          <source srcset={contentPage.hero.Mobile.url} loading="lazy" media="(max-width: 768px)" class="img-responsive" />
+          <source srcSet={contentPage.hero.Mobile.url} loading="lazy" media="(max-width: 768px)" class="img-responsive" />
           <img src={contentPage.hero.url} loading="lazy" alt={contentPage.hero.alt} class="img-responsive" />
           <div className='hero-text'><h1>{contentPage.title}</h1></div>
         </picture>

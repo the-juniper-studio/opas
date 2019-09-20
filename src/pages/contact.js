@@ -30,7 +30,6 @@ export const contactQuery = graphql`
 const RenderBody = ({ contactPage }) => {
   return (
     <React.Fragment>
-      <SEO title="Contact" />
       <div className="container-fluid">
         <div className="row">
           <div className="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
