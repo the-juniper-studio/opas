@@ -58,7 +58,7 @@ export const homeQuery = graphql`
 const renderer = ({ days, hours, minutes, seconds }) => {
   return (
     <div className='countdown'>
-      <div className='days'><span>Days</span> {hours}</div>
+      <div className='days'><span>Days</span> {days}</div>
       <div className='hours'><span>Hours</span> {hours}</div>
       <div className='minutes'><span>Minutes</span> {minutes}</div>
       <div className='seconds'><span>Seconds</span> {seconds}</div>
@@ -82,7 +82,7 @@ const RenderBody = ({ homePage, bidJs }) => {
                           return (
                             <div className={'item' + (index === 0 ? ' active' : '')} key={`item-${index}`}>
                               <picture>
-                                <source srcset={item.hero_image.Mobile.url} loading={index === 0 ? 'eager' : 'auto'} media="(max-width: 768px)" className="img-responsive" />
+                                <source srcSet={item.hero_image.Mobile.url} loading={index === 0 ? 'eager' : 'auto'} media="(max-width: 768px)" className="img-responsive" />
                                 <img src={item.hero_image.url} alt={item.hero_image.alt} loading={index === 0 ? 'eager' : 'auto'} className="img-responsive" />
                               </picture>
                               <div className='carousel-caption hero-text'>
@@ -145,7 +145,6 @@ const RenderBody = ({ homePage, bidJs }) => {
                 <div className='panel-body text-center'>
                   <div>{RichText.render(homePage.countdown_title, linkResolver)}</div>
                   <Countdown date={homePage.countdown_deadline} zeroPadTime={2} zeroPadDays={2} renderer={renderer} />
-                  {homePage.countdown_deadline}
                   <div>{RichText.render(homePage.countdown_text, linkResolver)}</div>
                 </div>
               </div>
