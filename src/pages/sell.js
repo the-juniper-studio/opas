@@ -27,7 +27,6 @@ export const sellQuery = graphql`
 const RenderBody = ({ sellPage }) => {
   return (
     <React.Fragment>
-      <SEO title="Sell" />
       {sellPage.hero && (
         <picture className="hero">
           <source srcset={sellPage.hero.Mobile.url} loading="lazy" media="(max-width: 768px)" class="img-responsive" />
