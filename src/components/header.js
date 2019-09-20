@@ -47,7 +47,9 @@ class RenderBody extends Component {
                   <li><Link to="/about-us/" activeClassName="active">About us</Link></li>
                   <li><Link to="/contact/" activeClassName="active">Contact</Link></li>
                 </ul>
-                <p className='hidden-sm navbar-text pull-right'>Phone: <a href="tel:+441412660125">0141 266 0125</a></p>
+                <ul className="nav navbar-nav navbar-right">
+                  <li><p className='hidden-sm navbar-text pull-right'>Phone: <a href="tel:+441412660125">0141 266 0125</a></p></li>
+                </ul>
                 <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right x-bidlogix--trigger-login">Sign Up/Log in</a>
               </div>
             </div>
