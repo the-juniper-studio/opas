@@ -53,7 +53,6 @@ class RenderBody extends Component {
                     <a className="btn btn-secondary navbar-btn pull-right x-bidlogix--trigger-login x-bidlogix--authenticated-hide hidden">Sign Up/Log in</a>
                     <ul className="nav navbar-nav navbar-right">
                       <li className="x-bidlogix--authenticated-show"><a className="clickable x-bidlogix--trigger-my-bids">My bids</a></li>
-                      <li role="separator" className="divider"></li>
                       <li className="x-bidlogix--authenticated-show"><a className="clickable x-bidlogix--trigger-my-settings">My settings</a></li>
                       <li className="x-bidlogix--authenticated-show"><a className="clickable x-bidlogix--trigger-logout">Log out</a></li>
                     </ul>
