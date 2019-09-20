@@ -16,6 +16,7 @@ exports.sourceNodes = (
     const nodeContent = JSON.stringify(auctionItem)
     const nodeData = Object.assign({}, auctionItem, {
       id: nodeId,
+      itemid: auctionItem.id,
       parent: null,
       children: [],
       internal: {
