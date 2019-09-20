@@ -60,7 +60,7 @@ function scripttop() {
 const IndexPage = () => {
   return (
     <Layout pageName='auction'>
-      <SEO title="Auction | Online Property Auctions Scotland" description="Bid on up to 50 properties every month in our national online property auctions. Bid live, in real time on Residential and Commercial Property and Land. Register now to get full access to the auctions and further membership benefits." lang='en-gb' />
+      <SEO title="Auction | Online Property Auctions Scotland" description="Bid on up to 50 properties every month in our national online property auctions. Bid live, in real time on Residential and Commercial Property and Land. Register now to get full access to the auctions and further membership benefits" lang='en-gb' />
 
       <script defer src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossOrigin="anonymous"></script>
       <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossOrigin="anonymous" />
