@@ -49,11 +49,11 @@ class RenderBody extends Component {
                 </ul>
                 <p className='hidden-sm navbar-text pull-right'>Phone: <a href="tel:+441412660125">0141 266 0125</a></p>
                 <ul className="nav navbar-nav navbar-right">
-                  <li className='x-bidlogix--authenticated-hide hide'><a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right">Sign Up/Log in</a></li>
-                  <li className="x-bidlogix--authenticated-show hide"><a href="/auction/#!/myBids">My bids</a></li>
-                  <li className="x-bidlogix--authenticated-show hide"><a href="/auction/#!/invoices">My invoices</a></li>
-                  <li className="x-bidlogix--authenticated-show hide"><a href="/auction/#!/mySettings">My settings</a></li>
-                  <li className="x-bidlogix--authenticated-show hide"><a className="clickable x-bidlogix--trigger-logout">Log out</a></li>
+                  <li className='x-bidlogix--authenticated-hide'><a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right">Sign Up/Log in</a></li>
+                  <li className="x-bidlogix--authenticated-show"><a href="/auction/#!/myBids">My bids</a></li>
+                  <li className="x-bidlogix--authenticated-show"><a href="/auction/#!/invoices">My invoices</a></li>
+                  <li className="x-bidlogix--authenticated-show"><a href="/auction/#!/mySettings">My settings</a></li>
+                  <li className="x-bidlogix--authenticated-show"><a className="clickable x-bidlogix--trigger-logout">Log out</a></li>
                 </ul>
               </div>
             </div>
