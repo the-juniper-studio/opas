@@ -124,15 +124,15 @@ const RenderBody = ({ homePage, bidJs }) => {
                   const endDate = format(item.node.endTime, 'ha on Mo MMMM YYYY');
                   return (
                     <div className='col-xs-6 col-md-4 col-lg-3 d-flex flex-column'  key={`item-${index}`}>
-                      <div className='thumbnail pos-rel flex-grow d-flex flex-column'>
+                      <a className='thumbnail pos-rel flex-grow d-flex flex-column' href={`https://www.opascotland.co.uk/auction/#!/itemDetails/340/${item.node.itemid}`}>
                         <span className='label label-primary pos-abs'>Lot {item.node.lotNumber}</span>
                         <Cloudinary url={item.node.imageUrls[0]} />
                         <div className='caption mt-auto'>
                           <small className='text-muted'>Ends: {endDate}</small>
                           <h3 className='h5 mb-0 text-muted' dangerouslySetInnerHTML={{__html: item.node.title}} />
-                          <div className='text-center mt-3'><a href={`https://www.opascotland.co.uk/auction/#!/itemDetails/340/${item.node.itemid}`} class="btn btn-block btn-primary">View</a></div>
+                          <div className='text-center mt-3'><button class="btn btn-block btn-primary stretch">View</button></div>
                         </div>
-                      </div>
+                      </a>
                     </div>
                   )
                 })}

@@ -146,6 +146,12 @@ body {
   @extend .shadow-xs;
 }
 
+a.thumbnail:hover, 
+a.thumbnail:focus, 
+a.thumbnail.active {
+    text-decoration: none;
+}
+
 /* Flexbox */
 .d-block {
   display:block;
