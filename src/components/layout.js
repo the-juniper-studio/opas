@@ -5,7 +5,6 @@ import Footer from "./footer"
 import "../styles/layout.scss"
 
 const Layout = ({ children }) => {
-
   return (
     <React.Fragment>
       <a className="sr-only sr-only-focusable" href="#main">Skip to main content</a>

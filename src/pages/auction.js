@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 function scripting() {
   return {__html: `
@@ -36,6 +37,7 @@ function scripting() {
 const IndexPage = () => {
   return (
     <Layout>
+      <SEO title="auction" keywords="auction" description="auction" lang='en-gb' />
       <div className="container-fluid mt-2">
         <noscript id="deferred-styles">
           <link href="https://hove.eu-west-2.bidjs.com/static/2.0/prettyphoto/jquery.prettyPhoto.min.css" rel="stylesheet" type="text/css" />

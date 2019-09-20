@@ -82,8 +82,8 @@ const RenderBody = ({ homePage, bidJs }) => {
                           return (
                             <div className={'item' + (index === 0 ? ' active' : '')} key={`item-${index}`}>
                               <picture>
-                                <source srcset={item.hero_image.Mobile.url} loading={index === 0 ? 'eager' : 'auto'} media="(max-width: 768px)" class="img-responsive" />
-                                <img src={item.hero_image.url} alt={item.hero_image.alt} loading={index === 0 ? 'eager' : 'auto'} class="img-responsive" />
+                                <source srcset={item.hero_image.Mobile.url} loading={index === 0 ? 'eager' : 'auto'} media="(max-width: 768px)" className="img-responsive" />
+                                <img src={item.hero_image.url} alt={item.hero_image.alt} loading={index === 0 ? 'eager' : 'auto'} className="img-responsive" />
                               </picture>
                               <div className='carousel-caption hero-text'>
                                 {RichText.render(item.hero_title, linkResolver)}
@@ -130,7 +130,7 @@ const RenderBody = ({ homePage, bidJs }) => {
                         <div className='caption mt-auto'>
                           <small className='text-muted'>Ends: {endDate}</small>
                           <h3 className='h5 mb-0 text-muted' dangerouslySetInnerHTML={{__html: item.node.title}} />
-                          <div className='text-center mt-3'><button class="btn btn-block btn-primary stretch">View</button></div>
+                          <div className='text-center mt-3'><button className="btn btn-block btn-primary stretch">View</button></div>
                         </div>
                       </a>
                     </div>
