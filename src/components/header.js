@@ -41,11 +41,11 @@ class RenderBody extends Component {
 
               <div hidden={!this.state.expanded} id="main-nav">
                 <ul className="nav navbar-nav">
-                  <li><Link to="/" activeClassName="active" >Home</Link></li>
-                  <li><a href="/auction/">Auction</a></li>
-                  <li><Link to="/sell/" activeClassName="active">Sell</Link></li>
-                  <li><Link to="/about-us/" activeClassName="active">About us</Link></li>
-                  <li><Link to="/contact/" activeClassName="active">Contact</Link></li>
+                  <li><Link to="/" activeClassName="active" onClick={ this.toggleNav }>Home</Link></li>
+                  <li><a href="/auction/" onClick={ this.toggleNav }>Auction</a></li>
+                  <li><Link to="/sell/" activeClassName="active" onClick={ this.toggleNav }>Sell</Link></li>
+                  <li><Link to="/about-us/" activeClassName="active" onClick={ this.toggleNav }>About us</Link></li>
+                  <li><Link to="/contact/" activeClassName="active" onClick={ this.toggleNav }>Contact</Link></li>
                 </ul>
                 <p className='hidden-sm navbar-text pull-right'>Phone: <a href="tel:+441412660125">0141 266 0125</a></p>
                 {this.props.pageName === 'auction' ? (
