@@ -66,7 +66,7 @@ const IndexPage = () => {
 
       <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en,Promise" />
       <script src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GOOGLE_API_KEY}`} type="text/javascript" />
-      <script src="https://hove.eu-west-2.bidjs.com/static/2.0/js/bid-dependencies--no-bootstrap.min.js" />
+      <script src="https://hove.eu-west-2.bidjs.com/static/2.0/js/bid-dependencies.min.js" />
       <script src="https://hove.eu-west-2.bidjs.com/static/2.0/prettyphoto/jquery.prettyPhoto.min.js" />
       <script src="https://hove.eu-west-2.bidjs.com/static/2.0/js/hbs-bid.min.js" />
       <script src="https://hove.eu-west-2.bidjs.com/static/2.0/js/bid.min.js" />
