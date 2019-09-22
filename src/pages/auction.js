@@ -2,31 +2,6 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-function scriptbottom() {
-  return {__html: `
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
-          (function($) {
-            $(document).ready(function() {
-              PageApp.start();
-            });
-          })(jQuery);
-        });
-        var loadDeferredStyles = function() {
-          var addStylesNode = document.getElementById("deferred-styles");
-          var replacement = document.createElement("div");
-          replacement.innerHTML = addStylesNode.textContent;
-          document.body.appendChild(replacement)
-          addStylesNode.parentElement.removeChild(addStylesNode);
-        };
-        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-          webkitRequestAnimationFrame || msRequestAnimationFrame;
-        if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-        else window.addEventListener('load', loadDeferredStyles);
-    </script>
-  `};
-}
-
 function scripttop() {
   return {__html: `
     <script defer>
@@ -53,6 +28,31 @@ function scripttop() {
           unsupportedBrowserMessage: 'Your browser is not supported. Please use a browser such as Google Chrome or Microsoft Edge to ensure full functionality'
         }
       }
+    </script>
+  `};
+}
+
+function scriptbottom() {
+  return {__html: `
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+          (function($) {
+            $(document).ready(function() {
+              PageApp.start();
+            });
+          })(jQuery);
+        });
+        var loadDeferredStyles = function() {
+          var addStylesNode = document.getElementById("deferred-styles");
+          var replacement = document.createElement("div");
+          replacement.innerHTML = addStylesNode.textContent;
+          document.body.appendChild(replacement)
+          addStylesNode.parentElement.removeChild(addStylesNode);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+        else window.addEventListener('load', loadDeferredStyles);
     </script>
   `};
 }
