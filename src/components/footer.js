@@ -9,7 +9,7 @@ const Footer = () => (
     <div className="container-fluid block-lg">
       <div className="row">
         <div className="col-xs-12 col-sm-4">
-          <h4>Scottish Property Auctions &copy; {new Date().getFullYear()}</h4>
+          <h4>Online Property Auctions Scotland Ltd &copy; {new Date().getFullYear()}</h4>
           272 Bath Street<br/>
           Glasgow<br/>
           Scotland<br/>
@@ -22,7 +22,6 @@ const Footer = () => (
             <li><Link to="/privacy-policy">Privacy Policy</Link></li>
             <li><Link to="/about-us">About us</Link></li>
             <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/anti-money-laundering">Anti-Money Laundering</Link></li>
           </ul>
         </div>
         <div className="col-xs-12 col-sm-5">
