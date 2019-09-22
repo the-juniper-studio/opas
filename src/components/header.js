@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby';
+import { StaticQuery, graphql, Link } from "gatsby"
+import { withPreview } from 'gatsby-source-prismic-graphql';
+import { RichText } from 'prismic-reactjs';
+import { linkResolver } from '../utils/linkResolver';
 import Logo from "../images/Online-Property-Logo.png"
 
-
-export const query = graphql`
-  query navigationHeadQuery($uid: String) {
+const query = graphql`
+  query {
     prismic {
-      allNavigations(uid: $uid) {
+      allNavigations {
         edges {
           node {
             _meta {
@@ -28,16 +30,20 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-
-const Header = ({pageName}) => {
-  return (
-    <React.Fragment>
-      <RenderBody pageName={pageName} />
-    </React.Fragment>
-  )
-}
+export const Header = () => (
+  <StaticQuery
+    query={query}
+    render={withPreview(data => {
+      return (
+        <React.Fragment>
+          <RenderBody />
+        </React.Fragment>
+      )
+    }, query)}
+  />
+);
 
 class RenderBody extends Component {
   constructor() {
