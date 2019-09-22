@@ -6,7 +6,7 @@ import RightMove from "../images/right-move.png"
 
 
 export const query = graphql`
-  query navigationQuery($uid: String) {
+  query navigationFooterQuery($uid: String) {
     prismic {
       allNavigations(uid: $uid) {
         edges {
@@ -45,6 +45,7 @@ const Footer = ( Navigation ) => (
         <div className="col-xs-12 col-sm-3">
           <h4>Links</h4>
           <ul className="list-unstyled">
+
             <li><Link to="/privacy-policy">Privacy Policy</Link></li>
             <li><Link to="/about-us">About us</Link></li>
             <li><Link to="/contact">Contact</Link></li>
