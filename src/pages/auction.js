@@ -5,52 +5,57 @@ import SEO from "../components/seo"
 function scriptbottom() {
   return {__html: `
     <script>
-        window.addEventListener('DOMContentLoaded', function() {
+      window.addEventListener('DOMContentLoaded', function() {
           (function($) {
-            $(document).ready(function() {
-              PageApp.start();
-            });
+              $(document).ready(function() {
+                PageApp.start();
+              });
           })(jQuery);
-        });
-        var loadDeferredStyles = function() {
-          var addStylesNode = document.getElementById("deferred-styles");
-          var replacement = document.createElement("div");
-          replacement.innerHTML = addStylesNode.textContent;
-          document.body.appendChild(replacement)
-          addStylesNode.parentElement.removeChild(addStylesNode);
-        };
-        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+      });
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
           webkitRequestAnimationFrame || msRequestAnimationFrame;
-        if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-        else window.addEventListener('load', loadDeferredStyles);
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
     </script>
+    <script src="https://static.bidjs.com/1.4/bootstrap3/js/bidjs-modules.chunk.js"> 
   `};
 }
 
 function scripttop() {
   return {__html: `
-    <script defer>
+    <script>
       window.bidjs = {  
         config: {    
-          apiBase: "https://hove.eu-west-2.bidjs.com/auction-007/api",
-          clientId: "/onlinepropertyauctions",
-          staticBase: "https://hove.eu-west-2.bidjs.com/static/2.0",
-          staticCDN: 'https://static.bidjs.com', // Do not change    
-          staticVersion: '1.5', // e.g. 1.3  
-          templateVariant: 'bootstrap3' // either 'bootstrap3' or 'bootstrap4'  
-          },  
+          apiBase: 'https://hove.eu-west-2.bidjs.com/auction-007/api',
+          clientId: '/onlinepropertyauctions',
+          googleMapsApiKey: 'YOUR_KEY',
+          staticBase: 'https://hove.eu-west-2.bidjs.com/static/2.0',
+          staticCDN: 'https://static.bidjs.com',  
+          staticVersion: '1.4', 
+          templateVariant: 'bootstrap3' 
+        },  
         modules: {    
           auctionDetails: '#!/auctionDetails/%AUCTION_ID%',
           auctionsArchived: true,
           invoices: true,
           lotDetails: '#!/itemDetails/%ITEM_ID%',
           mySales: true
-          },  
+        },  
         options: {
           allowTitleChange: true,
           allowMetaDescriptionChange: true,
           standalone: false,
           unsupportedBrowserMessage: 'Your browser is not supported. Please use a browser such as Google Chrome or Microsoft Edge to ensure full functionality'
+        },
+        callback: function (event) {
+          console.log(event)
         }
       }
     </script>
@@ -62,13 +67,15 @@ const IndexPage = () => {
     <Layout pageName='auction'>
       <SEO title="Auction | Online Property Auctions Scotland" description="Bid on up to 50 properties every month in our national online property auctions. Bid live, in real time on Residential and Commercial Property and Land. Register now to get full access to the auctions and further membership benefits" lang='en-gb' />
 
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossOrigin="anonymous" />
-      <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en,Promise" />
+
+
+      <script defer src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en,Promise" />
       <script src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GOOGLE_API_KEY}`} type="text/javascript" />
-      <script src="https://hove.eu-west-2.bidjs.com/static/2.0/js/bid-dependencies.min.js" />
+      <script src="https://hove.eu-west-2.bidjs.com/static/2.0/js/bid-dependencies--no-bootstrap.min.js" />
       <script src="https://hove.eu-west-2.bidjs.com/static/2.0/prettyphoto/jquery.prettyPhoto.min.js" />
-      <script src="https://hove.eu-west-2.bidjs.com/static/2.0/js/hbs-bid.min.js" />
+      <script src="https://hove.eu-west-2.bidjs.com/static/2.0js/hbs-bid.min.js" />
       <script src="https://hove.eu-west-2.bidjs.com/static/2.0/js/bid.min.js" />
+
 
       <div dangerouslySetInnerHTML={scripttop()} />
 
