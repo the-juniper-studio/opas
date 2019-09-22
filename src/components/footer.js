@@ -1,20 +1,46 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Ombudsman from "../images/the-property-ombudsman.png"
 import TSI from "../images/TSI.png"
 import RightMove from "../images/right-move.png"
 
-const Footer = () => (
+
+export const query = graphql`
+  query navigationQuery($uid: String) {
+    prismic {
+      allNavigations(uid: $uid) {
+        edges {
+          node {
+            _meta {
+              uid
+              tags
+            }
+            company_name
+            company_address
+            company_phone
+            site_logo
+            footer_links {
+              link_label
+              link {
+                _linkType
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+
+const Footer = ( Navigation ) => (
   <footer className="footer mt-3" role="contentinfo">
     <div className="container-fluid block-lg">
       <div className="row">
         <div className="col-xs-12 col-sm-4">
-          <h4>Online Property Auctions Scotland Ltd &copy; {new Date().getFullYear()}</h4>
-          272 Bath Street<br/>
-          Glasgow<br/>
-          Scotland<br/>
-          G2 4JR<br />
-          <p className=''>T: <a href="tel:+441412660125">0141 266 0125</a></p>
+          <h4>{Navigation.company_name} &copy; {new Date().getFullYear()}</h4>
+          {Navigation.company_address}
+          <p className=''>T: <a href="tel:+441412660125">{Navigation.company_phone}</a></p>
         </div>
         <div className="col-xs-12 col-sm-3">
           <h4>Links</h4>
