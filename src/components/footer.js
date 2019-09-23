@@ -22,7 +22,6 @@ const query = graphql`
             company_display_name
             company_address
             company_phone
-            site_logo
             footer_links {
               link_label
               link {
@@ -67,7 +66,16 @@ export const Footer = () => (
                 <h4>Links</h4>
                 <ul className="list-unstyled">
                   {data.prismic.allNavigations.edges[0].node.footer_links.map((slice, index) => {
-                   
+                    const page = slice.link._meta.type.replace('_page','')
+                    return (
+                      <li key={`footer-${index}`}>
+                        {slice.link._meta.uid != null ? (
+                          <a href={`/${slice.link._meta.uid}`}>{RichText.render(slice.link_label, linkResolver)}</a>
+                        ):(
+                          <a href={`/${page}`}>{RichText.render(slice.link_label, linkResolver)}</a>
+                        )}
+                      </li>
+                    )
                   })}
                 </ul>
               </div>
