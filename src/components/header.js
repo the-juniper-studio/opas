@@ -74,7 +74,7 @@ class RenderBody extends Component {
                   <li><a href="/about-us/" activeClassName="active" onClick={ this.toggleNav }>About us</a></li>
                   <li><a href="/contact/" activeClassName="active" onClick={ this.toggleNav }>Contact</a></li>
                 </ul>
-                <hr className="visible-xs">
+                <hr className="visible-xs" />
                 <React.Fragment>
                   <ul className="nav navbar-nav navbar-right">
                     <li className="x-bidlogix--authenticated-show"><a href="/auction/#!/myBids">My bids</a></li>
