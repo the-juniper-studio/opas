@@ -26,6 +26,18 @@ const query = graphql`
               link_label
               link {
                 _linkType
+                ... on PRISMIC_Content_page {
+                  _meta {
+                    uid
+                    type
+                  }
+                }
+                ... on PRISMIC_Contact_page {
+                  _meta {
+                    uid
+                    type
+                  }
+                }
               }
             }
           }
@@ -45,16 +57,25 @@ export const Footer = () => (
           <div className="container-fluid block-lg">
             <div className="row">
               <div className="col-xs-12 col-sm-4">
-                {RichText.render(data.prismic.allNavigations.edges[0].node.company_name, linkResolver)} 
+                {data.prismic.allNavigations.edges[0].node.company_name} &copy; {new Date().getFullYear()}
                 {RichText.render(data.prismic.allNavigations.edges[0].node.company_address, linkResolver)}
                 <p className=''>T: <a href="tel:+441412660125">{data.prismic.allNavigations.edges[0].node.company_phone}</a></p>
               </div>
               <div className="col-xs-12 col-sm-3">
                 <h4>Links</h4>
                 <ul className="list-unstyled">
-                  <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-                  <li><Link to="/about-us">About us</Link></li>
-                  <li><Link to="/contact">Contact</Link></li>
+                  {data.prismic.allNavigations.edges[0].node.footer_links.map((slice, index) => {
+                    const page = slice.link._meta.type.replace('_page','')
+                    return (
+                      <li key={`footer-${index}`}>
+                        {slice.link._meta.uid != null ? (
+                          <Link to={`/${slice.link._meta.uid}`}>{RichText.render(slice.link_label, linkResolver)}</Link>
+                        ):(
+                          <Link to={`/${page}`}>{RichText.render(slice.link_label, linkResolver)}</Link>
+                        )}
+                      </li>
+                    )
+                  })}
                 </ul>
               </div>
               <div className="col-xs-12 col-sm-5">
