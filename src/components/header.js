@@ -3,7 +3,6 @@ import { StaticQuery, graphql, Link } from "gatsby"
 import { withPreview } from 'gatsby-source-prismic-graphql';
 import { RichText } from 'prismic-reactjs';
 import { linkResolver } from '../utils/linkResolver';
-import Logo from "../images/Online-Property-Logo.png"
 
 const query = graphql`
   query {
@@ -71,7 +70,7 @@ class RenderBody extends Component {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <Link className="navbar-brand" to="/"><img alt="Online Property Auctions Scotland Ltd" src={Logo} /></Link>
+                <Link className="navbar-brand" to="/"><img alt="PRISMIC company_name" src="PRISMIC site_logo" /></Link>
               </div>
               <div hidden={!this.state.expanded} id="main-nav">
                 <ul className="nav navbar-nav">
@@ -81,14 +80,15 @@ class RenderBody extends Component {
                   <li><Link to="/about-us/" activeClassName="active" onClick={ this.toggleNav }>About us</Link></li>
                   <li><Link to="/contact/" activeClassName="active" onClick={ this.toggleNav }>Contact</Link></li>
                 </ul>
-                <p className='hidden-sm navbar-text pull-right'>Phone: <a href="tel:+441412660125">0141 266 0125</a></p>
+                <hr className="visible-xs" />
                 <React.Fragment>
-                  <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right x-bidlogix--authenticated-hide hidden">Sign Up/Log in</a>
                   <ul className="nav navbar-nav navbar-right">
-                    <li className="x-bidlogix--authenticated-show"><a href="/auction/#!/myBids">My bids</a></li>
-                    <li className="x-bidlogix--authenticated-show"><a href="/auction/#!/mySettings">My settings</a></li>
-                    <li className="x-bidlogix--authenticated-show"><a className="clickable x-bidlogix--trigger-logout">Log out</a></li>
+                    <li className="x-bidlogix--authenticated-show hidden"><a href="/auction/#!/myBids">My bids</a></li>
+                    <li className="x-bidlogix--authenticated-show hidden"><a href="/auction/#!/mySettings">My settings</a></li>
+                    <li className="x-bidlogix--authenticated-show hidden"><a className="clickable x-bidlogix--trigger-logout">Log out</a></li>
+                    <li className='hidden-sm'><a href="tel:+44 PRISMIC company_phone">Phone: <span className="text-primary">PRISMIC company_phone</span></a></li>
                   </ul>
+                  <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right x-bidlogix--authenticated-hide">Sign Up/Log in</a>
                 </React.Fragment>
               </div>
             </div>

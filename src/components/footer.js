@@ -45,14 +45,13 @@ export const Footer = () => (
           <div className="container-fluid block-lg">
             <div className="row">
               <div className="col-xs-12 col-sm-4">
-                {RichText.render(data.prismic.allNavigations.edges[0].node.company_name, linkResolver)} &copy; {new Date().getFullYear()}
+                {RichText.render(data.prismic.allNavigations.edges[0].node.company_name, linkResolver)} 
                 {RichText.render(data.prismic.allNavigations.edges[0].node.company_address, linkResolver)}
                 <p className=''>T: <a href="tel:+441412660125">{data.prismic.allNavigations.edges[0].node.company_phone}</a></p>
               </div>
               <div className="col-xs-12 col-sm-3">
                 <h4>Links</h4>
                 <ul className="list-unstyled">
-
                   <li><Link to="/privacy-policy">Privacy Policy</Link></li>
                   <li><Link to="/about-us">About us</Link></li>
                   <li><Link to="/contact">Contact</Link></li>
@@ -70,6 +69,9 @@ export const Footer = () => (
                     <img alt="Right Move" src={RightMove} loading="lazy" className="img-responsive" />
                   </div>
                 </div>
+              </div>
+              <div className="col-xs-12">
+              Copyright {RichText.render(data.prismic.allNavigations.edges[0].node.company_name, linkResolver)} &copy; {new Date().getFullYear()}
               </div>
             </div>
           </div>
