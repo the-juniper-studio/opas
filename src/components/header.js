@@ -47,14 +47,27 @@ class RenderBody extends Component {
                   <li><Link to="/contact/" activeClassName="active" onClick={ this.toggleNav }>Contact</Link></li>
                 </ul>
                 <p className='hidden-sm navbar-text pull-right'>Phone: <a href="tel:+441412660125">0141 266 0125</a></p>
-                <React.Fragment>
-                  <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right x-bidlogix--authenticated-hide hidden">Sign Up/Log in</a>
-                  <ul className="nav navbar-nav navbar-right">
-                    <li className="x-bidlogix--authenticated-show"><a href="/auction/#!/myBids">My bids</a></li>
-                    <li className="x-bidlogix--authenticated-show"><a href="/auction/#!/mySettings">My settings</a></li>
-                    <li className="x-bidlogix--authenticated-show"><a className="clickable x-bidlogix--trigger-logout">Log out</a></li>
-                  </ul>
-                </React.Fragment>
+
+                {this.props.pageName === 'auction' ? (
+                  <React.Fragment>
+                    <a className="btn btn-secondary navbar-btn pull-right x-bidlogix--trigger-login x-bidlogix--authenticated-hide hidden">Sign Up/Log in</a>
+                    <ul className="nav navbar-nav navbar-right">
+                      <li className="x-bidlogix--authenticated-show"><a className="clickable x-bidlogix--trigger-my-bids">My bids</a></li>
+                      <li className="x-bidlogix--authenticated-show"><a className="clickable x-bidlogix--trigger-my-settings">My settings</a></li>
+                      <li className="x-bidlogix--authenticated-show"><a className="clickable x-bidlogix--trigger-logout">Log out</a></li>
+                    </ul>
+                  </React.Fragment>
+                ):(
+                  <React.Fragment>
+                    <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right">Sign Up/Log in</a>
+                    <ul className="nav navbar-nav navbar-right">
+                      <li className="x-bidlogix--authenticated-show"><a href="/auction/#!/myBids">My bids</a></li>
+                      <li className="x-bidlogix--authenticated-show"><a href="/auction/#!/mySettings">My settings</a></li>
+                      <li className="x-bidlogix--authenticated-show"><a className="clickable x-bidlogix--trigger-logout">Log out</a></li>
+                    </ul>
+                  </React.Fragment>
+                )}
+
               </div>
             </div>
           </nav>
