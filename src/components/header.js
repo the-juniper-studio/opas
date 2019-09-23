@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby';
 import Logo from "../images/Online-Property-Logo.png"
 
 
@@ -65,15 +64,15 @@ class RenderBody extends Component {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <Link className="navbar-brand" to="/"><img alt="Online Property Auctions Scotland Ltd" src={Logo} /></Link>
+                <a className="navbar-brand" href="/"><img alt="Online Property Auctions Scotland Ltd" src={Logo} /></a>
               </div>
               <div hidden={!this.state.expanded} id="main-nav">
                 <ul className="nav navbar-nav">
-                  <li><Link to="/" activeClassName="active" onClick={ this.toggleNav }>Home</Link></li>
+                  <li><a href="/" activeClassName="active" onClick={ this.toggleNav }>Home</a></li>
                   <li><a href="/auction/" onClick={ this.toggleNav }>Auction</a></li>
-                  <li><Link to="/sell/" activeClassName="active" onClick={ this.toggleNav }>Sell</Link></li>
-                  <li><Link to="/about-us/" activeClassName="active" onClick={ this.toggleNav }>About us</Link></li>
-                  <li><Link to="/contact/" activeClassName="active" onClick={ this.toggleNav }>Contact</Link></li>
+                  <li><a href="/sell/" activeClassName="active" onClick={ this.toggleNav }>Sell</a></li>
+                  <li><a href="/about-us/" activeClassName="active" onClick={ this.toggleNav }>About us</a></li>
+                  <li><a href="/contact/" activeClassName="active" onClick={ this.toggleNav }>Contact</a></li>
                 </ul>
                 <React.Fragment>
                   <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right x-bidlogix--authenticated-hide hidden">Sign Up/Log in</a>

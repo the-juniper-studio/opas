@@ -1,5 +1,5 @@
 import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import { withPreview } from 'gatsby-source-prismic-graphql';
 import { RichText } from 'prismic-reactjs';
 import { linkResolver } from '../utils/linkResolver';
@@ -69,9 +69,9 @@ export const Footer = () => (
                     return (
                       <li key={`footer-${index}`}>
                         {slice.link._meta.uid != null ? (
-                          <Link to={`/${slice.link._meta.uid}`}>{RichText.render(slice.link_label, linkResolver)}</Link>
+                          <a href={`/${slice.link._meta.uid}`}>{RichText.render(slice.link_label, linkResolver)}</a>
                         ):(
-                          <Link to={`/${page}`}>{RichText.render(slice.link_label, linkResolver)}</Link>
+                          <a href={`/${page}`}>{RichText.render(slice.link_label, linkResolver)}</a>
                         )}
                       </li>
                     )
