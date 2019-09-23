@@ -48,7 +48,7 @@ class RenderBody extends Component {
                 </ul>
                 <p className='hidden-sm navbar-text pull-right'>Phone: <a href="tel:+441412660125">0141 266 0125</a></p>
                 <React.Fragment>
-                  <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right x-bidlogix--authenticated-hide hidden">Sign Up/Log in</a>
+                  <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right x-bidlogix--authenticated-hide">Sign Up/Log in</a>
                   <ul className="nav navbar-nav navbar-right">
                     <li className="x-bidlogix--authenticated-show hidden"><a href="/auction/#!/myBids">My bids</a></li>
                     <li className="x-bidlogix--authenticated-show hidden"><a href="/auction/#!/mySettings">My settings</a></li>
