@@ -8,6 +8,7 @@ import Ombudsman from "../images/the-property-ombudsman.png"
 import TSI from "../images/TSI.png"
 import RightMove from "../images/right-move.png"
 
+
 const query = graphql`
   query {
     prismic {
@@ -21,7 +22,6 @@ const query = graphql`
             company_display_name
             company_address
             company_phone
-            site_logo
             footer_links {
               link_label
               link {
