@@ -1,6 +1,35 @@
 import React, { Component } from 'react'
 import Logo from "../images/Online-Property-Logo.png"
 
+
+export const query = graphql`
+  query navigationHeadQuery($uid: String) {
+    prismic {
+      allNavigations(uid: $uid) {
+        edges {
+          node {
+            _meta {
+              uid
+              tags
+            }
+            company_display_name
+            company_address
+            company_phone
+            site_logo
+            footer_links {
+              link_label
+              link {
+                _linkType
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+
 const Header = ({pageName}) => {
   return (
     <React.Fragment>

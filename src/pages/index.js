@@ -121,10 +121,10 @@ const RenderBody = ({ homePage, bidJs }) => {
               </div>
               <div className='row auction d-flex flex-wrap'>
                 {bidJs.edges.map((item, index) => {
-                  const endDate = format(item.node.endTime, 'ha on Mo MMMM YYYY');
+                  const endDate = format(item.node.endTime, 'ha on Mo MMM');
                   return (
                     <div className='col-xs-6 col-sm-4 col-lg-3 d-flex flex-column'  key={`item-${index}`}>
-                      <a className='thumbnail pos-rel flex-grow d-flex flex-column' href={`/auction/#!/itemDetails/${process.env.BIDJS_AUCTION_ID}/${item.node.itemid}`}>
+                      <a className='thumbnail pos-rel flex-grow d-flex flex-column' href={`/auction/#!/itemDetails/340/${item.node.itemid}`}>
                         <span className='label label-primary pos-abs'>Lot {item.node.lotNumber}</span>
                         <Cloudinary url={item.node.imageUrls[0]} />
                         <div className='caption mt-auto'>

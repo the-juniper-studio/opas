@@ -48,7 +48,6 @@ const query = graphql`
 `;
 
 
-
 export const Footer = () => (
   <StaticQuery
     query={query}
