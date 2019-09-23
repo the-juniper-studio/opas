@@ -18,7 +18,7 @@ const query = graphql`
               uid
               tags
             }
-            company_name
+            company_display_name
             company_address
             company_phone
             site_logo
@@ -57,9 +57,9 @@ export const Footer = () => (
           <div className="container-fluid block-lg">
             <div className="row">
               <div className="col-xs-12 col-sm-4">
-                {data.prismic.allNavigations.edges[0].node.company_name} &copy; {new Date().getFullYear()}
+                <h4>{data.prismic.allNavigations.edges[0].node.company_display_name} &copy; {new Date().getFullYear()}</h4>
                 {RichText.render(data.prismic.allNavigations.edges[0].node.company_address, linkResolver)}
-                <p className=''>T: <a href="tel:+441412660125">{data.prismic.allNavigations.edges[0].node.company_phone}</a></p>
+                <p className=''>T: <a href={`tel:+44${data.prismic.allNavigations.edges[0].node.company_phone}`}>{data.prismic.allNavigations.edges[0].node.company_phone}</a></p>
               </div>
               <div className="col-xs-12 col-sm-3">
                 <h4>Links</h4>
@@ -90,9 +90,6 @@ export const Footer = () => (
                     <img alt="Right Move" src={RightMove} loading="lazy" className="img-responsive" />
                   </div>
                 </div>
-              </div>
-              <div className="col-xs-12">
-              Copyright {RichText.render(data.prismic.allNavigations.edges[0].node.company_name, linkResolver)} &copy; {new Date().getFullYear()}
               </div>
             </div>
           </div>
