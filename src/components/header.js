@@ -74,14 +74,15 @@ class RenderBody extends Component {
                   <li><a href="/about-us/" activeClassName="active" onClick={ this.toggleNav }>About us</a></li>
                   <li><a href="/contact/" activeClassName="active" onClick={ this.toggleNav }>Contact</a></li>
                 </ul>
+                <hr className="visible-xs">
                 <React.Fragment>
-                  <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right x-bidlogix--authenticated-hide hidden">Sign Up/Log in</a>
                   <ul className="nav navbar-nav navbar-right">
                     <li className="x-bidlogix--authenticated-show"><a href="/auction/#!/myBids">My bids</a></li>
                     <li className="x-bidlogix--authenticated-show"><a href="/auction/#!/mySettings">My settings</a></li>
                     <li className="x-bidlogix--authenticated-show"><a className="clickable x-bidlogix--trigger-logout">Log out</a></li>
                     <li className="hidden-sm"><a href="tel:+441412660125">Phone: <span className="text-primary">0141 266 0125</span></a></li>
                   </ul>
+                   <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right x-bidlogix--authenticated-hide hidden">Sign Up/Log in</a>
                 </React.Fragment>
               </div>
             </div>
