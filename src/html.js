@@ -4,22 +4,22 @@ import PropTypes from "prop-types"
 function scripting() {
   return {__html: `
     <script defer>
-      window.bidjs = {  
-        config: {    
+      window.bidjs = {
+        config: {
           apiBase: "https://hove.eu-west-2.bidjs.com/auction-007/api",
           clientId: "/onlinepropertyauctions",
           staticBase: "https://hove.eu-west-2.bidjs.com/static/2.0",
-          staticCDN: 'https://static.bidjs.com', // Do not change    
-          staticVersion: '1.5', // e.g. 1.3  
-          templateVariant: 'bootstrap3' // either 'bootstrap3' or 'bootstrap4'  
-          },  
-        modules: {    
+          staticCDN: 'https://static.bidjs.com', // Do not change
+          staticVersion: '1.5', // e.g. 1.3
+          templateVariant: 'bootstrap3' // either 'bootstrap3' or 'bootstrap4'
+          },
+        modules: {
           auctionDetails: '#!/auctionDetails/%AUCTION_ID%',
           auctionsArchived: true,
           invoices: true,
           lotDetails: '#!/itemDetails/%ITEM_ID%',
           mySales: true
-          },  
+          },
         options: {
           allowTitleChange: true,
           allowMetaDescriptionChange: true,
@@ -50,7 +50,7 @@ export default function HTML(props) {
         <script defer src="https://hove.eu-west-2.bidjs.com/static/2.0/js/bid-dependencies.min.js" />
         <script defer src="https://hove.eu-west-2.bidjs.com/static/2.0/prettyphoto/jquery.prettyPhoto.min.js" />
         <script defer src="https://hove.eu-west-2.bidjs.com/static/2.0/js/hbs-bid.min.js" />
-        <script defer src="https://hove.eu-west-2.bidjs.com/static/2.0/js/bid.min.js" />
+        <script defer src="/4.js" />
         {props.headComponents}
         <div dangerouslySetInnerHTML={scripting()} />
       </head>
