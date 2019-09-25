@@ -59,7 +59,6 @@ class RenderBody extends Component {
                 </ul>
                 {this.props.pageName === 'auction' ? (
                   <React.Fragment>
-                    <a classname="btn btn-link navbar-btn pull-right" href="tel:+441412660125">Phone: <span className="text-primary">0141 266 0125</span></a>
                     <a className="btn btn-secondary navbar-btn pull-right x-bidlogix--trigger-login x-bidlogix--authenticated-hide hidden">Sign Up/Log in</a>
                     <ul className="nav navbar-nav navbar-right">
                       <li className="x-bidlogix--authenticated-show hidden"><a className="clickable x-bidlogix--trigger-my-bids">My bids</a></li>
