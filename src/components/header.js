@@ -82,7 +82,8 @@ class RenderBody extends Component {
                     )}
                   </React.Fragment>
                 )}
-                <ul className="nav navbar-nav navbar-right"><li className="hidden-sm"><a href="tel:+441412660125">Phone: <span className="text-primary">0141 266 0125</span></a></li></ul>
+                <hr className="visible-xs" />
+                <a href="tel:+441412660125" className="d-block mr-2 navbar-right navbar-text">Phone: <span className="text-primary">0141 266 0125</span></a>
               </div>
             </div>
           </nav>
