@@ -21,6 +21,7 @@ function scripting() {
           mySales: true
           },
         options: {
+          analyticsCode: 'UA-148159752-1',
           allowTitleChange: true,
           allowMetaDescriptionChange: true,
           standalone: false,
