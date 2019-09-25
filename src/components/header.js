@@ -71,7 +71,6 @@ class RenderBody extends Component {
                   </React.Fragment>
                 ):(
                   <React.Fragment>
-                    <p>HERE -> {this.state.loggedIn && "true"}</p>
                     {this.state.loggedIn === false ? (
                       <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right">Sign Up/Log in</a>
                     ):(
