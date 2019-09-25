@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 import Logo from "../images/Online-Property-Logo.png"
 
-if (typeof window !== 'undefined') {
-  var loggedIn = localStorage.getItem('bidJSToken') || null
-}
 
 const Header = ({pageName}) => {
   return (
     <React.Fragment>
-      <RenderBody pageName={pageName} loggedIn={loggedIn} />
+      <RenderBody pageName={pageName} />
     </React.Fragment>
   )
 }
@@ -16,11 +13,12 @@ const Header = ({pageName}) => {
 class RenderBody extends Component {
   constructor() {
     super()
+    const loggedIn = typeof window === 'undefined' ? false : (localStorage.getItem('bidJSToken') !== null)
     this.state = {
       expanded: false,
-      loggerIn: loggedIn
+      loggedIn
     }
-    this.deleteCookie = this.removeCookie.bind(this);
+    this.removeCookie = this.removeCookie.bind(this);
     this.toggleNav = this.toggleNav.bind(this);
   }
   toggleNav() {
@@ -29,7 +27,11 @@ class RenderBody extends Component {
     })
   }
   removeCookie() {
-    localStorage.removeItem('bidJSToken')
+    typeof window === 'undefined' ? null : localStorage.removeItem('bidJSToken')
+    this.setState({
+      loggedIn: false
+    })
+    
   }
 
   render() {
@@ -67,7 +69,8 @@ class RenderBody extends Component {
                   </React.Fragment>
                 ):(
                   <React.Fragment>
-                    {loggedIn === null ? (
+                    <p>HERE -> {this.state.loggedIn && "true"}</p>
+                    {this.state.loggedIn === false ? (
                       <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right">Sign Up/Log in</a>
                     ):(
                       <ul className="nav navbar-nav navbar-right">
