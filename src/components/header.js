@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import Logo from "../images/Online-Property-Logo.png"
 
+if (typeof window !== 'undefined') {
+  var loggedIn = localStorage.getItem('bidJSToken') || null
+}
 
 const Header = ({pageName}) => {
   return (
     <React.Fragment>
-      <RenderBody pageName={pageName} />
+      <RenderBody pageName={pageName} loggedIn={loggedIn} />
     </React.Fragment>
   )
 }
@@ -14,8 +17,10 @@ class RenderBody extends Component {
   constructor() {
     super()
     this.state = {
-      expanded: false
+      expanded: false,
+      loggerIn: loggedIn
     }
+    this.deleteCookie = this.removeCookie.bind(this);
     this.toggleNav = this.toggleNav.bind(this);
   }
   toggleNav() {
@@ -23,6 +28,10 @@ class RenderBody extends Component {
       expanded:!this.state.expanded
     })
   }
+  removeCookie() {
+    localStorage.removeItem('bidJSToken')
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -58,12 +67,15 @@ class RenderBody extends Component {
                   </React.Fragment>
                 ):(
                   <React.Fragment>
-                    <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right">Sign Up/Log in</a>
-                    <ul className="nav navbar-nav navbar-right">
-                      <li className="x-bidlogix--authenticated-show hidden"><a href="/auction/#!/myBids">My bids</a></li>
-                      <li className="x-bidlogix--authenticated-show hidden"><a href="/auction/#!/mySettings">My settings</a></li>
-                      <li className="x-bidlogix--authenticated-show hidden"><a className="clickable x-bidlogix--trigger-logout">Log out</a></li>
-                    </ul>
+                    {loggedIn === null ? (
+                      <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right">Sign Up/Log in</a>
+                    ):(
+                      <ul className="nav navbar-nav navbar-right">
+                        <li><a href="/auction/#!/myBids">My bids</a></li>
+                        <li><a href="/auction/#!/mySettings">My settings</a></li>
+                        <li><a href="#" onClick={ this.removeCookie }>Log out</a></li>
+                      </ul>
+                    )}
                   </React.Fragment>
                 )}
               </div>
