@@ -2,34 +2,6 @@ import React, { Component } from 'react'
 import Logo from "../images/Online-Property-Logo.png"
 
 
-export const query = graphql`
-  query navigationHeadQuery($uid: String) {
-    prismic {
-      allNavigations(uid: $uid) {
-        edges {
-          node {
-            _meta {
-              uid
-              tags
-            }
-            company_display_name
-            company_address
-            company_phone
-            site_logo
-            footer_links {
-              link_label
-              link {
-                _linkType
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
-
-
 const Header = ({pageName}) => {
   return (
     <React.Fragment>
@@ -41,9 +13,12 @@ const Header = ({pageName}) => {
 class RenderBody extends Component {
   constructor() {
     super()
+    const loggedIn = typeof window === 'undefined' ? false : (localStorage.getItem('bidJSToken') !== null)
     this.state = {
-      expanded: false
+      expanded: false,
+      loggedIn
     }
+    this.removeCookie = this.removeCookie.bind(this);
     this.toggleNav = this.toggleNav.bind(this);
   }
   toggleNav() {
@@ -51,6 +26,14 @@ class RenderBody extends Component {
       expanded:!this.state.expanded
     })
   }
+  removeCookie() {
+    localStorage.removeItem('bidJSToken')
+    this.setState({
+      loggedIn: false
+    })
+    
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -74,16 +57,32 @@ class RenderBody extends Component {
                   <li><a href="/about-us/" activeClassName="active" onClick={ this.toggleNav }>About us</a></li>
                   <li><a href="/contact/" activeClassName="active" onClick={ this.toggleNav }>Contact</a></li>
                 </ul>
-                <hr className="visible-xs" />
-                <React.Fragment>
-                  <ul className="nav navbar-nav navbar-right">
-                    <li className="x-bidlogix--authenticated-show"><a href="/auction/#!/myBids">My bids</a></li>
-                    <li className="x-bidlogix--authenticated-show"><a href="/auction/#!/mySettings">My settings</a></li>
-                    <li className="x-bidlogix--authenticated-show"><a className="clickable x-bidlogix--trigger-logout">Log out</a></li>
-                    <li className="hidden-sm"><a href="tel:+441412660125">Phone: <span className="text-primary">0141 266 0125</span></a></li>
-                  </ul>
-                   <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right x-bidlogix--authenticated-hide hidden">Sign Up/Log in</a>
-                </React.Fragment>
+                {this.props.pageName === 'auction' ? (
+                  <React.Fragment>
+                    <a className="btn btn-secondary navbar-btn pull-right x-bidlogix--trigger-login x-bidlogix--authenticated-hide hidden">Sign Up/Log in</a>
+                    <ul className="nav navbar-nav navbar-right">
+                      <li className="x-bidlogix--authenticated-show hidden"><a className="clickable x-bidlogix--trigger-my-bids">My bids</a></li>
+                      <li className="x-bidlogix--authenticated-show hidden"><a className="clickable x-bidlogix--trigger-my-settings">My settings</a></li>
+                      <li className="x-bidlogix--authenticated-show hidden"><a className="clickable x-bidlogix--trigger-logout">Log out</a></li>
+                    </ul>
+                  </React.Fragment>
+                ):(
+                  <React.Fragment>
+                    {this.state.loggedIn === false ? (
+                      <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right">Sign Up/Log in</a>
+                    ):(
+                      <React.Fragment>
+                        <hr className="visible-xs" />
+                        <ul className="nav navbar-nav navbar-right">
+                          <li><a href="/auction/#!/myBids">My bids</a></li>
+                          <li><a href="/auction/#!/mySettings">My settings</a></li>
+                          <li><a href="#" onClick={ this.removeCookie }>Log out</a></li>
+                        </ul>
+                      </React.Fragment>
+                    )}
+                  </React.Fragment>
+                )}
+                <ul className="nav navbar-nav navbar-right"><li className="hidden-sm"><a href="tel:+441412660125">Phone: <span className="text-primary">0141 266 0125</span></a></li></ul>
               </div>
             </div>
           </nav>
