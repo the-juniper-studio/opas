@@ -57,7 +57,6 @@ class RenderBody extends Component {
                   <li><a href="/about-us/" activeClassName="active" onClick={ this.toggleNav }>About us</a></li>
                   <li><a href="/contact/" activeClassName="active" onClick={ this.toggleNav }>Contact</a></li>
                 </ul>
-                <hr className="visible-xs" />
                 {this.props.pageName === 'auction' ? (
                   <React.Fragment>
                     <a classname="btn btn-link navbar-btn pull-right" href="tel:+441412660125">Phone: <span className="text-primary">0141 266 0125</span></a>
@@ -74,15 +73,18 @@ class RenderBody extends Component {
                     {this.state.loggedIn === false ? (
                       <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right">Sign Up/Log in</a>
                     ):(
-                      <ul className="nav navbar-nav navbar-right">
-                        <li><a href="/auction/#!/myBids">My bids</a></li>
-                        <li><a href="/auction/#!/mySettings">My settings</a></li>
-                        <li><a href="#" onClick={ this.removeCookie }>Log out</a></li>
-                        <li className="hidden-sm"><a href="tel:+441412660125">Phone: <span className="text-primary">0141 266 0125</span></a></li>
-                      </ul>
+                      <React.Fragment>
+                        <hr className="visible-xs" />
+                        <ul className="nav navbar-nav navbar-right">
+                          <li><a href="/auction/#!/myBids">My bids</a></li>
+                          <li><a href="/auction/#!/mySettings">My settings</a></li>
+                          <li><a href="#" onClick={ this.removeCookie }>Log out</a></li>
+                        </ul>
+                      </React.Fragment>
                     )}
                   </React.Fragment>
                 )}
+                <ul className="nav navbar-nav navbar-right"><li className="hidden-sm"><a href="tel:+441412660125">Phone: <span className="text-primary">0141 266 0125</span></a></li></ul>
               </div>
             </div>
           </nav>
