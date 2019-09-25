@@ -27,7 +27,7 @@ class RenderBody extends Component {
     })
   }
   removeCookie() {
-    typeof window === 'undefined' ? null : localStorage.removeItem('bidJSToken')
+    localStorage.removeItem('bidJSToken')
     this.setState({
       loggedIn: false
     })
