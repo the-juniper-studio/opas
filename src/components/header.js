@@ -59,7 +59,7 @@ class RenderBody extends Component {
                 </ul>
                 {this.props.pageName === 'auction' ? (
                   <React.Fragment>
-                    <a className="btn btn-secondary navbar-btn pull-right x-bidlogix--trigger-login x-bidlogix--authenticated-hide hidden">Sign Up/Log in</a>
+                    <a className="btn btn-secondary navbar-btn pull-right x-bidlogix--trigger-login x-bidlogix--authenticated-hide hidden">Register/Log in</a>
                     <ul className="nav navbar-nav navbar-right">
                       <li className="x-bidlogix--authenticated-show hidden"><a className="clickable x-bidlogix--trigger-my-bids">My bids</a></li>
                       <li className="x-bidlogix--authenticated-show hidden"><a className="clickable x-bidlogix--trigger-my-settings">My settings</a></li>
@@ -69,7 +69,7 @@ class RenderBody extends Component {
                 ):(
                   <React.Fragment>
                     {this.state.loggedIn === false ? (
-                      <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right">Sign Up/Log in</a>
+                      <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right">Register/Log in</a>
                     ):(
                       <React.Fragment>
                         <hr className="visible-xs" />
