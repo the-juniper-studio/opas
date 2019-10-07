@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { StaticQuery, graphql, Link } from "gatsby"
 import { withPreview } from 'gatsby-source-prismic-graphql';
-import { RichText } from 'prismic-reactjs';
-import { linkResolver } from '../utils/linkResolver';
 import Logo from "../images/Online-Property-Logo.png"
 
 
@@ -35,6 +33,11 @@ const query = graphql`
                     }
                   }
                   ... on PRISMIC_Contact_page {
+                    _meta {
+                      type
+                    }
+                  }
+                  ... on PRISMIC_Auction_page{
                     _meta {
                       type
                     }
@@ -106,7 +109,7 @@ class RenderBody extends Component {
                         {headerData.header_links.map((nav, index) => {
                           var headerLink = '/'
                           if (nav.link !== null && nav.link._meta.type !== 'home_page') {
-                            var headerLink = nav.link._meta.type || nav.link._meta.uid || '/'
+                            headerLink = nav.link._meta.type || nav.link._meta.uid || '/'
                           }
                           return (
                             <li key={`nav-${index}`}><Link to={headerLink.replace('_page', '')} activeClassName="active"  onClick={ this.toggleNav }>{nav.link_label}</Link></li>

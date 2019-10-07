@@ -69,9 +69,9 @@ export const Footer = () => (
                     return (
                       <li key={`footer-${index}`}>
                         {slice.link._meta.uid != null ? (
-                          <a href={`/${slice.link._meta.uid}`}>{RichText.render(slice.link_label, linkResolver)}</a>
+                          <a href={`/${slice.link._meta.uid}`}>{slice.link_label}</a>
                         ):(
-                          <a href={`/${page}`}>{RichText.render(slice.link_label, linkResolver)}</a>
+                          <a href={`/${page}`}>{slice.link_label}</a>
                         )}
                       </li>
                     )
