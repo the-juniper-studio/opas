@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StaticQuery, graphql, Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import { withPreview } from 'gatsby-source-prismic-graphql';
 import Logo from "../images/Online-Property-Logo.png"
 
@@ -112,7 +112,7 @@ class RenderBody extends Component {
                             headerLink = nav.link._meta.type || nav.link._meta.uid || '/'
                           }
                           return (
-                            <li key={`nav-${index}`}><Link to={headerLink.replace('_page', '')} activeClassName="active"  onClick={ this.toggleNav }>{nav.link_label}</Link></li>
+                            <li key={`nav-${index}`}><a href={headerLink.replace('_page', '')} activeClassName="active"  onClick={ this.toggleNav }>{nav.link_label}</a></li>
                           )
                         })}
                       </ul>
