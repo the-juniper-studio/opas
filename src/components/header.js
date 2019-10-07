@@ -53,6 +53,7 @@ class RenderBody extends Component {
                 <ul className="nav navbar-nav">
                   <li><a href="/" activeClassName="active" onClick={ this.toggleNav }>Home</a></li>
                   <li><a href="/auction/" onClick={ this.toggleNav }>Auction</a></li>
+                  <li><a href="/how-to-bid-in-our-online-property-auctions/" activeClassName="active" onClick={ this.toggleNav }>How to Bid</a></li>
                   <li><a href="/sell/" activeClassName="active" onClick={ this.toggleNav }>Sell</a></li>
                   <li><a href="/about-us/" activeClassName="active" onClick={ this.toggleNav }>About us</a></li>
                   <li><a href="/contact/" activeClassName="active" onClick={ this.toggleNav }>Contact</a></li>
