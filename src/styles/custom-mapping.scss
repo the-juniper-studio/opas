@@ -4,6 +4,10 @@
   width:auto;
 }
 
+.panel.panel-primary a.h1 {
+  color:#fff;
+}
+
 .footer {
   @extend .navbar;
   @extend .navbar-inverse;

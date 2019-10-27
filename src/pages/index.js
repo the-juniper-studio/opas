@@ -2,11 +2,9 @@ import React from 'react'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import SEO from '../components/seo'
-import Cloudinary from '../components/cloudinary'
 import Countdown from 'react-countdown-now';
 import { RichText } from 'prismic-reactjs';
 import { linkResolver } from '../utils/linkResolver';
-import { format } from 'date-fns'
 
 export const homeQuery = graphql`
   query {
@@ -116,36 +114,43 @@ const RenderBody = ({ homePage, bidJs }) => {
             <main className='main' id='main' role='main'>
               {RichText.render(homePage.title, linkResolver)}
               {RichText.render(homePage.content, linkResolver)}
-              <div className='clearfix mt-4'>
-                <h2 className="pull-left mt-0">Latest Properties</h2>
-                <a href='/auction' className='btn btn-default pull-right' role='button'>View All</a>
+              <div className='panel panel-primary'>
+                <div className='panel-body text-center'>
+                  <a href='https://auctions.opascotland.com' className='h1 d-block'>Click to visit our auction site</a>
+                </div>
               </div>
-              <div className='row auction d-flex flex-wrap'>
-                {bidJs.edges.map((item, index) => {
-                  const endDate = format(item.node.endTime, 'ha on Mo MMM');
-                  return (
-                    <React.Fragment>
-                      {item.node.status !== 5 && (
-                        <div className='col-xs-6 col-sm-4 col-lg-3 d-flex flex-column'  key={`item-${index}`}>
-                          <a className='thumbnail pos-rel flex-grow d-flex flex-column' href={`/auction/#!/itemDetails/${process.env.BIDJS_AUCTION_ID}/${item.node.itemid}`}>
-                            <span className='label label-primary pos-abs'>Lot {item.node.lotNumber}</span>
-                            {item.node.imageUrls[0] ? (
-                              <Cloudinary url={item.node.imageUrls[0]} />
-                            ):(
-                              <div className='text-muted text-center mt-3'>Image not available</div>
-                            )}
-                            <div className='caption mt-auto'>
-                              <small className='text-muted'>Ends: {endDate}</small>
-                              <h3 className='h5 mb-0 text-muted' dangerouslySetInnerHTML={{__html: item.node.title}} />
-                              <div className='text-center mt-3'><button className="btn btn-block btn-primary stretch">View</button></div>
-                            </div>
-                          </a>
-                        </div>
-                      )}
-                    </React.Fragment>
-                  )
-                })}
-              </div>
+              {/*
+                <div className='clearfix mt-4'>
+                  <h2 className="pull-left mt-0">Latest Properties</h2>
+                  <a href='/auction' className='btn btn-default pull-right' role='button'>View All</a>
+                </div>
+                <div className='row auction d-flex flex-wrap'>
+                  {bidJs.edges.map((item, index) => {
+                    const endDate = format(item.node.endTime, 'ha on Mo MMM');
+                    return (
+                      <React.Fragment>
+                        {item.node.status !== 5 && (
+                          <div className='col-xs-6 col-sm-4 col-lg-3 d-flex flex-column'  key={`item-${index}`}>
+                            <a className='thumbnail pos-rel flex-grow d-flex flex-column' href={`/auction/#!/itemDetails/${process.env.BIDJS_AUCTION_ID}/${item.node.itemid}`}>
+                              <span className='label label-primary pos-abs'>Lot {item.node.lotNumber}</span>
+                              {item.node.imageUrls[0] ? (
+                                <Cloudinary url={item.node.imageUrls[0]} />
+                              ):(
+                                <div className='text-muted text-center mt-3'>Image not available</div>
+                              )}
+                              <div className='caption mt-auto'>
+                                <small className='text-muted'>Ends: {endDate}</small>
+                                <h3 className='h5 mb-0 text-muted' dangerouslySetInnerHTML={{__html: item.node.title}} />
+                                <div className='text-center mt-3'><button className="btn btn-block btn-primary stretch">View</button></div>
+                              </div>
+                            </a>
+                          </div>
+                        )}
+                      </React.Fragment>
+                    )
+                  })}
+                </div>
+              */}
             </main>
           </div>
           <div className='col-xs-12 col-md-4 col-lg-3'>

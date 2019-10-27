@@ -115,36 +115,38 @@ class RenderBody extends Component {
                             headerLink !== 'auction_page' ? (
                               <li key={`nav-${index}`}><Link to={headerLink.replace('_page', '')} activeClassName="active"  onClick={ this.toggleNav }>{nav.link_label}</Link></li>
                             ):(
-                              <li key={`nav-${index}`}><a href={headerLink.replace('_page', '')} activeClassName="active"  onClick={ this.toggleNav }>{nav.link_label}</a></li>
+                              <li key={`nav-${index}`}><a href='https://auctions.opascotland.com' onClick={ this.toggleNav }>{nav.link_label}</a></li>
                             )
                           )
                         })}
                       </ul>
-                      {this.props.pageName === 'auction' ? (
-                        <React.Fragment>
-                          <a className="btn btn-secondary navbar-btn pull-right x-bidlogix--trigger-login x-bidlogix--authenticated-hide hidden">Register/Log in</a>
-                          <ul className="nav navbar-nav navbar-right">
-                            <li className="x-bidlogix--authenticated-show hidden"><a className="clickable x-bidlogix--trigger-my-bids">My bids</a></li>
-                            <li className="x-bidlogix--authenticated-show hidden"><a className="clickable x-bidlogix--trigger-my-settings">My settings</a></li>
-                            <li className="x-bidlogix--authenticated-show hidden"><a className="clickable x-bidlogix--trigger-logout">Log out</a></li>
-                          </ul>
-                        </React.Fragment>
-                      ):(
-                        <React.Fragment>
-                          {this.state.loggedIn === false ? (
-                            <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right">Register/Log in</a>
-                          ):(
-                            <React.Fragment>
-                              <hr className="visible-xs" />
-                              <ul className="nav navbar-nav navbar-right">
-                                <li><a href="/auction/#!/myBids">My bids</a></li>
-                                <li><a href="/auction/#!/mySettings">My settings</a></li>
-                                <li><a href="#" onClick={ this.removeCookie }>Log out</a></li>
-                              </ul>
-                            </React.Fragment>
-                          )}
-                        </React.Fragment>
-                      )}
+                      {/*
+                        {this.props.pageName === 'auction' ? (
+                          <React.Fragment>
+                            <a className="btn btn-secondary navbar-btn pull-right x-bidlogix--trigger-login x-bidlogix--authenticated-hide hidden">Register/Log in</a>
+                            <ul className="nav navbar-nav navbar-right">
+                              <li className="x-bidlogix--authenticated-show hidden"><a className="clickable x-bidlogix--trigger-my-bids">My bids</a></li>
+                              <li className="x-bidlogix--authenticated-show hidden"><a className="clickable x-bidlogix--trigger-my-settings">My settings</a></li>
+                              <li className="x-bidlogix--authenticated-show hidden"><a className="clickable x-bidlogix--trigger-logout">Log out</a></li>
+                            </ul>
+                          </React.Fragment>
+                        ):(
+                          <React.Fragment>
+                            {this.state.loggedIn === false ? (
+                              <a href="/auction/#!/login" className="btn btn-secondary navbar-btn pull-right">Register/Log in</a>
+                            ):(
+                              <React.Fragment>
+                                <hr className="visible-xs" />
+                                <ul className="nav navbar-nav navbar-right">
+                                  <li><a href="/auction/#!/myBids">My bids</a></li>
+                                  <li><a href="/auction/#!/mySettings">My settings</a></li>
+                                  <li><a href="#" onClick={ this.removeCookie }>Log out</a></li>
+                                </ul>
+                              </React.Fragment>
+                            )}
+                          </React.Fragment>
+                        )}
+                      */}
                       <hr className="visible-xs" />
                       {headerData.company_phone && (
                         <a href={`tel:${headerData.company_phone}`} className="d-block mr-2 navbar-right navbar-text">Phone: <span className="text-primary">{headerData.company_phone}</span></a>
